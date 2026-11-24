@@ -13982,7 +13982,7 @@
 	name = "cheele"
 	result = /obj/item/natural/worms/leech/cheele
 	reqs = list(/obj/item/reagent_containers/lux = 1, /obj/item/natural/worms/leech = 1)
-	blacklist = list(/obj/item/natural/worms/leech/abyssoid, /obj/item/natural/worms/leech/cheele, /obj/item/reagent_containers/lux/eoran_aril)
+	blacklist = list(/obj/item/natural/worms/leech/abyssoid, /obj/item/natural/worms/leech/cheele, /obj/item/natural/worms/leech/parasite, /obj/item/reagent_containers/lux/eoran_aril)
 	category = "Medicine"
 	rogue_skill = /datum/attribute/skill/misc/medicine
 	rogue_difficulty = 4
@@ -19703,7 +19703,7 @@
 	name = "Bog Cream (Artemisia)"
 	result = /obj/item/bog_cream
 	reqs = list(/obj/item/natural/worms/leech = 1, /obj/item/alch/artemisia = 1, /obj/item/reagent_containers/food/snacks/tallow = 1)
-	blacklist = list(/obj/item/natural/worms/leech/abyssoid, /obj/item/natural/worms/leech/cheele, /obj/item/reagent_containers/food/snacks/tallow/black, /obj/item/reagent_containers/food/snacks/tallow/red, /obj/item/reagent_containers/food/snacks/tallow/soft)
+	blacklist = list(/obj/item/natural/worms/leech/abyssoid, /obj/item/natural/worms/leech/cheele, /obj/item/natural/worms/leech/parasite, /obj/item/reagent_containers/food/snacks/tallow/black, /obj/item/reagent_containers/food/snacks/tallow/red, /obj/item/reagent_containers/food/snacks/tallow/soft)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 
@@ -19715,7 +19715,7 @@
 	rogue_results = null
 	tool_paths = null
 	parts = null
-	blacklist = list(/obj/item/natural/worms/leech/abyssoid, /obj/item/natural/worms/leech/cheele, /obj/item/reagent_containers/food/snacks/tallow/black, /obj/item/reagent_containers/food/snacks/tallow/red, /obj/item/reagent_containers/food/snacks/tallow/soft)
+	blacklist = list(/obj/item/natural/worms/leech/abyssoid, /obj/item/natural/worms/leech/cheele, /obj/item/natural/worms/leech/parasite, /obj/item/reagent_containers/food/snacks/tallow/black, /obj/item/reagent_containers/food/snacks/tallow/red, /obj/item/reagent_containers/food/snacks/tallow/soft)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 1

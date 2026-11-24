@@ -2,7 +2,7 @@
 mortar recipes (Vibelin's and Azure Peak's on top of Ratwood's), infusions, distillations, chemical reactions, reagent
 data, new ingredients and filled bottles.
 
-    py -3 -I modular_redtard/tools/port_vibelin_alchemy.py [--out DIR] [--lists DIR] [--config FILE] [--dry-run]
+    py -3 -I modular_redtard/tools/port_vibelin_alchemy.py [--out DIR] [--lists DIR] [--config FILE] [--extra-scan DIR] [--dry-run]
 
 --out is where the .dm files, path_map.json and alchemy_port.json go (default modular_redtard/alchemy/vibelin); --lists
 gets the tables of what was ported, what was not and why, and the checks (default the VA1 block's work folder).
@@ -88,7 +88,8 @@ BASES = {
                          'reagent_state': None, 'boiling_point': None}},
     # Ingredients: the module's (Ratwood's) /obj/item/alch; Vibelin's herbs (/obj/item/alch/herb/x) are the module's /obj/item/alch/x.
     'ingredient': {'owner': 'Rockhill porter (alchemy/ported/alchemy.dm)', 'root': '/obj/item/alch', 'vibelin_root': '/obj/item/alch',
-                   'vars': {'name': 'name', 'desc': 'desc', 'icon': 'icon', 'icon_state': 'icon_state', 'w_class': 'w_class', 'color': 'color'}},
+                   'vars': {'name': 'name', 'desc': 'desc', 'icon': 'icon', 'icon_state': 'icon_state', 'w_class': 'w_class', 'color': 'color',
+                            'smeltresult': 'smeltresult'}},
     # Filled bottles: the module's Ratwood bottle; Vibelin's ones the module lacks go under the step.
     'bottle': {'owner': 'survival/vessels.dm', 'root': '/obj/item/reagent_containers/glass/bottle', 'vibelin_root': '/obj/item/reagent_containers/glass/bottle',
                'step': 'vibelin_alchemy',
@@ -150,7 +151,9 @@ DEFAULT_CONFIG = {
     'item_pairs': {'/obj/item/fertilizer/bone_meal': '/obj/item/alch/bonemeal',
                    '/obj/item/reagent_containers/glass/bottle/vial': '/obj/item/reagent_containers/glass/bottle/alchemical',
                    # The module's mana crystal is Ratwood's (TASKS "ВМ1", point 2); Vibelin's small one has no twin.
-                   '/obj/item/mana_battery/mana_crystal/standard': '/obj/item/magic/manacrystal'},
+                   '/obj/item/mana_battery/mana_crystal/standard': '/obj/item/magic/manacrystal',
+                   # ... and its small one is the magic block's /obj/item/rogue_mana_crystal (magic/batteries.dm).
+                   '/obj/item/mana_battery/mana_crystal/small': '/obj/item/rogue_mana_crystal'},
     # Path rewrites of Vibelin items before the lookups (prefix -> prefix).
     'item_rewrites': {'/obj/item/alch/herb': '/obj/item/alch', '/obj/item/neuFarm/seed': ['/obj/item/herbseed', '/obj/item/seeds']},
     # Lists of earlier ports: Vibelin type -> the module's type (column type -> target).
@@ -159,6 +162,10 @@ DEFAULT_CONFIG = {
     'k1v_duplicates': '.cache/modular_redtard/agents/k1/k1v_lists/duplicates.tsv',
     # Vibelin bottles of the alchemy shelf.
     'bottle_files': ['code/modules/reagents/reagent_containers/bottles/alchemy.dm'],
+    # Vibelin's sound keywords of the still -> a file (the keyword is no sound key of TG's).
+    'distill_sounds': {'bubbles': 'sound/effects/bubbles/bubbles.ogg'},
+    # Sprite sheets the module's code names although no generated value does (alchemy/essence/_defines.dm ROGUE_ESSENCE_ALCHEMY_ICON).
+    'always_copy': ['icons/roguetown/misc/alchemy.dmi'],
     # A reaction whose reagents are all TG's would change TG chemistry on modern maps: left out.
     'reaction_skip_tg_only': True,
 }
@@ -305,7 +312,7 @@ def scan_procs(files):
 
 
 class AlchemyPorter:
-    def __init__(self, cfg, out_dir):
+    def __init__(self, cfg, out_dir, extra_scan=()):
         self.cfg = cfg
         self.out_dir = out_dir
         self.final_dir = cfg['final_dir'].replace('\\', '/').rstrip('/')
@@ -336,6 +343,17 @@ class AlchemyPorter:
             if any(os.path.join(os.path.normpath(dp), '').startswith(s) for s in skip):
                 continue
             mod_files += [os.path.join(dp, f) for f in fn if f.endswith('.dm')]
+        # Draft trees of the module (a neighbour's files not moved in yet): scanned as if they were in it, except
+        # files the module already has under the same relative path.
+        for extra in extra_scan:
+            extra = os.path.abspath(extra)
+            for dp, _dn, fn in os.walk(extra):
+                if any(os.path.join(os.path.normpath(dp), '').startswith(s) for s in skip):
+                    continue
+                for f in fn:
+                    full = os.path.join(dp, f)
+                    if f.endswith('.dm') and not os.path.isfile(os.path.join(REPO, os.path.relpath(full, extra))):
+                        mod_files.append(full)
         self.mod = Tree(mod_files, 'module')
         self.mod_known = self.mod.all_paths
         self.tg_known = self.tg.all_paths
@@ -980,6 +998,11 @@ class AlchemyPorter:
             for var in ('name', 'id', 'distill_message', 'distill_sound'):
                 # An id is the recipe's own (Vibelin's subtypes inherit their parent's, which would make them one).
                 text = self.string(self.vib, self.vib.types.get(path, {}).get(var) if var == 'id' else r(var))
+                if text and var == 'distill_sound':
+                    file = self.cfg.get('distill_sounds', {}).get(text.strip('"'))
+                    text = f"'{file}'" if file else None
+                    if not file:
+                        self.notes['distill_sound keyword without a file, left out'] += 1
                 if text and base['vars'].get(var):
                     values[base['vars'][var]] = text
             values[base['vars']['distilled_reagent']] = what
@@ -1085,6 +1108,9 @@ class AlchemyPorter:
         base = BASES['ingredient']
         for path in self.vib_types(base['vibelin_root']):
             hit = self.map_item(path)
+            # A type the module only touches with a smeltresult (a neighbour's override of Vibelin's own item) is still new.
+            if hit and hit in self.mod.types and not (set(self.mod.types[hit]) - {'smeltresult'}) and hit not in self.generated:
+                hit = None
             if hit:
                 self.row('ingredient', 'vibelin', path, hit, 'in the module')
                 continue
@@ -1104,6 +1130,13 @@ class AlchemyPorter:
                     copied = self.asset(ref.group(1), state.strip('"') if state else None) if ref else None
                     if copied:
                         values[ours] = f"'{copied}'"
+                    continue
+                if theirs == 'smeltresult':
+                    smelt = self.map_item(value) if PATH_RX.match(value) else None
+                    if smelt:
+                        values[ours] = smelt
+                    else:
+                        self.notes[f'ingredient smeltresult not in the module, left out: {value}'] += 1
                     continue
                 if theirs == 'w_class':
                     if value in self.tg.defines or value.startswith('WEIGHT_CLASS_'):
@@ -1325,6 +1358,10 @@ class AlchemyPorter:
             text += '\n'.join('\n'.join(lines) + '\n' for _p, lines in sorted(blocks, key=lambda b: b[0]))
             with open(os.path.join(self.out_dir, file), 'w', encoding='utf-8', newline='\n') as handle:
                 handle.write(text)
+        for ref in self.cfg.get('always_copy', []):
+            source = os.path.join(self.vib_root, ref)
+            if os.path.isfile(source):
+                self.copies[source] = os.path.join(self.out_dir, 'icons', ref[len('icons/'):] if ref.startswith('icons/') else ref)
         for source, target in self.copies.items():
             os.makedirs(os.path.dirname(target), exist_ok=True)
             shutil.copyfile(source, target)
@@ -1402,11 +1439,13 @@ def main():
     parser.add_argument('--out', default=rel(DEFAULT_CONFIG['final_dir']), help='folder for the .dm data, path_map.json and alchemy_port.json')
     parser.add_argument('--lists', default=rel('.cache/modular_redtard/agents/va1/va1g_lists'), help='folder for the run\'s tables and checks')
     parser.add_argument('--config', help='alchemy_port.json to use (default <out>/alchemy_port.json)')
+    parser.add_argument('--extra-scan', action='append', default=[], metavar='DIR',
+                        help='a draft tree laid out like the repository root (DIR/modular_redtard/...) scanned as part of the module; repeatable')
     parser.add_argument('--dry-run', action='store_true')
     args = parser.parse_args()
     out_dir = os.path.abspath(args.out)
     cfg, write_to = load_config(args.config or os.path.join(out_dir, 'alchemy_port.json'), out_dir)
-    porter = AlchemyPorter(cfg, out_dir)
+    porter = AlchemyPorter(cfg, out_dir, args.extra_scan)
     porter.run(os.path.abspath(args.lists) if args.lists else None, args.dry_run)
     if write_to and not args.dry_run:
         with open(write_to, 'w', encoding='utf-8', newline='\n') as handle:

@@ -210,3 +210,232 @@ magic_range_aura = 10
 
 # Tiles a spell of the adjacent kind reaches when it has no spell_<type>_range of its own (Vibelin SPELL_RANGE_ADJACENT).
 magic_range_adjacent = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list vm1a)
+
+# How far from a leyline, in tiles, a pool that draws on the leylines still draws (Vibelin range(3) of the beam).
+magic_leyline_range = 10
+
+# Share of a leyline's rate, over the distance plus one, a pool near it takes a second (Vibelin * 0.1).
+magic_leyline_inflow_share = 10
+
+# Mana a leyline holds before its intensity multiplies it; it starts full (Vibelin LEYLINE_BASE_CAPACITY).
+magic_leyline_capacity = 10
+
+# Mana a leyline makes a second before its intensity multiplies it (Vibelin LEYLINE_BASE_RECHARGE).
+magic_leyline_regen = 10
+
+# Mana a second a leyline gives at most before its intensity multiplies it (Vibelin BASE_LEYLINE_DONATION_RATE).
+magic_leyline_donation = 10
+
+# Leylines on a station level of a medieval map, choice 1 of 4 (Vibelin get_initial_leyline_amount()).
+magic_leyline_count_1 = 10
+
+# Weight of choice 1 of the leyline count, a whole number (Vibelin pickweight).
+magic_leyline_count_weight_1 = 10
+
+# Leylines on a station level of a medieval map, choice 2 of 4 (Vibelin get_initial_leyline_amount()).
+magic_leyline_count_2 = 10
+
+# Weight of choice 2 of the leyline count, a whole number (Vibelin pickweight).
+magic_leyline_count_weight_2 = 10
+
+# Leylines on a station level of a medieval map, choice 3 of 4 (Vibelin get_initial_leyline_amount()).
+magic_leyline_count_3 = 10
+
+# Weight of choice 3 of the leyline count, a whole number (Vibelin pickweight).
+magic_leyline_count_weight_3 = 10
+
+# Leylines on a station level of a medieval map, choice 4 of 4 (Vibelin get_initial_leyline_amount()).
+magic_leyline_count_4 = 10
+
+# Weight of choice 4 of the leyline count, a whole number (Vibelin pickweight).
+magic_leyline_count_weight_4 = 10
+
+# Multiplier of capacity, refill and rate of a leyline of none intensity (Vibelin leyline_intensity overall_mult).
+magic_leyline_none_mult = 10
+
+# Weight of none intensity when a leyline is made, a whole number (Vibelin GLOB.leyline_intensities).
+magic_leyline_none_weight = 10
+
+# Multiplier of capacity, refill and rate of a leyline of minimal intensity (Vibelin leyline_intensity overall_mult).
+magic_leyline_minimal_mult = 10
+
+# Weight of minimal intensity when a leyline is made, a whole number (Vibelin GLOB.leyline_intensities).
+magic_leyline_minimal_weight = 10
+
+# Multiplier of capacity, refill and rate of a leyline of extremely low intensity (Vibelin leyline_intensity overall_mult).
+magic_leyline_extremely_low_mult = 10
+
+# Weight of extremely low intensity when a leyline is made, a whole number (Vibelin GLOB.leyline_intensities).
+magic_leyline_extremely_low_weight = 10
+
+# Multiplier of capacity, refill and rate of a leyline of low intensity (Vibelin leyline_intensity overall_mult).
+magic_leyline_low_mult = 10
+
+# Weight of low intensity when a leyline is made, a whole number (Vibelin GLOB.leyline_intensities).
+magic_leyline_low_weight = 10
+
+# Multiplier of capacity, refill and rate of a leyline of below average intensity (Vibelin leyline_intensity overall_mult).
+magic_leyline_below_average_mult = 10
+
+# Weight of below average intensity when a leyline is made, a whole number (Vibelin GLOB.leyline_intensities).
+magic_leyline_below_average_weight = 10
+
+# Multiplier of capacity, refill and rate of a leyline of average intensity (Vibelin leyline_intensity overall_mult).
+magic_leyline_average_mult = 10
+
+# Weight of average intensity when a leyline is made, a whole number (Vibelin GLOB.leyline_intensities).
+magic_leyline_average_weight = 10
+
+# Multiplier of capacity, refill and rate of a leyline of above average intensity (Vibelin leyline_intensity overall_mult).
+magic_leyline_above_average_mult = 10
+
+# Weight of above average intensity when a leyline is made, a whole number (Vibelin GLOB.leyline_intensities).
+magic_leyline_above_average_weight = 10
+
+# Multiplier of capacity, refill and rate of a leyline of high intensity (Vibelin leyline_intensity overall_mult).
+magic_leyline_high_mult = 10
+
+# Weight of high intensity when a leyline is made, a whole number (Vibelin GLOB.leyline_intensities).
+magic_leyline_high_weight = 10
+
+# Multiplier of capacity, refill and rate of a leyline of extreme intensity (Vibelin leyline_intensity overall_mult).
+magic_leyline_extreme_mult = 10
+
+# Weight of extreme intensity when a leyline is made, a whole number (Vibelin GLOB.leyline_intensities).
+magic_leyline_extreme_weight = 10
+
+# How long a drained leyline circle stays drained; it starts drained for as long (Vibelin time_between_uses).
+magic_leyline_circle_cooldown = 10
+
+# How long draining an awake leyline circle takes.
+magic_leyline_circle_drain_time = 10
+
+# Chance in percent that draining an awake leyline circle lashes out instead of yielding a shard (Vibelin's chance of its guardian).
+magic_leyline_circle_backlash_chance = 10
+
+# Shock damage of a leyline circle lashing out (Vibelin electrocute_act(10)).
+magic_leyline_circle_backlash_shock = 10
+
+# How far from a pylon, in tiles, a pool that draws on pylons still draws (Vibelin range(3)).
+magic_pylon_range = 10
+
+# Mana a pylon holds; it starts empty and fills from the leylines near it (Vibelin mana_pylon).
+magic_pylon_capacity = 10
+
+# Mana a second a pylon gives at most to its link and to the foci near it (Vibelin BASE_MANA_DONATION_RATE).
+magic_pylon_donation = 10
+
+# How long attuning a pylon with a gem takes.
+magic_pylon_attune_time = 10
+
+# How long every pull of draining a pylon by hand takes (Vibelin do_after 3 seconds).
+magic_pylon_drain_time = 10
+
+# Mana every pull of draining a pylon by hand moves (Vibelin min(amount, 20)).
+magic_pylon_drain = 10
+
+# Difficulty of building a mana pylon (Vibelin craftdiff of its blueprint).
+magic_pylon_craft_difficulty = 10
+
+# Difficulty of making a ley linker (the module's recipe; Vibelin has none).
+magic_linker_craft_difficulty = 10
+
+# Mana the standard crystal (crystalized mana) holds; it starts full (Vibelin MANA_CRYSTAL_BASE_MANA_CAPACITY).
+magic_battery_capacity = 10
+
+# Mana a small, cut or focus crystal holds; it starts full (Vibelin half the crystal).
+magic_battery_small_capacity = 10
+
+# How slowly mana above a crystal's cap bleeds away (Vibelin MANA_CRYSTAL_BASE_DECAY_DIVISOR).
+magic_battery_overflow_divisor = 10
+
+# How long cutting or shaping a crystal with a knife takes (Vibelin do_after 3 seconds).
+magic_battery_cut_time = 10
+
+# How long attuning a focus with a gem takes (Vibelin do_after 3 seconds).
+magic_focus_attune_time = 10
+
+# Difficulty of making a mana focus (the module's recipe).
+magic_focus_craft_difficulty = 10
+
+# Mana a Mana Star holds; it starts empty (Vibelin mana_star).
+magic_manastar_capacity = 10
+
+# Mana a Mana Star makes a second up to its cap (Vibelin mana_star ethereal_recharge_rate).
+magic_manastar_regen = 10
+
+# Difficulty of making a Mana Star from a cut crystal and gold (the module's recipe).
+magic_manastar_craft_difficulty = 10
+
+# Mana a mana fountain holds (Vibelin mana_fountain).
+magic_fountain_capacity = 10
+
+# Mana a mana fountain holds at the start (Vibelin mana_fountain).
+magic_fountain_start = 10
+
+# Mana a mana fountain makes a second up to its cap (Vibelin mana_fountain).
+magic_fountain_regen = 10
+
+# Mana a unit of liquid mana gives the drinker's pool and costs the fountain (Vibelin's fountain: 25 mana a unit).
+magic_liquid_mana_per_unit = 10
+
+# Share of the hard cap past which a person's mana overloads them (Vibelin mana_overload_threshold, 0.9 of the capacity).
+magic_overload_threshold_share = 10
+
+# Step of the overload's strength, as a share of the threshold (Vibelin threshold * 0.05).
+magic_overload_step_share = 10
+
+# Strength of an overload for every step held, less one (Vibelin CARBON_MANA_OVERLOAD_COEFFICIENT). With these numbers an overload is about 95 strong: deadly.
+magic_overload_coefficient = 10
+
+# Overload strength past which it wounds (Vibelin MANA_OVERLOAD_DAMAGE_THRESHOLD).
+magic_overload_damage_threshold = 10
+
+# Brute damage, spread over the body, for every point of overload strength (Vibelin MANA_OVERLOAD_BASE_DAMAGE).
+magic_overload_damage = 10
+
+# Blood lost for every point of overload strength (Vibelin round(effect * 0.25)).
+magic_overload_blood_share = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list vm1b)
+
+# How much faster a held spell drains as it grows unstable: the drain is times 1 plus this times the instability (Azure Peak SPELL_HOLD_DRAIN_RAMP).
+magic_hold_drain_ramp = 10
+
+# Share of the way from the hold grace to the hold limit at which a held spell starts "Unraveling" (Azure Peak hold_instability warning).
+magic_hold_unravel_share = 10
+
+# A spell held to its limit tears loose and costs this many times its price (Azure Peak SPELL_HOLD_TEAR_COST).
+magic_hold_tear_cost = 10
+
+# Share of the charge time after which backing out of a spell is penalised (Azure Peak CANCEL_GRACE_FRACTION).
+magic_cancel_grace_share = 10
+
+# Least time of charge, in deciseconds, after which backing out of a spell is penalised (Azure Peak CANCEL_GRACE_MINIMUM).
+magic_cancel_grace_min = 10
+
+# Share of the price paid for backing out of a spell before its charge is full (Azure Peak CANCEL_PENALTY_COST_PARTIAL).
+magic_cancel_cost_partial = 10
+
+# Share of the price paid for backing out of a fully charged spell (Azure Peak CANCEL_PENALTY_COST_CHARGED).
+magic_cancel_cost_charged = 10
+
+# Share of the cooldown a spell backed out of goes on (Azure Peak CANCEL_PENALTY_COOLDOWN).
+magic_cancel_cooldown_share = 10
+
+# Longest cooldown, in deciseconds, for backing out of a spell (Azure Peak CANCEL_PENALTY_COOLDOWN_MAX).
+magic_cancel_cooldown_max = 10
+
+# Share of the cooldown added to an armor-penalised spell cast in medium armor (Azure Peak MEDIUM_ARMOR_CD_PENALTY).
+magic_armor_medium_penalty = 10
+
+# Share of the cooldown added to an armor-penalised spell cast in heavy armor (Azure Peak HEAVY_ARMOR_CD_PENALTY).
+magic_armor_heavy_penalty = 10
+
+# Share of the cooldown added to an armor-penalised spell cast in armor one is not trained in (Azure Peak UNTRAINED_ARMOR_CD_PENALTY).
+magic_armor_untrained_penalty = 10
+
+# Arcyne Bolt: armor penetration tier of a bolt against the armor of combat (0 to 4; above 4 it is read as a percent, 20 per tier). 0 keeps the penetration of the TG magic bolt.
+spell_projectile_arcyne_bolt_penetration = 10

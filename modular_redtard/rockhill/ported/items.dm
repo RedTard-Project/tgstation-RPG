@@ -78647,7 +78647,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
-	list_reagents = null
+	list_reagents = list(/datum/reagent/toxin/spidervenom_paralytic = 1)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/strongmanapot
 	name = "alchemical vial"

@@ -18,20 +18,35 @@
 	var/list/learned = list()
 	/// The role's points were given (points.dm): a job and its class both spawning the mage give them once.
 	var/role_points_given = FALSE
+	/// The tome this mastery lives in (Vibelin spell_mastery.parent, books.dm): its spells are given to whoever holds the
+	/// open tome and are paid with the tome's charges. Null for a person's own mastery.
+	var/obj/item/book
+	/// Spell type -> charges left in the tome (Vibelin spellbook_charges of the book). Kept between holds.
+	var/list/charges
+	/// Who holds the open tome and has its spells now.
+	var/mob/living/reader
 
-/datum/rogue_spell_mastery/New(mob/living/carbon/human/new_holder)
+/datum/rogue_spell_mastery/New(mob/living/carbon/human/new_holder, obj/item/new_book)
 	. = ..()
+	if(new_book)
+		book = new_book
+		charges = list()
+		return
 	holder = new_holder
 	holder.rogue_spell_mastery = src
 	RegisterSignal(holder, COMSIG_QDELETING, PROC_REF(on_holder_deleted))
 	add_verb(holder, /mob/living/carbon/human/proc/rogue_open_spellbook)
 
 /datum/rogue_spell_mastery/Destroy(force)
+	if(book)
+		withdraw_spells()
 	for(var/spell_type in learned)
 		var/datum/action/cooldown/spell/spell = learned[spell_type]
 		if(!QDELETED(spell))
 			qdel(spell)
 	learned = null
+	book = null
+	charges = null
 	if(holder)
 		UnregisterSignal(holder, COMSIG_QDELETING)
 		remove_verb(holder, /mob/living/carbon/human/proc/rogue_open_spellbook)
@@ -42,6 +57,100 @@
 /datum/rogue_spell_mastery/proc/on_holder_deleted(datum/source)
 	SIGNAL_HANDLER
 	qdel(src)
+
+/// Who works this mastery: the person, or the one holding the tome.
+/datum/rogue_spell_mastery/proc/working_mob()
+	return book ? reader : holder
+
+/// Contract (block ВМ1, books ВМ1в): may spell_type be cast once more? A person's own spell always may; a tome's spell
+/// while the tome has a charge of it (Vibelin has_spellbook_charges). Asked of a person's mastery about a spell a tome
+/// gave them, it answers for that tome.
+/datum/rogue_spell_mastery/proc/has_charges(spell_type)
+	if(!book)
+		var/datum/rogue_spell_mastery/tome = charged_tome_of(spell_type)
+		return tome ? tome.has_charges(spell_type) : TRUE
+	if(!(spell_type in learned))
+		return TRUE
+	return (charges[spell_type] || 0) > 0
+
+/// Contract: one charge of spell_type is spent (Vibelin consume_spellbook_charge). FALSE when the tome has none left.
+/datum/rogue_spell_mastery/proc/consume_charge(spell_type)
+	if(!book)
+		var/datum/rogue_spell_mastery/tome = charged_tome_of(spell_type)
+		return tome ? tome.consume_charge(spell_type) : TRUE
+	if(!(spell_type in learned))
+		return TRUE
+	if((charges[spell_type] || 0) <= 0)
+		return FALSE
+	charges[spell_type]--
+	var/datum/action/cooldown/spell/spell = learned[spell_type]
+	spell?.build_all_button_icons(UPDATE_BUTTON_STATUS)
+	return TRUE
+
+/// Charges of spell_type left, for the counter on its button (Vibelin get_remaining_charges); -1 when it has none to count.
+/datum/rogue_spell_mastery/proc/charges_left(spell_type)
+	if(!book)
+		var/datum/rogue_spell_mastery/tome = charged_tome_of(spell_type)
+		return tome ? tome.charges_left(spell_type) : -1
+	if(!(spell_type in learned))
+		return -1
+	return charges[spell_type] || 0
+
+/// The open tome in the person's hands that gave them spell_type, when the person did not learn it themselves.
+/datum/rogue_spell_mastery/proc/charged_tome_of(spell_type)
+	if(!holder || (spell_type in learned))
+		return null
+	for(var/obj/item/held as anything in holder.held_items)
+		var/datum/rogue_spell_mastery/tome = held?.rogue_charge_mastery()
+		if(tome && tome.reader == holder && (spell_type in tome.learned))
+			return tome
+	return null
+
+/// A tome's charges back to every spell's full count (Vibelin reset_spellbook_charges; the recharging rune of block ВМ2).
+/datum/rogue_spell_mastery/proc/reset_charges()
+	if(!book)
+		return
+	for(var/spell_type in learned)
+		charges[spell_type] = rogue_book_charges_of(spell_type)
+		var/datum/action/cooldown/spell/spell = learned[spell_type]
+		spell?.build_all_button_icons(UPDATE_BUTTON_STATUS)
+
+/// Vibelin add_spells(): the open tome in someone's hands gives them its spells, the same spell objects every time, so
+/// cooldowns stay.
+/datum/rogue_spell_mastery/proc/give_spells(mob/living/new_reader)
+	if(!book || !istype(new_reader) || reader == new_reader)
+		return
+	withdraw_spells()
+	reader = new_reader
+	for(var/spell_type in learned)
+		var/datum/action/cooldown/spell/rogue/spell = learned[spell_type]
+		if(QDELETED(spell))
+			continue
+		spell.Grant(new_reader)
+
+/// Vibelin remove_spells(): the tome is shut or let go of.
+/datum/rogue_spell_mastery/proc/withdraw_spells()
+	if(!book || !reader)
+		return
+	var/mob/living/old_reader = reader
+	reader = null
+	for(var/spell_type in learned)
+		var/datum/action/cooldown/spell/spell = learned[spell_type]
+		if(!QDELETED(spell) && spell.owner == old_reader)
+			spell.Remove(old_reader)
+
+/// A tome's spell: the object that stays with the tome, paid with its charges (fields of the spell base, block ВМ1б).
+/datum/rogue_spell_mastery/proc/make_tome_spell(spell_type)
+	var/datum/action/cooldown/spell/rogue/spell = new spell_type(book)
+	spell.uses_book_charges = TRUE
+	spell.charge_source = book
+	if(isnull(charges[spell_type]))
+		charges[spell_type] = rogue_book_charges_of(spell_type)
+	return spell
+
+/// What an item answers for its charges (books.dm): the tome's mastery, or nothing.
+/atom/movable/proc/rogue_charge_mastery()
+	return null
 
 /datum/rogue_spell_mastery/proc/form_level(form)
 	return form ? (form_levels[form] || 0) : 0
@@ -81,9 +190,12 @@
 /datum/rogue_spell_mastery/proc/invest_form(form)
 	if(!(form in GLOB.rogue_spell_forms) || unspent_form_points < 1)
 		return FALSE
-	if(form == ROGUE_FORM_BLOOD && holder.rogue_skill_rank(/datum/attribute/skill/magic/blood) < 1)
-		to_chat(holder, span_warning("I am not an adept enough blood mage to wield this unholy power."))
-		return FALSE
+	if(form == ROGUE_FORM_BLOOD)
+		var/mob/living/carbon/human/mage = working_mob()
+		// Vibelin: a tome takes more Hemomancy only when it already has some.
+		if(book ? !form_level(form) : (!holder || holder.rogue_skill_rank(/datum/attribute/skill/magic/blood) < 1))
+			to_chat(mage, span_warning("I am not an adept enough blood mage to wield this unholy power."))
+			return FALSE
 	unspent_form_points--
 	form_levels[form] = form_level(form) + 1
 	return TRUE
@@ -120,6 +232,13 @@
 /datum/rogue_spell_mastery/proc/learn(spell_type)
 	if(!can_learn(spell_type))
 		return FALSE
+	if(book)
+		var/datum/action/cooldown/spell/rogue/tome_spell = make_tome_spell(spell_type)
+		learned[spell_type] = tome_spell
+		if(reader)
+			tome_spell.Grant(reader)
+			to_chat(reader, span_nicegreen("I scribe [tome_spell.name] into [book]!"))
+		return TRUE
 	var/datum/action/cooldown/spell/rogue/spell = new spell_type(holder.mind || holder)
 	spell.Grant(holder)
 	learned[spell_type] = spell
@@ -132,8 +251,10 @@
 		return FALSE
 	var/datum/action/cooldown/spell/spell = learned[spell_type]
 	learned -= spell_type
+	if(book)
+		charges -= spell_type
 	if(!QDELETED(spell))
-		to_chat(holder, span_boldwarning("I forgot [spell.name]!"))
+		to_chat(working_mob(), span_boldwarning((book ? "[spell.name] fades from the pages of [book]!" : "I forgot [spell.name]!")))
 		qdel(spell)
 	return TRUE
 
@@ -149,7 +270,9 @@
 
 /// The spellbook (Vibelin's tgui SpellBook as a browser page): tracks with their ranks and free points, the spells of the
 /// basket that a form and technique buy, each with what it needs.
-/datum/rogue_spell_mastery/proc/show_book(mob/user = holder)
+/datum/rogue_spell_mastery/proc/show_book(mob/user = working_mob())
+	if(!user)
+		return
 	var/list/out = list("<h3>Free points: [unspent_form_points] form, [unspent_technique_points] technique</h3>")
 	out += "<table><tr><th>Form</th><th>Rank</th><th>For spells</th><th></th></tr>"
 	for(var/form in GLOB.rogue_spell_forms)
@@ -164,17 +287,23 @@
 		var/action = ""
 		if(spell_type in learned)
 			action = "<a href='byond://?src=[REF(src)];unlearn=[spell_type]'>Forget</a>"
+			if(book)
+				action = "[charges_left(spell_type)] charges, [action]"
 		else if(can_learn(spell_type))
 			action = "<a href='byond://?src=[REF(src)];learn=[spell_type]'>Learn</a>"
 		out += "<tr><td title='[html_encode(initial(spell_type.desc))]'>[initial(spell_type.name)]</td><td>[initial(spell_type.required_form)]</td><td>[initial(spell_type.required_technique)]</td><td>[initial(spell_type.required_level)]</td><td>[action]</td></tr>"
 	out += "</table>"
-	var/datum/browser/popup = new(user, "rogue_spellbook", "Spellbook", 700, 700)
+	var/datum/browser/popup = new(user, "rogue_spellbook", book ? "[book]" : "Spellbook", 700, 700)
 	popup.set_content(jointext(out, ""))
 	popup.open()
 
 /datum/rogue_spell_mastery/Topic(href, list/href_list)
 	. = ..()
-	if(usr != holder || QDELETED(holder))
+	var/mob/living/working = working_mob()
+	if(usr != working || QDELETED(working))
+		return
+	var/obj/item/rogue_spellbook/tome = book
+	if(istype(tome) && !tome.readable_by(working))
 		return
 	if(href_list["invest_form"])
 		invest_form(href_list["invest_form"])

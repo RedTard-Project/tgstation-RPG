@@ -5,8 +5,8 @@
 ///   (TRAIT_ARCYNE) those of Vibelin's Magician's Apprentice, the least a Vibelin role versed in the arcyne starts with;
 /// - the Arcyne Insight scroll (Vibelin /obj/item/book/granter/spell_points) gives a reader of Novice Arcyne or better form
 ///   points, its technique kind technique points; Ratwood's loot chest may hold one, as Vibelin's does.
-/// Vibelin's spellbooks with charges and its magic school migrants have nothing to land on here yet (books with charges
-/// wait for the magic theme; the module has no such migrants). Vibelin's Thinker, a special trait of the ruler, is not a
+/// Vibelin's tomes with charges keep points of their own (books.dm, spellcraft.dm), not the reader's; its magic school
+/// migrants have nothing to land on here (the module has no such migrants). Vibelin's Thinker, a special trait of the ruler, is not a
 /// trait here: its points go to the port's mage lords.
 /// Numbers: magic_points_<role>_form, _technique (and _imbue, _old_form where Vibelin has them), magic_insight_* of magic.txt.
 

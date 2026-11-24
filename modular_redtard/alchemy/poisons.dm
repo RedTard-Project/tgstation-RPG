@@ -1,136 +1,160 @@
-// Ratwood's poisons (roguecrafting/alchemy/reagents.dm, reagent_containers/powderspice.dm) and blessed water (Ratwood's Azure
-// Peak module, spells/orison.dm), Azure Peak's cursed water and Ratwood's concentrated rot. A poison works slowly: a dose of 5
-// units makes one sick or kills over a minute, a poisoned round carries 2. Ratwood's nausea is TG's disgust
-// (rogue_reagent_sicken(), survival/soups.dm); an antidote purges them all (rogue_harmful, alchemy/potions.dm). Dwarves shrug
-// most of a poison off (Ratwood isdwarf()). The rot infects, but its turning waits for the deadite; the poisons of other
-// systems (the vampire's quietus, Pestra's humours) wait for them.
+// Vibelin's poisons (crafting/alchemy/reagents.dm) under Ratwood's paths, and Ratwood's sleep powder, blessed water, cursed
+// water and concentrated rot (Azure Peak's and Ratwood's content, below). A poison works slowly: a dose of 5 units makes one
+// sick or kills over a minute, a poisoned round carries 2. What a poison does is the engine's (alchemy/potions.dm): the channels
+// it works through, the ones the dwarves take less of, the volume it waits for; the numbers are alch_rg_<key>_<channel> and
+// alch_rg_<key>_<channel>_resist. Vibelin's nausea is TG's disgust (survival/soups.dm ROGUE_NAUSEA_TO_DISGUST); an antidote of
+// Ratwood's (the strong one) purges every poison (rogue_harmful). The rot infects, but its turning waits for the deadite; the
+// poisons of other systems (the vampire's quietus, Pestra's humours) wait for them.
 
 /// Ratwood isdwarf(): of the dwarven kin, the races Vibelin's dwarves gave (heritage/).
 /proc/rogue_is_dwarf(mob/living/carbon/target)
 	var/datum/species/kind = target?.dna?.species
 	return kind && findtext(kind.rogue_vibelin_type, "/datum/species/dwarf") == 1
 
-/// A Ratwood poison: per Ratwood tick nausea and toxins, a dwarf's own; energy drained (the stamina poisons). What a poison does
-/// past that is its own.
+/// The base of Vibelin's poisons: harmful (an antidote of Ratwood's purges it), and a reagent of the engine.
+/datum/reagent/poison
+	rogue_harmful = TRUE
+	rogue_rate = "poison_full"
+
+/datum/reagent/poison/New()
+	. = ..()
+	rogue_set_rates()
+
+/datum/reagent/poison/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, metabolization_ratio)
+	. = ..()
+	. |= rogue_tick(affected_mob, seconds_per_tick)
+
+/datum/reagent/poison/on_mob_metabolize(mob/living/affected_mob)
+	. = ..()
+	rogue_apply_effects(affected_mob)
+
+/datum/reagent/poison/on_mob_end_metabolize(mob/living/affected_mob, metabolization_ratio)
+	. = ..()
+	rogue_apply_effects(affected_mob, FALSE)
+
+/datum/reagent/poison/on_mob_delete(mob/living/affected_mob)
+	. = ..()
+	rogue_apply_effects(affected_mob, FALSE)
+
+/// Weaker, meant to make one wish for death and incapacitate but not kill: nausea and toxins; a dwarf takes a third and a quarter.
 /datum/reagent/berrypoison
-	name = "Berry Poison"
-	description = "A bitter poison of berries. It sickens and weakens, but seldom kills."
-	color = "#47B2E0"
-	taste_description = "bitterness"
-	metabolization_rate = ROGUE_REAGENT_RATE(0.1)
-	rogue_harmful = TRUE
-	/// Per Ratwood tick: nausea and toxins, and what a dwarf takes instead.
-	var/rogue_nausea = 3
-	var/rogue_toxin = 2
-	var/rogue_dwarf_nausea = 1
-	var/rogue_dwarf_toxin = 0.5
+	parent_type = /datum/reagent/poison
+	rogue_key = "berry"
+	rogue_rate = "poison_slow"
+	rogue_gate = ROGUE_GATE_POISON
+	rogue_channels = ROGUE_RG_NAUSEA|ROGUE_RG_TOX
+	rogue_resist_channels = ROGUE_RG_NAUSEA|ROGUE_RG_TOX
 
-/datum/reagent/berrypoison/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, metabolization_ratio)
-	. = ..()
-	if(volume < ROGUE_POISON_MIN_VOLUME)
-		return
-	var/dwarf = rogue_is_dwarf(affected_mob)
-	if(rogue_reagent_sicken(affected_mob, seconds_per_tick, dwarf ? rogue_dwarf_nausea : rogue_nausea, dwarf ? rogue_dwarf_toxin : rogue_toxin))
-		return UPDATE_MOB_HEALTH
+/datum/reagent/berrypoison/shroom
+	rogue_key = "shroom"
 
-/// Kills in one full dose of 5 units without an antidote; a dwarf is left just above dying.
+/// Meant to kill in one full dose (5 units): a dwarf is left just above dying.
 /datum/reagent/strongpoison
-	parent_type = /datum/reagent/berrypoison
-	name = "Strong Poison"
-	description = "A black poison that burns. One dose kills."
-	color = "#1A1616"
-	taste_description = "burning"
-	rogue_nausea = 6
-	rogue_toxin = 4.5
-	rogue_dwarf_toxin = 2.3
+	parent_type = /datum/reagent/poison
+	rogue_key = "doom"
+	rogue_rate = "poison_slow"
+	rogue_gate = ROGUE_GATE_POISON
+	rogue_channels = ROGUE_RG_NAUSEA|ROGUE_RG_TOX
+	rogue_resist_channels = ROGUE_RG_NAUSEA|ROGUE_RG_TOX
 
-/// Rotten innards: those who eat them anyway (Ratwood's eater traits) are spared.
-/datum/reagent/organpoison
-	name = "Organ Poison"
-	description = "The rot of spoilt innards."
-	color = "#2C1818"
-	taste_description = "sour meat"
-	metabolization_rate = ROGUE_REAGENT_RATE(0.1)
-	rogue_harmful = TRUE
-	/// Per Ratwood tick: nausea and toxins.
-	var/rogue_nausea = 9
-	var/rogue_toxin = 2
-
-/datum/reagent/organpoison/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, metabolization_ratio)
-	. = ..()
-	if(HAS_TRAIT(affected_mob, TRAIT_NASTY_EATER) || HAS_TRAIT(affected_mob, TRAIT_ORGAN_EATER) || HAS_TRAIT(affected_mob, TRAIT_WILD_EATER))
-		return
-	if(rogue_reagent_sicken(affected_mob, seconds_per_tick, rogue_nausea, rogue_toxin))
-		return UPDATE_MOB_HEALTH
-
-/// Leeches energy (the rogue energy of humans); over stamina_poison_cap units the body sheds the excess, so the drain ends.
+/// Leeches stamina; a dwarf loses a third of it.
 /datum/reagent/stampoison
-	name = "Stamina Poison"
-	description = "A green poison that leaves one breathless and spent."
-	color = "#083B1C"
-	taste_description = "breathlessness"
-	metabolization_rate = ROGUE_REAGENT_RATE(0.1)
-	rogue_harmful = TRUE
-	/// Energy leeched per Ratwood tick.
-	var/rogue_energy_drain = 45
-
-/datum/reagent/stampoison/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, metabolization_ratio)
-	. = ..()
-	var/ticks = seconds_per_tick / ROGUE_REAGENT_TICK
-	if(ishuman(affected_mob))
-		var/mob/living/carbon/human/drained = affected_mob
-		drained.rogue_energy_add(-rogue_energy_drain * ticks)
-	if(volume >= ROGUE_STAMINA_POISON_CAP)
-		holder.remove_reagent(type, ROGUE_STAMINA_POISON_SHED * ticks)
+	parent_type = /datum/reagent/poison
+	rogue_key = "stampoison"
+	rogue_rate = "poison_quick"
+	rogue_channels = ROGUE_RG_STAMINA
+	rogue_resist_channels = ROGUE_RG_STAMINA
 
 /datum/reagent/strongstampoison
-	parent_type = /datum/reagent/stampoison
-	name = "Strong Stamina Poison"
-	description = "A poison as cold as frozen air; it drains one's strength in moments."
-	color = "#041D0E"
-	taste_description = "frozen air"
-	rogue_energy_drain = 180
+	parent_type = /datum/reagent/poison
+	rogue_key = "strongstampoison"
+	rogue_rate = "strongstampoison"
+	rogue_channels = ROGUE_RG_STAMINA
+	rogue_resist_channels = ROGUE_RG_STAMINA
 
-/// Ratwood's assassins' ice: toxins pour in, 20 a tick.
-/datum/reagent/toxin/killersice
-	name = "Killer's Ice"
-	description = "A clear, cold poison. It kills fast."
-	color = "#C8C9E9"
-	metabolization_rate = ROGUE_REAGENT_RATE(0.1)
-	toxpwr = 0
-	/// Toxins per Ratwood tick.
-	var/rogue_toxin = 20
+/// A combination of the strong stamina poison and the doom poison, craft only: the poison to out-poison anyone.
+/datum/reagent/poison/dreaddeath
+	rogue_key = "dreaddeath"
+	rogue_rate = "poison_brisk"
+	rogue_channels = ROGUE_RG_STAMINA|ROGUE_RG_TOX|ROGUE_RG_OXY
+	rogue_resist_channels = ROGUE_RG_STAMINA|ROGUE_RG_TOX|ROGUE_RG_OXY
 
-/datum/reagent/toxin/killersice/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, metabolization_ratio)
-	. = ..()
-	if(rogue_reagent_sicken(affected_mob, seconds_per_tick, 0, rogue_toxin))
-		return UPDATE_MOB_HEALTH
+/// Rotten innards: the ones of the kind it was taken from are made sick by it (the more the less constitution they have). The
+/// turning into Graggar's own at the end of it (Vibelin graggometer) waits for the species swap of the heritage and the patrons.
+/datum/reagent/organpoison
+	parent_type = /datum/reagent/poison
+	rogue_key = "organ"
+	rogue_rate = "poison_slow"
+	/// Whose flesh it is: ROGUE_POOL_*, the ones that take it as poison.
+	var/rogue_pool = ROGUE_POOL_ALL
 
-/// The nectar of the fyritius flower sets the body alight from within (and poisons it as Ratwood's toxins do).
-/datum/reagent/toxin/fyritiusnectar
-	name = "Fyritius Nectar"
-	description = "A burning nectar. Swallowed, it sets one aflame."
-	color = "#FFC400"
-	metabolization_rate = ROGUE_REAGENT_RATE(0.5)
-	toxpwr = 0
-	/// Per Ratwood tick: toxins (Ratwood's base toxin, 1.5 times REM); and from rogue_burn_volume units nausea, burns and fire.
-	var/rogue_toxin = 1.5 * ROGUE_REAGENT_EFFECT
-	var/rogue_burn_volume = 0.5
-	var/rogue_nausea = 9
-	var/rogue_burn = 2
-	var/rogue_fire_stacks = 1
+/datum/reagent/organpoison/human
+	rogue_pool = ROGUE_POOL_MEN
 
-/datum/reagent/toxin/fyritiusnectar/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, metabolization_ratio)
-	. = ..()
+/datum/reagent/organpoison/kobold
+	rogue_pool = ROGUE_POOL_KOBOLD
+
+/datum/reagent/organpoison/rogue_extra(mob/living/carbon/affected_mob, seconds_per_tick)
+	var/kobold = rogue_vibelin_species(affected_mob, "/datum/species/kobold")
+	if((rogue_pool == ROGUE_POOL_MEN && kobold) || (rogue_pool == ROGUE_POOL_KOBOLD && !kobold))
+		return NONE
+	if(HAS_TRAIT(affected_mob, TRAIT_NOHUNGER) || HAS_TRAIT(affected_mob, TRAIT_NASTY_EATER) || HAS_TRAIT(affected_mob, TRAIT_ORGAN_EATER) || HAS_TRAIT(affected_mob, TRAIT_WILD_EATER))
+		return NONE
 	var/ticks = seconds_per_tick / ROGUE_REAGENT_TICK
-	var/burning = volume >= rogue_burn_volume
-	. = rogue_reagent_sicken(affected_mob, seconds_per_tick, burning ? rogue_nausea : 0, rogue_toxin)
-	if(!burning)
-		return
-	if(affected_mob.adjust_fire_loss(rogue_burn * ticks, updating_health = FALSE))
-		. = UPDATE_MOB_HEALTH
-	affected_mob.adjust_fire_stacks(rogue_fire_stacks * ticks)
-	affected_mob.ignite_mob()
+	var/sick = max(rogue_rg("organ_nausea") * (1 - affected_mob.rogue_stat(ROGUE_STAT_CONSTITUTION) / rogue_rg("organ_constitution")), 0)
+	affected_mob.adjust_disgust(sick * ticks * ROGUE_NAUSEA_TO_DISGUST)
+	if(affected_mob.adjust_tox_loss(rogue_rg("organ_tox") * ticks, updating_health = FALSE))
+		return UPDATE_MOB_HEALTH
+	return NONE
+
+/// Burns the lungs and throat of a dark elf, heals a tiefling, and chokes the rest in large doses.
+/datum/reagent/poison/drowsbane
+	rogue_key = "drowsbane"
+	rogue_rate = "poison_slow"
+	rogue_gate = ROGUE_GATE_POISON
+
+/datum/reagent/poison/drowsbane/rogue_extra(mob/living/carbon/affected_mob, seconds_per_tick)
+	if(volume < rogue_rg("gate_poison"))
+		return NONE
+	var/ticks = seconds_per_tick / ROGUE_REAGENT_TICK
+	var/update = NONE
+	var/chance = rogue_rg("drowsbane_chance")
+	if(rogue_vibelin_species(affected_mob, "/datum/species/tieberian"))
+		var/heal = rogue_rg("drowsbane_heal") * ticks
+		if(affected_mob.adjust_brute_loss(-heal, updating_health = FALSE))
+			update = UPDATE_MOB_HEALTH
+		if(affected_mob.adjust_fire_loss(-heal, updating_health = FALSE))
+			update = UPDATE_MOB_HEALTH
+		if(volume >= rogue_rg("drowsbane_shed_volume"))
+			holder.remove_reagent(type, rogue_rg("drowsbane_shed") * ticks)
+		if(rogue_roll(chance, seconds_per_tick))
+			to_chat(affected_mob, span_notice("Something inside me burns, it's rejuvenating!"))
+	if(rogue_vibelin_species(affected_mob, "/datum/species/elf/dark") || rogue_vibelin_species(affected_mob, "/datum/species/human/halfdrow"))
+		if(affected_mob.adjust_tox_loss(rogue_rg("drowsbane_tox") * ticks, updating_health = FALSE))
+			update = UPDATE_MOB_HEALTH
+		if(affected_mob.adjust_oxy_loss(rogue_rg("drowsbane_oxy") * ticks, updating_health = FALSE))
+			update = UPDATE_MOB_HEALTH
+		if(rogue_roll(chance, seconds_per_tick))
+			affected_mob.adjust_eye_blur(rogue_rg("drowsbane_blur"))
+			to_chat(affected_mob, span_warning("My eyes water..."))
+			affected_mob.emote("cough")
+		if(rogue_roll(chance, seconds_per_tick))
+			affected_mob.emote("gasp")
+			to_chat(affected_mob, span_warning("My throat feels like it's on fire!"))
+		return update
+	if(affected_mob.adjust_oxy_loss(rogue_rg("drowsbane_oxy_other") * ticks, updating_health = FALSE))
+		update = UPDATE_MOB_HEALTH
+	if(rogue_roll(chance, seconds_per_tick))
+		to_chat(affected_mob, span_warning("My tongue feels like its on fire!"))
+	if(volume > rogue_rg("drowsbane_irritate_volume"))
+		if(rogue_roll(chance, seconds_per_tick))
+			affected_mob.adjust_eye_blur(rogue_rg("drowsbane_blur"))
+			to_chat(affected_mob, span_warning("My eyes water..."))
+			affected_mob.emote("cough")
+		if(rogue_roll(chance, seconds_per_tick))
+			affected_mob.emote("gasp")
+			to_chat(affected_mob, span_warning("My throat feels like it's on fire!"))
+	return update
 
 /// Ratwood's sleep powder: it saps energy, poisons the hale a little and after some forty seconds puts one to sleep.
 /datum/reagent/sleep_powder

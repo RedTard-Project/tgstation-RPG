@@ -256,8 +256,9 @@ GLOBAL_LIST_INIT(rogue_charge_cursors, list(
 	if(LAZYACCESS(modifiers, SHIFT_CLICK) || LAZYACCESS(modifiers, CTRL_CLICK) || LAZYACCESS(modifiers, ALT_CLICK))
 		return
 	fighter.rogue_hold_facing(TRUE)
-	// A readied spell takes the press for its own charge (magic/spell.dm), not the weapon's.
-	if(istype(fighter.click_intercept, /datum/action/cooldown/spell))
+	// A readied spell takes the press for its own charge (magic/spell.dm), not the weapon's, all the while it is charged and
+	// held (Azure Peak's hold); its right click disarms it, with the cancel penalty if the spell has one.
+	if(fighter.rogue_spell_holds_press())
 		return
 	if(LAZYACCESS(modifiers, MIDDLE_CLICK))
 		fighter.rogue_set_cursor(fighter.rogue_mmb_cursor())

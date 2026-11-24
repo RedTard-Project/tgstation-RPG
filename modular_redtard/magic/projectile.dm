@@ -89,6 +89,14 @@
 	if(istype(to_fire, /obj/projectile/magic/rogue))
 		var/obj/projectile/magic/rogue/bolt = to_fire
 		bolt.rogue_arc = arc
+		// The bolt meets the armor of combat/ as an arrow does (Vibelin flag "piercing" and armor_penetration): its
+		// penetration is the spell's spell_<type>_penetration (Ratwood's tier 0-4, or a percent as Vibelin writes it), none
+		// without one (0) the bolt keeps the TG magic bolt's 100 that passes every armor, as before the port.
+		var/penetration = tune("penetration")
+		if(rogue_combat_enabled() && penetration > 0)
+			bolt.armour_penetration = penetration
+		if(!bolt.spell_impact_color)
+			bolt.spell_impact_color = spell_color
 		if(arc)
 			bolt.range = max(CEILING(get_dist_euclidean(owner, target), 1), 1) + rogue_value("magic_arc_extra_range")
 	to_fire.aim_projectile(target, owner)
@@ -136,12 +144,25 @@
 	vis_flags = VIS_INHERIT_PLANE|VIS_INHERIT_LAYER
 
 /// The bolt of the basket's spells (Vibelin /obj/projectile/magic). Arcing, it flies over the living that are not on the
-/// tile it was aimed at (Ratwood arcshot; combat/launchers.dm does it for arrows).
+/// tile it was aimed at (Ratwood arcshot; combat/launchers.dm does it for arrows). It flashes where it strikes (Vibelin
+/// spell_impact, visuals.dm) in its spell's colour.
 /obj/projectile/magic/rogue
 	name = "arcyne bolt"
 	icon_state = "energy"
 	damage = 0
 	var/rogue_arc = FALSE
+	/// What armor of combat/ it meets (Vibelin flag: ROGUE_ARMOR_PIERCING, _SLASH, _BLUNT, _FIRE...) and the blow class of
+	/// the wound it leaves (Vibelin woundclass, BCLASS_*); combat/armor.dm and combat/wounds.dm read them (see the ВМ1б report).
+	var/rogue_armor_type = ROGUE_ARMOR_PIERCING
+	var/rogue_bclass
+	/// Vibelin spell_impact_intensity and spell_impact_color (the spell's colour when unset, else the bolt's light).
+	var/spell_impact_intensity = ROGUE_SPELL_IMPACT_LOW
+	var/spell_impact_color
+
+/obj/projectile/magic/rogue/on_hit(atom/target, blocked = 0, pierce_hit)
+	. = ..()
+	if(spell_impact_intensity > ROGUE_SPELL_IMPACT_NONE && get_turf(target))
+		new /obj/effect/temp_visual/rogue_spell_impact(get_turf(target), spell_impact_color || light_color || COLOR_WHITE, spell_impact_intensity)
 
 /obj/projectile/magic/rogue/prehit_pierce(atom/target)
 	if(rogue_arc && isliving(target) && original && get_turf(target) != get_turf(original))

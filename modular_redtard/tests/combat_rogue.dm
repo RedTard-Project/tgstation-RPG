@@ -321,9 +321,9 @@
 	TEST_ASSERT(drinker.get_brute_loss() < brute_before, "A health potion did not heal")
 	drinker.reagents.clear_reagents()
 	drinker.reagents.add_reagent(/datum/reagent/berrypoison, 5)
-	drinker.reagents.add_reagent(/datum/reagent/medicine/antidote, 5)
+	drinker.reagents.add_reagent(/datum/reagent/medicine/strong_antidote, 5)
 	drinker.reagents.metabolize(drinker, SSMOBS_DT, can_overdose = TRUE)
-	TEST_ASSERT(drinker.reagents.get_reagent_amount(/datum/reagent/berrypoison) < 4.5, "An antidote did not purge the poison")
+	TEST_ASSERT(drinker.reagents.get_reagent_amount(/datum/reagent/berrypoison) < 4.5, "A strong antidote did not purge the poison")
 	drinker.reagents.clear_reagents()
 	var/datum/wound/cut = drinker.cause_wound_of_type_and_severity(WOUND_SLASH, chest, WOUND_SEVERITY_MODERATE)
 	TEST_ASSERT(istype(cut), "Could not cut the chest")
@@ -339,27 +339,50 @@
 	TEST_ASSERT(chest.brute_dam < brute_before, "A bandage soaked in a potion did not heal the limb")
 	TEST_ASSERT_NULL(cloth.rogue_medicine, "The spent medicine stayed on the cloth")
 
+/// VA1v: a vial pours its essence into the cauldron; the essences of two batches of the antidote brew two batches, below the
+/// recipe's Alchemy the brew is slurry; a recipe takes nothing besides its essences; the mortar holds a batch; the still has
+/// its recipes.
 /datum/unit_test/rogue_brewing
 
 /datum/unit_test/rogue_brewing/Run()
 	var/mob/living/carbon/human/consistent/alchemist = allocate(__IMPLIED_TYPE__)
 	var/obj/machinery/light/rogue/cauldron/cauldron = allocate(__IMPLIED_TYPE__)
+	var/datum/alch_cauldron_recipe/antidote = GLOB.alch_cauldron_recipes[/datum/alch_cauldron_recipe/antidote]
+	TEST_ASSERT(antidote, "The cauldron has no antidote recipe")
+	var/obj/item/essence_vial/vial = allocate(__IMPLIED_TYPE__)
+	TEST_ASSERT_EQUAL(vial.fill_essence(/datum/thaumaturgical_essence/earth, 1), 1, "A vial took no essence")
+	alchemist.put_in_active_hand(vial)
+	TEST_ASSERT_EQUAL(cauldron.item_interaction(alchemist, vial), ITEM_INTERACT_SUCCESS, "The cauldron did not take the vial's essence")
+	TEST_ASSERT_EQUAL(cauldron.essence_contents[/datum/thaumaturgical_essence/earth], 1, "The vial's essence did not go into the cauldron")
+	TEST_ASSERT(!vial.essence_amount, "The vial kept its essence")
+	var/list/extra = antidote.required_essences.Copy()
+	extra[/datum/thaumaturgical_essence/fire] = 1
+	TEST_ASSERT(!antidote.batches_in(extra), "A recipe brewed with an essence it does not take")
 	for(var/skill_rank in list(ROGUE_RANK_NONE, ROGUE_RANK_APPRENTICE))
 		alchemist.rogue_set_skill(ROGUE_ALCHEMY_SKILL, skill_rank * ROGUE_SKILL_PER_RANK)
 		cauldron.reagents.clear_reagents()
 		cauldron.reagents.add_reagent(/datum/reagent/water, 100)
-		for(var/ingredient_type in list(/obj/item/alch/coaldust, /obj/item/alch/puresalt))
-			var/obj/item/alch/ingredient = allocate(ingredient_type)
-			alchemist.put_in_active_hand(ingredient)
-			TEST_ASSERT_EQUAL(cauldron.item_interaction(alchemist, ingredient), ITEM_INTERACT_SUCCESS, "The cauldron did not take [ingredient]")
+		cauldron.selected_recipe = antidote
+		cauldron.rogue_brewer = WEAKREF(alchemist)
+		cauldron.essence_contents = list()
+		for(var/essence_type in antidote.required_essences)
+			cauldron.essence_contents[essence_type] = antidote.required_essences[essence_type] * 2
+		TEST_ASSERT(cauldron.rogue_has_required_essences(), "The essences of two batches are not enough for one")
 		cauldron.rogue_finish_brew()
+		TEST_ASSERT(!length(cauldron.essence_contents), "The brew left its essences")
 		TEST_ASSERT(!cauldron.reagents.has_reagent(/datum/reagent/water), "The brew left its water")
-		if(skill_rank < ROGUE_RANK_APPRENTICE)
+		if(skill_rank < antidote.skill_required)
 			TEST_ASSERT(cauldron.reagents.has_reagent(/datum/reagent/yuck), "A brew beyond an unskilled alchemist did not turn to slurry")
 		else
-			TEST_ASSERT(cauldron.reagents.get_reagent_amount(/datum/reagent/medicine/antidote) >= 100, "Coal dust and salt did not brew an antidote")
-	var/obj/item/natural/bone/bone = allocate(__IMPLIED_TYPE__)
-	TEST_ASSERT(istype(rogue_grind_recipe(bone), /datum/alch_grind_recipe/natural_bone), "Natural bone has no mortar recipe")
+			TEST_ASSERT_EQUAL(cauldron.reagents.get_reagent_amount(/datum/reagent/medicine/antidote), antidote.output_reagents[/datum/reagent/medicine/antidote] * 2, "Two batches of essences did not brew two batches of antidote")
+	var/obj/item/reagent_containers/glass/mortar/mortar = allocate(__IMPLIED_TYPE__)
+	for(var/i in 1 to 2)
+		var/obj/item/natural/bone/bone = allocate(__IMPLIED_TYPE__)
+		TEST_ASSERT(istype(rogue_grind_recipe(bone), /datum/alch_grind_recipe/natural_bone), "Natural bone has no mortar recipe")
+		alchemist.put_in_active_hand(bone)
+		TEST_ASSERT_EQUAL(mortar.item_interaction(alchemist, bone), ITEM_INTERACT_SUCCESS, "The mortar did not take a bone")
+	TEST_ASSERT_EQUAL(length(mortar.rogue_grind_batch), 2, "The mortar does not hold a batch")
+	TEST_ASSERT(length(rogue_distillation_recipes()), "The still has no recipes")
 
 /// K2d1: a spear stuck in the arm by a crit gives pull out and twist; a twist is a second crit and frees it; a kick at the
 /// holder breaks the hold and leaves the spear in the arm, taken out as an arrow; a mace never sticks.

@@ -8,7 +8,7 @@
 	desc = "Shoot out rapid bolts of arcyne power."
 	button_icon_state = "arcane_bolt"
 	sound = 'modular_redtard/magic/sound/vlightning.ogg'
-	tunables = list("cost", "cooldown", "charge", "slowdown", "damage", "tile_time", "range")
+	tunables = list("cost", "cooldown", "charge", "slowdown", "damage", "tile_time", "range", "penetration")
 	required_form = ROGUE_FORM_ARCANE
 	associated_skill = /datum/attribute/skill/magic/arcane
 	invocation = "MAGIC MISSILE!!!"

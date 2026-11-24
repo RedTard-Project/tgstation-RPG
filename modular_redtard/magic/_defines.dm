@@ -69,5 +69,39 @@
 
 /// The filter of a caster while a spell charges.
 #define ROGUE_SPELL_CHARGE_FILTER "rogue_spell_charge"
+/// The glow and rune of a spell with no colour of its own nor a form's.
+#define ROGUE_SPELL_DEFAULT_COLOR "#9932CC"
+
+/// Sent to the caster when a spell asks what modifies it (Vibelin COMSIG_SPELL_REQUEST_MODIFIERS): (list/out). A handler adds
+/// entries to out, each list(ROGUE_SPELLMOD_COST = factor, ROGUE_SPELLMOD_CASTSPEED = factor, ROGUE_SPELLMOD_MAGNITUDE = bonus)
+/// with ROGUE_SPELLMOD_FORM = a form or ROGUE_SPELLMOD_TECHNIQUE = a technique: the entry applies to spells of that form or
+/// technique (get_modifiers(), magic/modifiers.dm). Books, foci and worn items answer it (/datum/component/rogue_spell_modifier).
+#define COMSIG_ROGUE_SPELL_REQUEST_MODIFIERS "rogue_spell_request_modifiers"
+/// Keys of a modifier entry and of get_modifiers(): the price and the charge time are multiplied and divided by their factors,
+/// the magnitude (1 with nothing) gets the bonuses added (Vibelin SPELLMOD_*).
+#define ROGUE_SPELLMOD_COST "cost"
+#define ROGUE_SPELLMOD_CASTSPEED "castSpeed"
+#define ROGUE_SPELLMOD_MAGNITUDE "magnitude"
+#define ROGUE_SPELLMOD_FORM "form"
+#define ROGUE_SPELLMOD_TECHNIQUE "technique"
+
+/// The hold loop of a charging spell (Azure Peak SSmousecharge, Vibelin SSaction_charge) runs every ROGUE_SPELL_HOLD_TICK.
+/// charge_drain is mana every ROGUE_SPELL_CHARGE_DRAIN_TICK of the charge (Vibelin: 0.4 s), hold_drain every
+/// ROGUE_SPELL_HOLD_DRAIN_TICK of the hold (Azure Peak: 0.2 s); the loop pays their share of a tick.
+#define ROGUE_SPELL_HOLD_TICK (2 DECISECONDS)
+#define ROGUE_SPELL_CHARGE_DRAIN_TICK (4 DECISECONDS)
+#define ROGUE_SPELL_HOLD_DRAIN_TICK (2 DECISECONDS)
+/// Hold warnings (Azure Peak hold_warned): none yet, "Straining", "Unraveling".
+#define ROGUE_SPELL_HOLD_CALM 0
+#define ROGUE_SPELL_HOLD_STRAINING 1
+#define ROGUE_SPELL_HOLD_UNRAVELING 2
+
+/// How bright the flash where a spell bolt strikes is (Vibelin SPELL_IMPACT_*).
+#define ROGUE_SPELL_IMPACT_NONE 0
+#define ROGUE_SPELL_IMPACT_LOW 1
+#define ROGUE_SPELL_IMPACT_MEDIUM 2
+#define ROGUE_SPELL_IMPACT_HIGH 3
+/// Vibelin's rune under a casting mage, its particles, the wave of a finished cast and the strike flash (icons/effects/spell_cast.dmi).
+#define ROGUE_SPELL_CAST_ICON 'modular_redtard/magic/icons/spell_cast.dmi'
 /// The filter of a staff or tome attuned to the last spell cast through it (Ratwood IMPLEMENT_GLOW_FILTER).
 #define ROGUE_IMPLEMENT_GLOW_FILTER "rogue_implement_attunement"

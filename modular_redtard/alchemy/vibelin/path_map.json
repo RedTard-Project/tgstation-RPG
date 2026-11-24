@@ -1,0 +1,4526 @@
+{
+ "about": "Vibelin path (azure:path for Azure Peak) -> the module path this alchemy port uses; written by port_vibelin_alchemy.py.",
+ "bases": {
+  "essence": {
+   "root": "/datum/thaumaturgical_essence",
+   "owner": "VA1b (alchemy/essence/)"
+  },
+  "combination": {
+   "root": "/datum/essence_combination",
+   "owner": "VA1b (alchemy/essence/)"
+  },
+  "precursor": {
+   "root": "/datum/natural_precursor",
+   "owner": "VA1b (alchemy/essence/)"
+  },
+  "infusion": {
+   "root": "/datum/infusion_recipe",
+   "owner": "VA1b (alchemy/essence/)"
+  },
+  "cauldron": {
+   "root": "/datum/alch_cauldron_recipe",
+   "owner": "VA1v (alchemy/brewing.dm)"
+  },
+  "grind": {
+   "root": "/datum/alch_grind_recipe",
+   "owner": "VA1v (alchemy/brewing.dm)"
+  },
+  "distillation": {
+   "root": "/datum/distillation_recipe",
+   "owner": "VA1v (alchemy/distillation.dm)"
+  },
+  "reaction": {
+   "root": "/datum/chemical_reaction/rogue_alchemy",
+   "owner": "VA1a (alchemy/potions.dm)"
+  },
+  "reagent": {
+   "root": "/datum/reagent",
+   "owner": "VA1a (alchemy/_defines.dm, potions.dm …)"
+  },
+  "ingredient": {
+   "root": "/obj/item/alch",
+   "owner": "Rockhill porter (alchemy/ported/alchemy.dm)"
+  },
+  "bottle": {
+   "root": "/obj/item/reagent_containers/glass/bottle",
+   "owner": "survival/vessels.dm"
+  }
+ },
+ "paths": {
+  "/datum/thaumaturgical_essence/air": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/air",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/chaos": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/chaos",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/crystal": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/crystal",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/cycle": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/cycle",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/death": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/death",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/earth": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/earth",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/energia": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/energia",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/fire": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/fire",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/frost": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/frost",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/life": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/life",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/light": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/light",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/magic": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/magic",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/motion": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/motion",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/order": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/order",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/poison": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/poison",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/void": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/void",
+   "how": "essence"
+  },
+  "/datum/thaumaturgical_essence/water": {
+   "kind": "essence",
+   "target": "/datum/thaumaturgical_essence/water",
+   "how": "essence"
+  },
+  "/datum/reagent/adrenaline": {
+   "kind": "reagent",
+   "target": "/datum/reagent/adrenaline",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/ash": {
+   "kind": "reagent",
+   "target": "/datum/reagent/ash",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/blood": {
+   "kind": "reagent",
+   "target": "/datum/reagent/blood",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/blood/fuel": {
+   "kind": "reagent",
+   "target": "/datum/reagent/fuel/oil",
+   "how": "pair"
+  },
+  "/datum/reagent/buff": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/constitution": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/constitution",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/constitution/concentrated": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/constitution/concentrated",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/endurance": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/endurance",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/endurance/concentrated": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/endurance/concentrated",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/fortune": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/fortune",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/fortune/concentrated": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/fortune/concentrated",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/intelligence": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/intelligence",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/intelligence/concentrated": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/intelligence/concentrated",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/perception": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/perception",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/perception/concentrated": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/perception/concentrated",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/speed": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/speed",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/speed/concentrated": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/speed/concentrated",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/strength": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/strength",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/buff/strength/concentrated": {
+   "kind": "reagent",
+   "target": "/datum/reagent/buff/strength/concentrated",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/tallow": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/oil/tallow",
+   "how": "same name"
+  },
+  "/datum/reagent/drug/gravitum_elixir": {
+   "kind": "reagent",
+   "target": "/datum/reagent/drug/gravitum_elixir",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/drug/methamphetamine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/drug/methamphetamine",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/drug/phlogiston_elasticum": {
+   "kind": "reagent",
+   "target": "/datum/reagent/drug/phlogiston_elasticum",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/drug/subtilum_tincture": {
+   "kind": "reagent",
+   "target": "/datum/reagent/drug/subtilum_tincture",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/medicine/antidote": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/antidote",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/ashbinders_salve": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/ashbinders_salve",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/ashwarden_brew": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/ashwarden_brew",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/atropine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/atropine",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/medicine/bloodelder_wine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/bloodelder_wine",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/bloodpot": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/bloodpot",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/coldvein_compress": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/coldvein_compress",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/crystalline_lymph": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/crystalline_lymph",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/diseasecure": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/diseasecure",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/endorphin": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/endorphin",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/fever_oil": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/fever_oil",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/gender_potion": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/gender_potion",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/healthpot": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/healthpot",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/ichor_of_mending": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/ichor_of_mending",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/manapot": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/manapot",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/manapot/weak": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/manapot/weak",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/marrowbrew": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/marrowbrew",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/mindclear_tonic": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/mindclear_tonic",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/mirewort_compress": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/mirewort_compress",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/nervebind_extract": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/nervebind_extract",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/pale_serum": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/pale_serum",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/rosawater": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/rosawater",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/soporpot": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/soporpot",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/soulweave_distillate": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/soulweave_distillate",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/spiritwood_elixir": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/spiritwood_elixir",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/stampot": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/stampot",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/stonevein_broth": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/stonevein_broth",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/strongbloodpot": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/strongbloodpot",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/stronghealth": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/stronghealth",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/strongmana": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/strongmana",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/strongstam": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/strongstam",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/sunpetal_decoction": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/sunpetal_decoction",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/thornmorrow_tincture": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/thornmorrow_tincture",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/tombsilt_tincture": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/tombsilt_tincture",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/vitalroot_draught": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/vitalroot_draught",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/witchknit_paste": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/witchknit_paste",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/medicine/woundwrack_oil": {
+   "kind": "reagent",
+   "target": "/datum/reagent/medicine/woundwrack_oil",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/mercury": {
+   "kind": "reagent",
+   "target": "/datum/reagent/mercury",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/meth_precursor": {
+   "kind": "reagent",
+   "target": "/datum/reagent/meth_precursor",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/ashfall_dust": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/ashfall_dust",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/berry": {
+   "kind": "reagent",
+   "target": "/datum/reagent/berrypoison",
+   "how": "pair"
+  },
+  "/datum/reagent/poison/blinding_spore": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/blinding_spore",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/blistergall": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/blistergall",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/bloodstone_essence": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/bloodstone_essence",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/doom": {
+   "kind": "reagent",
+   "target": "/datum/reagent/strongpoison",
+   "how": "pair"
+  },
+  "/datum/reagent/poison/dreaddeath": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/dreaddeath",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/drowsbane": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/drowsbane",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/gloomvenom": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/gloomvenom",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/heatcramp_oil": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/heatcramp_oil",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/hexblood_poison": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/hexblood_poison",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/ironblight": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/ironblight",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/killersice": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/killersice",
+   "how": "pair"
+  },
+  "/datum/reagent/poison/mirelung_brew": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/mirelung_brew",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/mirrorwaste": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/mirrorwaste",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/organ": {
+   "kind": "reagent",
+   "target": "/datum/reagent/organpoison",
+   "how": "pair"
+  },
+  "/datum/reagent/poison/quietdeath": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/quietdeath",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/rotwater": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/rotwater",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/soulbane_ichor": {
+   "kind": "reagent",
+   "target": "/datum/reagent/poison/soulbane_ichor",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/poison/stamina": {
+   "kind": "reagent",
+   "target": "/datum/reagent/stampoison",
+   "how": "pair"
+  },
+  "/datum/reagent/poison/stamina_strong": {
+   "kind": "reagent",
+   "target": "/datum/reagent/strongstampoison",
+   "how": "pair"
+  },
+  "/datum/reagent/sal_petris": {
+   "kind": "reagent",
+   "target": "/datum/reagent/sal_petris",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/skill_elixir": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/soap": {
+   "kind": "reagent",
+   "target": "/datum/reagent/soap",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/toxin": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/toxin/acid": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/acid",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/toxin/amanitin": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/amanitin",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/toxin/amatoxin": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/amatoxin",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/toxin/bad_food": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/bad_food",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/toxin/coffeepowder": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/coffeepowder",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/toxin/fentanyl": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/fentanyl",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/toxin/fyritiusnectar": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/fyritiusnectar",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/toxin/killersice": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/killersice",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/toxin/manabloom_juice": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/manabloom_juice",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/toxin/plasma": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/plasma",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/toxin/spidervenom_inert": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/spidervenom_inert",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/toxin/spidervenom_paralytic": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/spidervenom_paralytic",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/toxin/teapowder": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/teapowder",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/toxin/venom": {
+   "kind": "reagent",
+   "target": "/datum/reagent/toxin/venom",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/undeadash": {
+   "kind": "reagent",
+   "target": "/datum/reagent/undeadash",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/water": {
+   "kind": "reagent",
+   "target": "/datum/reagent/water",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/water/gross": {
+   "kind": "reagent",
+   "target": "/datum/reagent/water/gross",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/yuck": {
+   "kind": "reagent",
+   "target": "/datum/reagent/yuck",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/nutriment/bone_marrow": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/nutriment/bone_marrow",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/caveweep": {
+   "kind": "reagent",
+   "target": "/datum/reagent/caveweep",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/cryzaline_suspension": {
+   "kind": "reagent",
+   "target": "/datum/reagent/cryzaline_suspension",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/devour": {
+   "kind": "reagent",
+   "target": "/datum/reagent/devour",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/sate": {
+   "kind": "reagent",
+   "target": "/datum/reagent/sate",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/thorn_essence": {
+   "kind": "reagent",
+   "target": "/datum/reagent/thorn_essence",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/tree_sap": {
+   "kind": "reagent",
+   "target": "/datum/reagent/tree_sap",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/blood/putrid": {
+   "kind": "reagent",
+   "target": "/datum/reagent/blood/putrid",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/blood/tiefling": {
+   "kind": "reagent",
+   "target": "/datum/reagent/blood/tiefling",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/alchemists_clarity": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/alchemists_clarity",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/arcane_solvent": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/arcane_solvent",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/athletes_brine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/athletes_brine",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/beastwhisper": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/beastwhisper",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/blade_arts": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/blade_arts",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/brewers_wort": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/brewers_wort",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/builders_draught": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/builders_draught",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/cooks_brine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/cooks_brine",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/craftsmans_wit": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/craftsmans_wit",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/farmers_almanac": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/farmers_almanac",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/heavy_arms": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/heavy_arms",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/locksmiths_oil": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/locksmiths_oil",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/marksmans_eye": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/marksmans_eye",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/miners_heart": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/miners_heart",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/miracle_water": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/miracle_water",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/prep_hands_tonic": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/prep_hands_tonic",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/scholars_ink": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/scholars_ink",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/seamstress_thimble_drop": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/seamstress_thimble_drop",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/shadow_tonic": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/shadow_tonic",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/shield_bearer": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/shield_bearer",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/skinners_elixir": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/skinners_elixir",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/smelters_patience": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/smelters_patience",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/smiths_blood": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/smiths_blood",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/trappers_sense": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/trappers_sense",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/vital_ichor": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/vital_ichor",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/whip_hand": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/whip_hand",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/skill_elixir/wild_draught": {
+   "kind": "reagent",
+   "target": "/datum/reagent/skill_elixir/wild_draught",
+   "how": "new (Vibelin path)"
+  },
+  "/datum/reagent/poison/berry/shroom": {
+   "kind": "reagent",
+   "target": "/datum/reagent/berrypoison/shroom",
+   "how": "new, under the module's /datum/reagent/berrypoison"
+  },
+  "/datum/reagent/poison/organ/human": {
+   "kind": "reagent",
+   "target": "/datum/reagent/organpoison/human",
+   "how": "new, under the module's /datum/reagent/organpoison"
+  },
+  "/datum/reagent/poison/organ/kobold": {
+   "kind": "reagent",
+   "target": "/datum/reagent/organpoison/kobold",
+   "how": "new, under the module's /datum/reagent/organpoison"
+  },
+  "/datum/reagent/consumable": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/blackpepper": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/blackpepper",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/caffeine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/caffeine",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/caffeine/coffee": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/caffeine/coffee",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/caffeine/tea": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/caffeine/tea",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/coffee": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/coffee",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/eggyolk": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/eggyolk",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/ethanol": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/ale": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/ale",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/ethanol/apfelweinheim": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/apfelweinheim",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/aqua_vitae": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/aqua_vitae",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/aurorian": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/aurorian",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/avarmead": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/avarmead",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/avarrice": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/avarrice",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/baijiu": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/baijiu",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/beer": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/beer",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/ethanol/blackberry": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/blackberry",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/blackberry/aged": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/blackberry/aged",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/blackberry/delectable": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/blackberry/delectable",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/blackgoat": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/blackgoat",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/brandy": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/brandy",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/brandy/pear": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/brandy/pear",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/brandy/plum": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/brandy/plum",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/brandy/strawberry": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/brandy/strawberry",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/brandy/tangerine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/brandy/tangerine",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/butterhairs": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/butterhairs",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/cider": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/cider",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/cider/pear": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/cider/pear",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/cider/strawberry": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/cider/strawberry",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/elfblue": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/elfblue",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/elfred": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/elfred",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/fireleaf": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/fireleaf",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/gin": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/gin",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/ethanol/gronnmead": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/gronnmead",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/hagwoodbitter": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/hagwoodbitter",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/huangjiu": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/huangjiu",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/jackberrywine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/jackberrywine",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/jackberrywine/aged": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/jackberrywine/aged",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/jackberrywine/delectable": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/jackberrywine/delectable",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/jagdtrunk": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/jagdtrunk",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/kgunlager": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/kgunlager",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/kgunplum": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/kgunplum",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/kgunsake": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/kgunsake",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/kgunshochu": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/kgunshochu",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/komuchisake": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/komuchisake",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/limoncello": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/limoncello",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/luxwine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/luxwine",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/mead": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/mead",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/ethanol/mead/spider": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/mead/spider",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/murkwine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/murkwine",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/nocshine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/nocshine",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/nred": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/nred",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/onion": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/onion",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/plum_wine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/plum_wine",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/plum_wine/aged": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/plum_wine/aged",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/plum_wine/delectable": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/plum_wine/delectable",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/raspberry": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/raspberry",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/raspberry/aged": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/raspberry/aged",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/raspberry/delectable": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/raspberry/delectable",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/redwine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/redwine",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/rtoper": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/rtoper",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/rum": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/rum",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/ethanol/saigamilk": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/saigamilk",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/shejiu": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/shejiu",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/sourwine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/sourwine",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/spottedhen": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/spottedhen",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/stonebeards": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/stonebeards",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/tangerine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/tangerine",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/tangerine/aged": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/tangerine/aged",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/tangerine/delectable": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/tangerine/delectable",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/voddena": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/voddena",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/whipwine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/whipwine",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/whitewine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/whitewine",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/ethanol/wine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/wine",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/ethanol/yaojiu": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ethanol/yaojiu",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/golden_calendula_tea": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/golden_calendula_tea",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/honey": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/honey",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/ice": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/ice",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/milk": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/milk",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/nutriment": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/nutriment",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/nutriment/vitamin": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/nutriment/vitamin",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/sodiumchloride": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/salt",
+   "how": "pair"
+  },
+  "/datum/reagent/consumable/soothing_valerian_tea": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/soothing_valerian_tea",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/soup": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/soup",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/soup/bone": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/soup/bone_broth",
+   "how": "same name"
+  },
+  "/datum/reagent/consumable/soup/cheese": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/soup/stew/cheese",
+   "how": "same name"
+  },
+  "/datum/reagent/consumable/soup/stew": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/soup/stew",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/soup/stew/chicken": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/soup/stew/chicken",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/soup/stew/fish": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/soup/stew/fish",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/soup/stew/meat": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/soup/stew/meat",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/soup/veggie": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/soup/veggie",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/soup/veggie/cabbage": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/soup/veggie/cabbage",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/soup/veggie/onion": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/soup/veggie/onion",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/soup/veggie/potato": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/soup/veggie/potato",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/soup/veggie/turnip": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/soup/veggie/turnip",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/sugar": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/sugar",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/consumable/sugar/molasses": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/sugar/molasses",
+   "how": "same path (module)"
+  },
+  "/datum/reagent/consumable/tea": {
+   "kind": "reagent",
+   "target": "/datum/reagent/consumable/tea",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/drug": {
+   "kind": "reagent",
+   "target": "/datum/reagent/drug",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/drug/mushroomhallucinogen": {
+   "kind": "reagent",
+   "target": "/datum/reagent/drug/mushroomhallucinogen",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/drug/nicotine": {
+   "kind": "reagent",
+   "target": "/datum/reagent/drug/nicotine",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/drug/space_drugs": {
+   "kind": "reagent",
+   "target": "/datum/reagent/drug/space_drugs",
+   "how": "same path (TG)"
+  },
+  "/datum/reagent/water/spicy": {
+   "kind": "reagent",
+   "target": "/datum/reagent/water",
+   "how": "same name"
+  },
+  "/obj/item/alch/airdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/airdust",
+   "how": "same path"
+  },
+  "/obj/item/alch/bone": {
+   "kind": "item",
+   "target": "/obj/item/alch/bone",
+   "how": "same path"
+  },
+  "/obj/item/alch/coaldust": {
+   "kind": "item",
+   "target": "/obj/item/alch/coaldust",
+   "how": "same path"
+  },
+  "/obj/item/alch/earthdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/earthdust",
+   "how": "same path"
+  },
+  "/obj/item/alch/feaudust": {
+   "kind": "item",
+   "target": "/obj/item/alch/feaudust",
+   "how": "same path"
+  },
+  "/obj/item/alch/firedust": {
+   "kind": "item",
+   "target": "/obj/item/alch/firedust",
+   "how": "same path"
+  },
+  "/obj/item/alch/golddust": {
+   "kind": "item",
+   "target": "/obj/item/alch/golddust",
+   "how": "same path"
+  },
+  "/obj/item/alch/herb": {
+   "kind": "item",
+   "target": "/obj/item/alch",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/artemisia": {
+   "kind": "item",
+   "target": "/obj/item/alch/artemisia",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/atropa": {
+   "kind": "item",
+   "target": "/obj/item/alch/atropa",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/benedictus": {
+   "kind": "item",
+   "target": "/obj/item/alch/benedictus",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/calendula": {
+   "kind": "item",
+   "target": "/obj/item/alch/calendula",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/euphorbia": {
+   "kind": "item",
+   "target": "/obj/item/alch/euphorbia",
+   "how": "new ingredient"
+  },
+  "/obj/item/alch/herb/euphrasia": {
+   "kind": "item",
+   "target": "/obj/item/alch/euphrasia",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/hypericum": {
+   "kind": "item",
+   "target": "/obj/item/alch/hypericum",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/lavender": {
+   "kind": "item",
+   "target": "/obj/item/alch/lavender",
+   "how": "new ingredient"
+  },
+  "/obj/item/alch/herb/matricaria": {
+   "kind": "item",
+   "target": "/obj/item/alch/matricaria",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/mentha": {
+   "kind": "item",
+   "target": "/obj/item/alch/mentha",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/necralily": {
+   "kind": "item",
+   "target": "/obj/item/alch/necralily",
+   "how": "new ingredient"
+  },
+  "/obj/item/alch/herb/paris": {
+   "kind": "item",
+   "target": "/obj/item/alch/paris",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/rosa": {
+   "kind": "item",
+   "target": "/obj/item/alch/rosa",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/salvia": {
+   "kind": "item",
+   "target": "/obj/item/alch/salvia",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/symphitum": {
+   "kind": "item",
+   "target": "/obj/item/alch/symphitum",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/taraxacum": {
+   "kind": "item",
+   "target": "/obj/item/alch/taraxacum",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/urtica": {
+   "kind": "item",
+   "target": "/obj/item/alch/urtica",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/herb/valeriana": {
+   "kind": "item",
+   "target": "/obj/item/alch/valeriana",
+   "how": "path rewrite"
+  },
+  "/obj/item/alch/horn": {
+   "kind": "item",
+   "target": "/obj/item/alch/horn",
+   "how": "same path"
+  },
+  "/obj/item/alch/irondust": {
+   "kind": "item",
+   "target": "/obj/item/alch/irondust",
+   "how": "same path"
+  },
+  "/obj/item/alch/magicdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/magicdust",
+   "how": "same path"
+  },
+  "/obj/item/alch/ozium": {
+   "kind": "item",
+   "target": "/obj/item/alch/ozium",
+   "how": "same path"
+  },
+  "/obj/item/alch/runedust": {
+   "kind": "item",
+   "target": "/obj/item/alch/runedust",
+   "how": "same path"
+  },
+  "/obj/item/alch/seeddust": {
+   "kind": "item",
+   "target": "/obj/item/alch/seeddust",
+   "how": "same path"
+  },
+  "/obj/item/alch/silverdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/silverdust",
+   "how": "same path"
+  },
+  "/obj/item/alch/sinew": {
+   "kind": "item",
+   "target": "/obj/item/alch/sinew",
+   "how": "same path"
+  },
+  "/obj/item/alch/swampdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/swampdust",
+   "how": "same path"
+  },
+  "/obj/item/ingot/thaumic": {
+   "kind": "item",
+   "target": "/obj/item/ingot/thaumic",
+   "how": "same path"
+  },
+  "/obj/item/alch/thaumicdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/thaumicdust",
+   "how": "new ingredient"
+  },
+  "/obj/item/alch/tobaccodust": {
+   "kind": "item",
+   "target": "/obj/item/alch/tobaccodust",
+   "how": "same path"
+  },
+  "/obj/item/alch/transisdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/transisdust",
+   "how": "same path"
+  },
+  "/obj/item/alch/viscera": {
+   "kind": "item",
+   "target": "/obj/item/alch/viscera",
+   "how": "same path"
+  },
+  "/obj/item/alch/waterdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/waterdust",
+   "how": "same path"
+  },
+  "/datum/essence_combination/crystal": {
+   "kind": "recipe",
+   "target": "/datum/essence_combination/crystal",
+   "how": "combination"
+  },
+  "/datum/essence_combination/cycle": {
+   "kind": "recipe",
+   "target": "/datum/essence_combination/cycle",
+   "how": "combination"
+  },
+  "/datum/essence_combination/death": {
+   "kind": "recipe",
+   "target": "/datum/essence_combination/death",
+   "how": "combination"
+  },
+  "/datum/essence_combination/energia": {
+   "kind": "recipe",
+   "target": "/datum/essence_combination/energia",
+   "how": "combination"
+  },
+  "/datum/essence_combination/frost": {
+   "kind": "recipe",
+   "target": "/datum/essence_combination/frost",
+   "how": "combination"
+  },
+  "/datum/essence_combination/life": {
+   "kind": "recipe",
+   "target": "/datum/essence_combination/life",
+   "how": "combination"
+  },
+  "/datum/essence_combination/light": {
+   "kind": "recipe",
+   "target": "/datum/essence_combination/light",
+   "how": "combination"
+  },
+  "/datum/essence_combination/magic": {
+   "kind": "recipe",
+   "target": "/datum/essence_combination/magic",
+   "how": "combination"
+  },
+  "/datum/essence_combination/motion": {
+   "kind": "recipe",
+   "target": "/datum/essence_combination/motion",
+   "how": "combination"
+  },
+  "/datum/essence_combination/poison": {
+   "kind": "recipe",
+   "target": "/datum/essence_combination/poison",
+   "how": "combination"
+  },
+  "/datum/essence_combination/void": {
+   "kind": "recipe",
+   "target": "/datum/essence_combination/void",
+   "how": "combination"
+  },
+  "/obj/item/natural/abyssalflame": {
+   "kind": "item",
+   "target": "/obj/item/magic/infernal/flame",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/abyssalflame": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/abyssalflame",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/airdust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/airdust",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/artemisia": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/artemisia",
+   "how": "precursor"
+  },
+  "/obj/item/natural/artifact": {
+   "kind": "item",
+   "target": "/obj/item/magic/artifact",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/artifact": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/artifact",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/atropa": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/atropa",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/benedictus": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/benedictus",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/bone": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/bone",
+   "how": "precursor"
+  },
+  "/obj/item/fertilizer/bone_meal": {
+   "kind": "item",
+   "target": "/obj/item/alch/bonemeal",
+   "how": "pair"
+  },
+  "/datum/natural_precursor/bonemeal": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/bonemeal",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/calendula": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/calendula",
+   "how": "precursor"
+  },
+  "/obj/item/natural/clod/dirt": {
+   "kind": "item",
+   "target": "/obj/item/natural/dirtclod",
+   "how": "K1v pair"
+  },
+  "/obj/item/natural/clay": {
+   "kind": "item",
+   "target": "/obj/item/natural/clay",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/clod_and_clay": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/clod_and_clay",
+   "how": "precursor"
+  },
+  "/obj/item/natural/silk": {
+   "kind": "item",
+   "target": "/obj/item/natural/silk",
+   "how": "same path"
+  },
+  "/obj/item/natural/cloth": {
+   "kind": "item",
+   "target": "/obj/item/natural/cloth",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/cloth_and_silk": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/cloth_and_silk",
+   "how": "precursor"
+  },
+  "/obj/item/ore/coal": {
+   "kind": "item",
+   "target": "/obj/item/rogueore/coal",
+   "how": "K1v pair"
+  },
+  "/obj/item/ore/coal/charcoal": {
+   "kind": "item",
+   "target": "/obj/item/rogueore/coal/charcoal",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/coal": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/coal",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/coaldust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/coaldust",
+   "how": "precursor"
+  },
+  "/obj/item/ore/iron": {
+   "kind": "item",
+   "target": "/obj/item/rogueore/iron",
+   "how": "K1v pair"
+  },
+  "/obj/item/ore/copper": {
+   "kind": "item",
+   "target": "/obj/item/rogueore/copper",
+   "how": "K1v pair"
+  },
+  "/obj/item/ore/tin": {
+   "kind": "item",
+   "target": "/obj/item/rogueore/tin",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/common_ore": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/common_ore",
+   "how": "precursor"
+  },
+  "/obj/item/natural/cured/essence": {
+   "kind": "item",
+   "target": "/obj/item/natural/cured/essence",
+   "how": "same path"
+  },
+  "/obj/item/grown/log/tree/essence": {
+   "kind": "item",
+   "target": "/obj/item/grown/log/tree/small/essence",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/dendor_essence": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/dendor_essence",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/earthdust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/earthdust",
+   "how": "precursor"
+  },
+  "/obj/item/natural/elementalfragment": {
+   "kind": "item",
+   "target": "/obj/item/magic/elemental/fragment",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/elementalfragment": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/elementalfragment",
+   "how": "precursor"
+  },
+  "/obj/item/natural/elementalmote": {
+   "kind": "item",
+   "target": "/obj/item/magic/elemental/mote",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/elementalmote": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/elementalmote",
+   "how": "precursor"
+  },
+  "/obj/item/natural/elementalrelic": {
+   "kind": "item",
+   "target": "/obj/item/magic/elemental/relic",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/elementalrelic": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/elementalrelic",
+   "how": "precursor"
+  },
+  "/obj/item/natural/elementalshard": {
+   "kind": "item",
+   "target": "/obj/item/magic/elemental/shard",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/elementalshard": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/elementalshard",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/euphorbia": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/euphorbia",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/euphrasia": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/euphrasia",
+   "how": "precursor"
+  },
+  "/obj/item/natural/fairydust": {
+   "kind": "item",
+   "target": "/obj/item/magic/fae/dust",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/fairydust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/fairydust",
+   "how": "precursor"
+  },
+  "/obj/item/natural/feather": {
+   "kind": "item",
+   "target": "/obj/item/natural/feather",
+   "how": "same path"
+  },
+  "/obj/item/natural/feather/infernal": {
+   "kind": "item",
+   "target": "/obj/item/natural/feather/infernal",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/feather": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/feather",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/feaudust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/feaudust",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/firedust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/firedust",
+   "how": "precursor"
+  },
+  "/obj/item/reagent_containers/food/snacks/fish/carp": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/fish/carp",
+   "how": "same path"
+  },
+  "/obj/item/reagent_containers/food/snacks/fish/clownfish": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/fish/clownfish",
+   "how": "same path"
+  },
+  "/obj/item/reagent_containers/food/snacks/fish/angler": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/fish/angler",
+   "how": "same path"
+  },
+  "/obj/item/reagent_containers/food/snacks/fish/eel": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/fish/eel",
+   "how": "same path"
+  },
+  "/obj/item/reagent_containers/food/snacks/fish/shrimp": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/fish/shrimp",
+   "how": "same path"
+  },
+  "/obj/item/reagent_containers/food/snacks/fish/swordfish": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/fish/swordfish",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/fish": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/fish",
+   "how": "precursor"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/produce/fruit",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/apple": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/apple",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/strawberry": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/fruit/strawberry",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/blackberry": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/fruit/blackberry",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/jacksberry": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/berries/rogue",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/jacksberry/poison": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison",
+   "how": "same name"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/pear": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/fruit/pear",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/lemon": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/fruit/lemon",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/lime": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/fruit/lime",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/tangerine": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/fruit/tangerine",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/plum": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/fruit/plum",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/mango": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/produce/fruit/mango",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/mangosteen": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/produce/fruit/mangosteen",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/dragonfruit": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/produce/fruit/dragonfruit",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/avocado": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/produce/fruit/avocado",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fruit/pineapple": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/produce/fruit/pineapple",
+   "how": "earlier port"
+  },
+  "/datum/natural_precursor/fruit": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/fruit",
+   "how": "precursor"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/fyritius": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/rogue/fyritius",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/fyritius": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/fyritius",
+   "how": "precursor"
+  },
+  "/obj/item/gem/green": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/green",
+   "how": "K1v pair"
+  },
+  "/obj/item/gem/jade": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/vibelin/jade",
+   "how": "earlier port"
+  },
+  "/datum/natural_precursor/gem_earth": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/gem_earth",
+   "how": "precursor"
+  },
+  "/obj/item/gem/opal": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/vibelin/opal",
+   "how": "earlier port"
+  },
+  "/obj/item/gem/diamond": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/diamond",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/gem_energia": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/gem_energia",
+   "how": "precursor"
+  },
+  "/obj/item/gem/red": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/ruby",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/gem_fire": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/gem_fire",
+   "how": "precursor"
+  },
+  "/obj/item/gem/blue": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/blue",
+   "how": "K1v pair"
+  },
+  "/obj/item/gem/turq": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/vibelin/turq",
+   "how": "earlier port"
+  },
+  "/datum/natural_precursor/gem_frost": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/gem_frost",
+   "how": "precursor"
+  },
+  "/obj/item/gem/yellow": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/yellow",
+   "how": "K1v pair"
+  },
+  "/obj/item/gem/amber": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/vibelin/amber",
+   "how": "earlier port"
+  },
+  "/datum/natural_precursor/gem_light": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/gem_light",
+   "how": "precursor"
+  },
+  "/obj/item/gem/amethyst": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/amethyst",
+   "how": "K1v pair"
+  },
+  "/obj/item/gem/violet": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/violet",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/gem_magic": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/gem_magic",
+   "how": "precursor"
+  },
+  "/obj/item/gem/onyxa": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/vibelin/onyxa",
+   "how": "earlier port"
+  },
+  "/obj/item/gem/coral": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/vibelin/coral",
+   "how": "earlier port"
+  },
+  "/datum/natural_precursor/gem_void": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/gem_void",
+   "how": "precursor"
+  },
+  "/obj/item/gem/oyster": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/oyster",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/gem_water": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/gem_water",
+   "how": "precursor"
+  },
+  "/obj/item/natural/glass": {
+   "kind": "item",
+   "target": "/obj/item/natural/glass",
+   "how": "same path"
+  },
+  "/obj/item/natural/glass/shard": {
+   "kind": "item",
+   "target": "/obj/item/natural/glass_shard",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/glass": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/glass",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/golddust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/golddust",
+   "how": "precursor"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/grain": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/produce/grain",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/grain/wheat": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/wheat",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/grain/oat": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/oat",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/grain": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/grain",
+   "how": "precursor"
+  },
+  "/obj/item/natural/heartwoodcore": {
+   "kind": "item",
+   "target": "/obj/item/magic/fae/core",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/heartwoodcore": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/heartwoodcore",
+   "how": "precursor"
+  },
+  "/obj/item/natural/hellhoundfang": {
+   "kind": "item",
+   "target": "/obj/item/magic/infernal/fang",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/hellhoundfang": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/hellhoundfang",
+   "how": "precursor"
+  },
+  "/obj/item/natural/hide": {
+   "kind": "item",
+   "target": "/obj/item/natural/hide",
+   "how": "same path"
+  },
+  "/obj/item/natural/hide/cured": {
+   "kind": "item",
+   "target": "/obj/item/natural/hide/cured",
+   "how": "same path"
+  },
+  "/obj/item/natural/fur": {
+   "kind": "item",
+   "target": "/obj/item/natural/fur",
+   "how": "same path"
+  },
+  "/obj/item/natural/fur/mole": {
+   "kind": "item",
+   "target": "/obj/item/natural/fur/mole",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/hide_and_fur": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/hide_and_fur",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/horn": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/horn",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/hypericum": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/hypericum",
+   "how": "precursor"
+  },
+  "/obj/item/natural/infernalash": {
+   "kind": "item",
+   "target": "/obj/item/magic/infernal/ash",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/infernalash": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/infernalash",
+   "how": "precursor"
+  },
+  "/obj/item/natural/iridescentscale": {
+   "kind": "item",
+   "target": "/obj/item/magic/fae/iridescentscale",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/iridescentscale": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/iridescentscale",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/irondust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/irondust",
+   "how": "precursor"
+  },
+  "/obj/item/natural/worms/leech": {
+   "kind": "item",
+   "target": "/obj/item/natural/worms/leech",
+   "how": "same path"
+  },
+  "/obj/item/natural/worms/leech/parasite": {
+   "kind": "item",
+   "target": "/obj/item/natural/worms/leech/parasite",
+   "how": "same path"
+  },
+  "/obj/item/natural/worms/leech/abyssoid": {
+   "kind": "item",
+   "target": "/obj/item/natural/worms/leech/abyssoid",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/leech": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/leech",
+   "how": "precursor"
+  },
+  "/obj/item/natural/leyline": {
+   "kind": "item",
+   "target": "/obj/item/magic/leyline",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/leyline": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/leyline",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/magicdust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/magicdust",
+   "how": "precursor"
+  },
+  "/obj/item/mana_battery/mana_crystal/small": {
+   "kind": "item",
+   "target": "/obj/item/rogue_mana_crystal",
+   "how": "pair"
+  },
+  "/datum/natural_precursor/mana_crystal_small": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/mana_crystal_small",
+   "how": "precursor"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/manabloom": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/manabloom",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/manabloom": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/manabloom",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/matricaria": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/matricaria",
+   "how": "precursor"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/steak": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/rogue/meat/steak",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/steak/human": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/meat/steak/human",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/fatty": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/rogue/meat/fatty",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/fatty/dwarf": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/meat/fatty/dwarf",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/fatty/kobold": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/meat/fatty/kobold",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/strange": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/meat/strange",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/poultry": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/rogue/meat/poultry",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/poultry/cutlet": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/poultry/cutlet/harpy": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/meat/poultry/cutlet/harpy",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/triton": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/meat/triton",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/strange/inhumen": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/meat/strange/inhumen",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/mince/beef": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/mince/beef/mett": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/meat/mince/beef/mett",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/mince/poultry": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/rogue/meat/mince/poultry",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/sausage": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/rogue/meat/sausage",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/sausage/wiener": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/meat/sausage/wiener",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/salami": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/rogue/meat/salami",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/meat/mince/fish": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/rogue/meat/mince/fish",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/meat": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/meat",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/mentha": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/mentha",
+   "how": "precursor"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/mushroom": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/produce/mushroom",
+   "how": "earlier port"
+  },
+  "/datum/natural_precursor/mushroom": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/mushroom",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/necralily": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/necralily",
+   "how": "precursor"
+  },
+  "/obj/item/ore/gold": {
+   "kind": "item",
+   "target": "/obj/item/rogueore/gold",
+   "how": "K1v pair"
+  },
+  "/obj/item/ore/silver": {
+   "kind": "item",
+   "target": "/obj/item/rogueore/silver",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/noble_ore": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/noble_ore",
+   "how": "precursor"
+  },
+  "/obj/item/natural/obsidian": {
+   "kind": "item",
+   "target": "/obj/item/magic/obsidian",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/obsidian": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/obsidian",
+   "how": "precursor"
+  },
+  "/obj/item/organ/appendix": {
+   "kind": "item",
+   "target": "/obj/item/organ/appendix",
+   "how": "same path"
+  },
+  "/obj/item/organ/heart": {
+   "kind": "item",
+   "target": "/obj/item/organ/heart",
+   "how": "same path"
+  },
+  "/obj/item/organ/eyes": {
+   "kind": "item",
+   "target": "/obj/item/organ/eyes",
+   "how": "same path"
+  },
+  "/obj/item/organ/liver": {
+   "kind": "item",
+   "target": "/obj/item/organ/liver",
+   "how": "same path"
+  },
+  "/obj/item/organ/lungs": {
+   "kind": "item",
+   "target": "/obj/item/organ/lungs",
+   "how": "same path"
+  },
+  "/obj/item/organ/stomach": {
+   "kind": "item",
+   "target": "/obj/item/organ/stomach",
+   "how": "same path"
+  },
+  "/obj/item/organ/tongue": {
+   "kind": "item",
+   "target": "/obj/item/organ/tongue",
+   "how": "same path"
+  },
+  "/obj/item/organ/brain": {
+   "kind": "item",
+   "target": "/obj/item/organ/brain",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/organs": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/organs",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/ozium": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/ozium",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/paris": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/paris",
+   "how": "precursor"
+  },
+  "/obj/item/natural/wood/plank": {
+   "kind": "item",
+   "target": "/obj/item/natural/wood/plank",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/plank": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/plank",
+   "how": "precursor"
+  },
+  "/obj/item/natural/poo": {
+   "kind": "item",
+   "target": "/obj/item/natural/poo",
+   "how": "same path"
+  },
+  "/obj/item/natural/poo/cow": {
+   "kind": "item",
+   "target": "/obj/item/natural/poo/cow",
+   "how": "same path"
+  },
+  "/obj/item/natural/poo/horse": {
+   "kind": "item",
+   "target": "/obj/item/natural/poo/horse",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/poo": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/poo",
+   "how": "precursor"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/poppy": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/rogue/poppy",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/poppy": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/poppy",
+   "how": "precursor"
+  },
+  "/obj/item/ore/cinnabar": {
+   "kind": "item",
+   "target": "/obj/item/rogueore/cinnabar",
+   "how": "K1v pair"
+  },
+  "/obj/item/chalk": {
+   "kind": "item",
+   "target": "/obj/item/chalk",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/quicksilver": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/quicksilver",
+   "how": "precursor"
+  },
+  "/obj/item/riddleofsteel": {
+   "kind": "item",
+   "target": "/obj/item/riddleofsteel",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/riddleofsteel": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/riddleofsteel",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/rosa": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/rosa",
+   "how": "precursor"
+  },
+  "/obj/item/reagent_containers/food/snacks/rotten": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/rotten",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/rotten/meat": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/rogue/meat_rotten",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/rotten/bacon": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/rotten/bacon",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/rotten/sausage": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/rotten/sausage",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/rotten/poultry": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/rotten/poultry",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/rotten/chickenleg": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/rotten/chickenleg",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/rotten/breadslice": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/rotten/breadslice",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/rotten/egg": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/rotten/egg",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/rotten/mince": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/rotten/mince",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/stale_bread": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/stale_bread",
+   "how": "earlier port"
+  },
+  "/datum/natural_precursor/rotten_food": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/rotten_food",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/runedust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/runedust",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/salvia": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/salvia",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/seeddust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/seeddust",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/silverdust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/silverdust",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/sinew": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/sinew",
+   "how": "precursor"
+  },
+  "/obj/item/natural/stone": {
+   "kind": "item",
+   "target": "/obj/item/natural/stone",
+   "how": "same path"
+  },
+  "/obj/item/natural/stone/sending": {
+   "kind": "item",
+   "target": "/obj/item/natural/stone/sending",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/stone": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/stone",
+   "how": "precursor"
+  },
+  "/obj/item/natural/stoneblock": {
+   "kind": "item",
+   "target": "/obj/item/natural/stoneblock",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/stoneblock": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/stoneblock",
+   "how": "precursor"
+  },
+  "/obj/item/reagent_containers/food/snacks/sugar": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/sugar",
+   "how": "same path"
+  },
+  "/obj/item/reagent_containers/food/snacks/tiefsugar": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/tiefsugar",
+   "how": "earlier port"
+  },
+  "/datum/natural_precursor/sugar": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/sugar",
+   "how": "precursor"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/sunflower": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/sunflower",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/sunflower": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/sunflower",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/swampdust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/swampdust",
+   "how": "precursor"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/swampweed": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/swampweed_dried": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry",
+   "how": "same name"
+  },
+  "/datum/natural_precursor/swampweed": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/swampweed",
+   "how": "precursor"
+  },
+  "/obj/item/natural/sylvanessence": {
+   "kind": "item",
+   "target": "/obj/item/magic/fae/essence",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/sylvanessence": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/sylvanessence",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/symphitum": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/symphitum",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/taraxacum": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/taraxacum",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/thaumic_iron": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/thaumic_iron",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/transisdust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/transisdust",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/urtica": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/urtica",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/valeriana": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/valeriana",
+   "how": "precursor"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/vegetable": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/produce/vegetable",
+   "how": "earlier port"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/vegetable/potato": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/potato/rogue",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/vegetable/cabbage": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/cabbage/rogue",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/vegetable/onion": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/onion/rogue",
+   "how": "K1v pair"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/vegetable/turnip": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/vegetable/turnip",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/vegetable": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/vegetable",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/viscera": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/viscera",
+   "how": "precursor"
+  },
+  "/obj/item/natural/voidstone": {
+   "kind": "item",
+   "target": "/obj/item/magic/voidstone",
+   "how": "K1v pair"
+  },
+  "/datum/natural_precursor/voidstone": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/voidstone",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/waterdust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/waterdust",
+   "how": "precursor"
+  },
+  "/datum/natural_precursor/westleach_dust": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/westleach_dust",
+   "how": "precursor"
+  },
+  "/obj/item/grown/log/tree": {
+   "kind": "item",
+   "target": "/obj/item/grown/log/tree",
+   "how": "same path"
+  },
+  "/obj/item/grown/log/tree/small": {
+   "kind": "item",
+   "target": "/obj/item/grown/log/tree/small",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/wood": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/wood",
+   "how": "precursor"
+  },
+  "/obj/item/natural/worms": {
+   "kind": "item",
+   "target": "/obj/item/natural/worms",
+   "how": "same path"
+  },
+  "/datum/natural_precursor/worms": {
+   "kind": "recipe",
+   "target": "/datum/natural_precursor/worms",
+   "how": "precursor"
+  },
+  "/datum/infusion_recipe/cinnabar": {
+   "kind": "recipe",
+   "target": "/datum/infusion_recipe/cinnabar",
+   "how": "infusion"
+  },
+  "/obj/item/essence_vial/combat": {
+   "kind": "item",
+   "target": "/obj/item/essence_vial/combat",
+   "how": "same path"
+  },
+  "/datum/infusion_recipe/combat_flask": {
+   "kind": "recipe",
+   "target": "/datum/infusion_recipe/combat_flask",
+   "how": "infusion"
+  },
+  "/datum/infusion_recipe/glass": {
+   "kind": "recipe",
+   "target": "/datum/infusion_recipe/glass",
+   "how": "infusion"
+  },
+  "/obj/item/ingot/iron": {
+   "kind": "item",
+   "target": "/obj/item/ingot/iron",
+   "how": "same path"
+  },
+  "/datum/infusion_recipe/heat_iron": {
+   "kind": "recipe",
+   "target": "/datum/infusion_recipe/heat_iron",
+   "how": "infusion"
+  },
+  "/obj/item/essence_node_jar": {
+   "kind": "item",
+   "target": "/obj/item/essence_node_jar",
+   "how": "same path"
+  },
+  "/obj/item/essence_node_jar/advanced": {
+   "kind": "item",
+   "target": "/obj/item/essence_node_jar/advanced",
+   "how": "same path"
+  },
+  "/datum/infusion_recipe/jar_two": {
+   "kind": "recipe",
+   "target": "/datum/infusion_recipe/jar_two",
+   "how": "infusion"
+  },
+  "/obj/item/gem": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/random",
+   "how": "K1v pair"
+  },
+  "/obj/item/mana_battery/mana_crystal/standard": {
+   "kind": "item",
+   "target": "/obj/item/magic/manacrystal",
+   "how": "pair"
+  },
+  "/datum/infusion_recipe/mana_crystal": {
+   "kind": "recipe",
+   "target": "/datum/infusion_recipe/mana_crystal",
+   "how": "infusion"
+  },
+  "/obj/item/neuFarm/seed": {
+   "kind": "item",
+   "target": "/obj/item/herbseed",
+   "how": "path rewrite"
+  },
+  "/datum/infusion_recipe/thaumic_iron": {
+   "kind": "recipe",
+   "target": "/datum/infusion_recipe/thaumic_iron",
+   "how": "infusion"
+  },
+  "/datum/alch_cauldron_recipe/antidote": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/antidote",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/ashbinders_salve_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/ashbinders_salve_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/ashwarden_brew_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/ashwarden_brew_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/berrypoison": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/berrypoison",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/big_blood_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/big_blood_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/big_health_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/big_health_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/big_mana_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/big_mana_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/big_stam_poison": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/big_stam_poison",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/big_stamina_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/big_stamina_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/blistergall_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/blistergall_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/blood_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/blood_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/bloodelder_wine_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/bloodelder_wine_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/coldvein_compress_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/coldvein_compress_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/con_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/con_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/crystalline_lymph_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/crystalline_lymph_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/cryzaline_suspension": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/cryzaline_suspension",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/disease_cure": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/disease_cure",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/doompoison": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/doompoison",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/dread_death": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/dread_death",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/end_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/end_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/fever_oil_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/fever_oil_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/gender_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/gender_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/gloomvenom_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/gloomvenom_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/gravitum_elixir": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/gravitum_elixir",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/health_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/health_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/hexblood_poison_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/hexblood_poison_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/ichor_of_mending_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/ichor_of_mending_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/int_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/int_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/lck_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/lck_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/mana_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/mana_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/marrowbrew_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/marrowbrew_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/mindclear_tonic_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/mindclear_tonic_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/mirelung_brew_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/mirelung_brew_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/mirrorwaste_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/mirrorwaste_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/nervebind_extract_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/nervebind_extract_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/pale_serum_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/pale_serum_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/per_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/per_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/phlogiston_elasticum": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/phlogiston_elasticum",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/quietdeath_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/quietdeath_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/rosawater_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/rosawater_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/sal_petris": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/sal_petris",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/soulbane_ichor_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/soulbane_ichor_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/soulweave_distillate_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/soulweave_distillate_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/spd_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/spd_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/spiritwood_elixir_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/spiritwood_elixir_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/stam_poison": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/stam_poison",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/stamina_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/stamina_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/stonevein_broth_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/stonevein_broth_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/str_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/str_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/subtilum_tincture": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/subtilum_tincture",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/thornmorrow_tincture_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/thornmorrow_tincture_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/tombsilt_tincture_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/tombsilt_tincture_potion",
+   "how": "cauldron recipe"
+  },
+  "/datum/alch_cauldron_recipe/vitalroot_draught_potion": {
+   "kind": "recipe",
+   "target": "/datum/alch_cauldron_recipe/vitalroot_draught_potion",
+   "how": "cauldron recipe"
+  },
+  "/obj/item/neuFarm/seed/artemisia": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/artemisia",
+   "how": "path rewrite"
+  },
+  "/obj/item/neuFarm/seed/atropa": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/atropa",
+   "how": "path rewrite"
+  },
+  "/obj/item/neuFarm/seed/benedictus": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/benedictus",
+   "how": "path rewrite"
+  },
+  "/obj/item/neuFarm/seed/calendula": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/calendula",
+   "how": "path rewrite"
+  },
+  "/datum/alch_grind_recipe/charcoal_ore": {
+   "kind": "recipe",
+   "target": "/datum/alch_grind_recipe/vibelin/charcoal_ore",
+   "how": "mortar recipe"
+  },
+  "/obj/item/reagent_containers/food/snacks/crow": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/crow",
+   "how": "same path"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/dry_westleach": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/vibelin/produce/dry_westleach",
+   "how": "earlier port"
+  },
+  "/datum/alch_grind_recipe/dry_westleach": {
+   "kind": "recipe",
+   "target": "/datum/alch_grind_recipe/vibelin/dry_westleach",
+   "how": "mortar recipe"
+  },
+  "/obj/item/neuFarm/seed/euphrasia": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/euphrasia",
+   "how": "path rewrite"
+  },
+  "/obj/item/reagent_containers/food/snacks/fish": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/fish",
+   "how": "same path"
+  },
+  "/obj/item/ingot/gold": {
+   "kind": "item",
+   "target": "/obj/item/ingot/gold",
+   "how": "same path"
+  },
+  "/obj/item/neuFarm/seed/hypericum": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/hypericum",
+   "how": "path rewrite"
+  },
+  "/datum/alch_grind_recipe/leech": {
+   "kind": "recipe",
+   "target": "/datum/alch_grind_recipe/vibelin/leech",
+   "how": "mortar recipe"
+  },
+  "/obj/item/neuFarm/seed/matricaria": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/matricaria",
+   "how": "path rewrite"
+  },
+  "/obj/item/neuFarm/seed/mentha": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/mentha",
+   "how": "path rewrite"
+  },
+  "/obj/item/reagent_containers/powder/ozium": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/powder/ozium",
+   "how": "same path"
+  },
+  "/obj/item/neuFarm/seed/paris": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/paris",
+   "how": "path rewrite"
+  },
+  "/obj/item/neuFarm/seed/rosa": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/rosa",
+   "how": "path rewrite"
+  },
+  "/obj/item/neuFarm/seed/salvia": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/salvia",
+   "how": "path rewrite"
+  },
+  "/obj/item/ingot/silver": {
+   "kind": "item",
+   "target": "/obj/item/ingot/silver",
+   "how": "same path"
+  },
+  "/obj/item/neuFarm/seed/symphitum": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/symphitum",
+   "how": "path rewrite"
+  },
+  "/obj/item/neuFarm/seed/taraxacum": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/taraxacum",
+   "how": "path rewrite"
+  },
+  "/obj/item/neuFarm/seed/urtica": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/urtica",
+   "how": "path rewrite"
+  },
+  "/obj/item/neuFarm/seed/valeriana": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/valeriana",
+   "how": "path rewrite"
+  },
+  "/obj/item/reagent_containers/food/snacks/produce/westleach": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed",
+   "how": "K1v pair"
+  },
+  "/datum/alch_grind_recipe/worm": {
+   "kind": "recipe",
+   "target": "/datum/alch_grind_recipe/vibelin/worm",
+   "how": "mortar recipe"
+  },
+  "azure:/obj/item/alch/artemisia": {
+   "kind": "item",
+   "target": "/obj/item/alch/artemisia",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/artemisia": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/artemisia",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/atropa": {
+   "kind": "item",
+   "target": "/obj/item/alch/atropa",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/atropa": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/atropa",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/benedictus": {
+   "kind": "item",
+   "target": "/obj/item/alch/benedictus",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/benedictus": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/benedictus",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/food/snacks/grown/berries/rogue": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/berries/rogue",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/berrypowder": {
+   "kind": "item",
+   "target": "/obj/item/alch/berrypowder",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/waterdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/waterdust",
+   "how": "same path"
+  },
+  "azure:/obj/item/ingot/silverblessed": {
+   "kind": "item",
+   "target": "/obj/item/ingot/silverblessed",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/silverdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/silverdust",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/firedust": {
+   "kind": "item",
+   "target": "/obj/item/alch/firedust",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/bone": {
+   "kind": "item",
+   "target": "/obj/item/alch/bone",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/bonemeal": {
+   "kind": "item",
+   "target": "/obj/item/alch/bonemeal",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/briar_essence": {
+   "kind": "item",
+   "target": "/obj/item/alch/briar_essence",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/earthdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/earthdust",
+   "how": "same path"
+  },
+  "azure:/datum/alch_grind_recipe/briar_essence": {
+   "kind": "recipe",
+   "target": "/datum/alch_grind_recipe/azure/briar_essence",
+   "how": "mortar recipe"
+  },
+  "azure:/obj/item/alch/calendula": {
+   "kind": "item",
+   "target": "/obj/item/alch/calendula",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/calendula": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/calendula",
+   "how": "same path"
+  },
+  "azure:/obj/item/rogueore/coal/charcoal": {
+   "kind": "item",
+   "target": "/obj/item/rogueore/coal/charcoal",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/coaldust": {
+   "kind": "item",
+   "target": "/obj/item/alch/coaldust",
+   "how": "same path"
+  },
+  "azure:/obj/item/rogueore/coal": {
+   "kind": "item",
+   "target": "/obj/item/rogueore/coal",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/food/snacks/crow": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/crow",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/airdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/airdust",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/tobaccodust": {
+   "kind": "item",
+   "target": "/obj/item/alch/tobaccodust",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/euphrasia": {
+   "kind": "item",
+   "target": "/obj/item/alch/euphrasia",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/euphrasia": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/euphrasia",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/food/snacks/fish": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/fish",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/food/snacks/grown/rogue/fyritius": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/rogue/fyritius",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/solardust": {
+   "kind": "item",
+   "target": "/obj/item/alch/solardust",
+   "how": "same path"
+  },
+  "azure:/obj/item/ingot/gold": {
+   "kind": "item",
+   "target": "/obj/item/ingot/gold",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/golddust": {
+   "kind": "item",
+   "target": "/obj/item/alch/golddust",
+   "how": "same path"
+  },
+  "azure:/obj/item/rogueore/gold": {
+   "kind": "item",
+   "target": "/obj/item/rogueore/gold",
+   "how": "same path"
+  },
+  "azure:/obj/item/goldslag": {
+   "kind": "item",
+   "target": "/obj/item/goldslag",
+   "how": "same path"
+  },
+  "azure:/datum/alch_grind_recipe/gold_slag": {
+   "kind": "recipe",
+   "target": "/datum/alch_grind_recipe/azure/gold_slag",
+   "how": "mortar recipe"
+  },
+  "azure:/obj/item/alch/horn": {
+   "kind": "item",
+   "target": "/obj/item/alch/horn",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/hypericum": {
+   "kind": "item",
+   "target": "/obj/item/alch/hypericum",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/hypericum": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/hypericum",
+   "how": "same path"
+  },
+  "azure:/obj/item/magic/infernal/fang": {
+   "kind": "item",
+   "target": "/obj/item/magic/infernal/fang",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/infernaldust": {
+   "kind": "item",
+   "target": "/obj/item/alch/infernaldust",
+   "how": "same path"
+  },
+  "azure:/obj/item/ingot/iron": {
+   "kind": "item",
+   "target": "/obj/item/ingot/iron",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/irondust": {
+   "kind": "item",
+   "target": "/obj/item/alch/irondust",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/runedust": {
+   "kind": "item",
+   "target": "/obj/item/alch/runedust",
+   "how": "same path"
+  },
+  "azure:/obj/item/rogueore/iron": {
+   "kind": "item",
+   "target": "/obj/item/rogueore/iron",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/food/snacks/grown/manabloom": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/manabloom",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/manabloompowder": {
+   "kind": "item",
+   "target": "/obj/item/alch/manabloompowder",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/matricaria": {
+   "kind": "item",
+   "target": "/obj/item/alch/matricaria",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/matricaria": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/matricaria",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/mentha": {
+   "kind": "item",
+   "target": "/obj/item/alch/mentha",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/mentha": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/mentha",
+   "how": "same path"
+  },
+  "azure:/obj/item/roguegem/blue": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/blue",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/mineraldust": {
+   "kind": "item",
+   "target": "/obj/item/alch/mineraldust",
+   "how": "same path"
+  },
+  "azure:/obj/item/roguegem/diamond": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/diamond",
+   "how": "same path"
+  },
+  "azure:/obj/item/roguegem/green": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/green",
+   "how": "same path"
+  },
+  "azure:/obj/item/roguegem/ruby": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/ruby",
+   "how": "same path"
+  },
+  "azure:/datum/alch_grind_recipe/mineraldustred": {
+   "kind": "recipe",
+   "target": "/datum/alch_grind_recipe/azure/mineraldustred",
+   "how": "mortar recipe"
+  },
+  "azure:/obj/item/riddleofsteel": {
+   "kind": "item",
+   "target": "/obj/item/riddleofsteel",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/magicdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/magicdust",
+   "how": "same path"
+  },
+  "azure:/obj/item/roguegem/violet": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/violet",
+   "how": "same path"
+  },
+  "azure:/obj/item/roguegem/yellow": {
+   "kind": "item",
+   "target": "/obj/item/roguegem/yellow",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/powder/ozium": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/powder/ozium",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/ozium": {
+   "kind": "item",
+   "target": "/obj/item/alch/ozium",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/paris": {
+   "kind": "item",
+   "target": "/obj/item/alch/paris",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/paris": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/paris",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/food/snacks/grown/rogue/poppy": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/rogue/poppy",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/powder/salt": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/powder/salt",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/puresalt": {
+   "kind": "item",
+   "target": "/obj/item/alch/puresalt",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/rosa": {
+   "kind": "item",
+   "target": "/obj/item/alch/rosa",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/rosa": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/rosa",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/salvia": {
+   "kind": "item",
+   "target": "/obj/item/alch/salvia",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/salvia": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/salvia",
+   "how": "same path"
+  },
+  "azure:/obj/item/scrap": {
+   "kind": "item",
+   "target": "/obj/item/scrap",
+   "how": "same path"
+  },
+  "azure:/datum/alch_grind_recipe/scrap": {
+   "kind": "recipe",
+   "target": "/datum/alch_grind_recipe/azure/scrap",
+   "how": "mortar recipe"
+  },
+  "azure:/obj/item/seeds": {
+   "kind": "item",
+   "target": "/obj/item/seeds",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/seeddust": {
+   "kind": "item",
+   "target": "/obj/item/alch/seeddust",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed": {
+   "kind": "item",
+   "target": "/obj/item/herbseed",
+   "how": "same path"
+  },
+  "azure:/obj/item/ingot/silver": {
+   "kind": "item",
+   "target": "/obj/item/ingot/silver",
+   "how": "same path"
+  },
+  "azure:/obj/item/rogueore/silver": {
+   "kind": "item",
+   "target": "/obj/item/rogueore/silver",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/sinew": {
+   "kind": "item",
+   "target": "/obj/item/alch/sinew",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/viscera": {
+   "kind": "item",
+   "target": "/obj/item/alch/viscera",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/food/snacks/zizo_bane": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/zizo_bane",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/sleep_powder": {
+   "kind": "item",
+   "target": "/obj/item/alch/sleep_powder",
+   "how": "same path"
+  },
+  "azure:/datum/alch_grind_recipe/sleep_powder": {
+   "kind": "recipe",
+   "target": "/datum/alch_grind_recipe/azure/sleep_powder",
+   "how": "mortar recipe"
+  },
+  "azure:/obj/item/reagent_containers/food/snacks/grown/sunflower": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/sunflower",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/swampdust": {
+   "kind": "item",
+   "target": "/obj/item/alch/swampdust",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/symphitum": {
+   "kind": "item",
+   "target": "/obj/item/alch/symphitum",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/symphitum": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/symphitum",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/taraxacum": {
+   "kind": "item",
+   "target": "/obj/item/alch/taraxacum",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/taraxacum": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/taraxacum",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/urtica": {
+   "kind": "item",
+   "target": "/obj/item/alch/urtica",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/urtica": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/urtica",
+   "how": "same path"
+  },
+  "azure:/obj/item/alch/valeriana": {
+   "kind": "item",
+   "target": "/obj/item/alch/valeriana",
+   "how": "same path"
+  },
+  "azure:/obj/item/herbseed/valeriana": {
+   "kind": "item",
+   "target": "/obj/item/herbseed/valeriana",
+   "how": "same path"
+  },
+  "azure:/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed",
+   "how": "same path"
+  },
+  "/datum/distillation_recipe/aqua_vitae": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/aqua_vitae",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/aqua_vitae/pear": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/aqua_vitae/pear",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/aqua_vitae/plum": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/aqua_vitae/plum",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/aqua_vitae/strawberry": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/aqua_vitae/strawberry",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/aqua_vitae/tangerine": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/aqua_vitae/tangerine",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/concentrated_constitution": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/concentrated_constitution",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/concentrated_endurance": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/concentrated_endurance",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/concentrated_fortune": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/concentrated_fortune",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/concentrated_intelligence": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/concentrated_intelligence",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/concentrated_mush_toxin": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/concentrated_mush_toxin",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/concentrated_perception": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/concentrated_perception",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/concentrated_speed": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/concentrated_speed",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/concentrated_strength": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/concentrated_strength",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/gloomvenom_refined": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/gloomvenom_refined",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/methamphetamine": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/methamphetamine",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/mirrorwaste_refined": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/mirrorwaste_refined",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/mushroom_toxin": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/mushroom_toxin",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/quietdeath_concentrated": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/quietdeath_concentrated",
+   "how": "distillation recipe"
+  },
+  "/datum/reagent/water/salty": {
+   "kind": "reagent",
+   "target": "/datum/reagent/water/salt",
+   "how": "pair"
+  },
+  "/datum/distillation_recipe/sea_salt": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/sea_salt",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/soulweave_distillate": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/soulweave_distillate",
+   "how": "distillation recipe"
+  },
+  "/datum/distillation_recipe/vitalroot_distilled": {
+   "kind": "recipe",
+   "target": "/datum/distillation_recipe/vitalroot_distilled",
+   "how": "distillation recipe"
+  },
+  "/datum/chemical_reaction/alchemists_clarity": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/alchemists_clarity",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/arcane_solvent": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/arcane_solvent",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/ashbinders_salve": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/ashbinders_salve",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/ashwarden_brew": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/ashwarden_brew",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/athletes_brine": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/athletes_brine",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/beastwhisper": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/beastwhisper",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/blade_arts_tincture": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/blade_arts_tincture",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/blistergall": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/blistergall",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/bloodelder_wine": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/bloodelder_wine",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/brewers_wort": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/brewers_wort",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/builders_draught": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/builders_draught",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/coldvein_compress": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/coldvein_compress",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/cooks_brine": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/cooks_brine",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/craftsmans_wit": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/craftsmans_wit",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/crystalline_lymph": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/crystalline_lymph",
+   "how": "reaction"
+  },
+  "/datum/reagent/druqks": {
+   "kind": "reagent",
+   "target": "/datum/reagent/druqks",
+   "how": "same path (module)"
+  },
+  "/datum/chemical_reaction/farmers_almanac_tonic": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/farmers_almanac_tonic",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/fever_oil": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/fever_oil",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/gloomvenom": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/gloomvenom",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/grosswaterify": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/grosswaterify",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/heatcramp_oil": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/heatcramp_oil",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/heavy_arms_draught": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/heavy_arms_draught",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/ichor_of_mending": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/ichor_of_mending",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/ironblight": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/ironblight",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/locksmiths_oil": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/locksmiths_oil",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/marksmans_eye_drop": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/marksmans_eye_drop",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/marrowbrew": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/marrowbrew",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/meth_precursor": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/meth_precursor",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/mindclear_tonic": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/mindclear_tonic",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/miners_heart": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/miners_heart",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/miracle_water": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/miracle_water",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/mirelung_brew": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/mirelung_brew",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/mirewort_compress": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/mirewort_compress",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/mirrorwaste": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/mirrorwaste",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/nervebind_extract": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/nervebind_extract",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/pale_serum": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/pale_serum",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/prep_hands_tonic": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/prep_hands_tonic",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/quietdeath": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/quietdeath",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/rotwater": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/rotwater",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/scholars_ink": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/scholars_ink",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/seamstress_thimble_drop": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/seamstress_thimble_drop",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/shadow_tonic": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/shadow_tonic",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/shield_bearers_draught": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/shield_bearers_draught",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/skinners_elixir": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/skinners_elixir",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/smelters_patience": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/smelters_patience",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/smiths_blood": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/smiths_blood",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/spiritwood_elixir": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/spiritwood_elixir",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/stonevein_broth": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/stonevein_broth",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/sunpetal_decoction": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/sunpetal_decoction",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/thornmorrow_tincture": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/thornmorrow_tincture",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/tombsilt_tincture": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/tombsilt_tincture",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/trappers_sense": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/trappers_sense",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/vital_ichor": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/vital_ichor",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/vitalroot_draught": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/vitalroot_draught",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/whip_hand_oil": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/whip_hand_oil",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/wild_draught": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/wild_draught",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/witchknit_paste": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/witchknit_paste",
+   "how": "reaction"
+  },
+  "/datum/chemical_reaction/woundwrack_oil": {
+   "kind": "recipe",
+   "target": "/datum/chemical_reaction/rogue_alchemy/woundwrack_oil",
+   "how": "reaction"
+  },
+  "/obj/item/reagent_containers/glass/bottle/antidote": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/rogue/antidote",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/healthpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/healthpot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/healthpot/labelled": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/healthpot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/killersice": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/rogue/poison",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/manapot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/manapot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/manapot/labelled": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/manapot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/poison": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/rogue/berrypoison",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/stampoison": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/rogue/stampoison",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/stampot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/rogue/stampot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/stampot/labelled": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/rogue/stampot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/stronghealthpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/healthpotnew",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/stronghealthpot/labelled": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/healthpotnew",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/strongmanapot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/strongmanapot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/strongmanapot/labelled": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/strongmanapot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/strongpoison": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/rogue/strongpoison",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/strongstampoison": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/rogue/strongstampoison",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/strongstampot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/rogue/strongstampot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/strongstampot/labelled": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/rogue/strongstampot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/antidote": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/rogue/antidote",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/conpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/conpot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/endpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/endpot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/healthpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/healthpot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/intpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/intpot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/lucpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/lucpot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/mercury": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/mercury",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/perpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/perpot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/spdpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/spdpot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/stronghealthpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/healthpotnew",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/strongpoison": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/rogue/strongpoison",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/strpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/strpot",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/water": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/water",
+   "how": "same content"
+  },
+  "/obj/item/reagent_containers/glass/bottle/bloodpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/vibelin_alchemy/bloodpot",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/diseasecure": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/vibelin_alchemy/diseasecure",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/strongbloodpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/vibelin_alchemy/strongbloodpot",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical",
+   "how": "pair"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/alchemists_clarity": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/alchemists_clarity",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/arcane_solvent": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/arcane_solvent",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/athletes_brine": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/athletes_brine",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/beastwhisper": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/beastwhisper",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/bladeart": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/bladeart",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/brewers_wort": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/brewers_wort",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/builders_draught": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/builders_draught",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/cooks_brine": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/cooks_brine",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/craftsmans_wit": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/craftsmans_wit",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/farmers_almanac": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/farmers_almanac",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/genderpot": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/genderpot",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/gravitum_elixir": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/gravitum_elixir",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/heavy_arms": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/heavy_arms",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/locksmiths_oil": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/locksmiths_oil",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/marksmans_eye": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/marksmans_eye",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/miners_heart": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/miners_heart",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/miracle_water": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/miracle_water",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/mirrorwaste": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/mirrorwaste",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/phlogiston_elasticum": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/phlogiston_elasticum",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/prep_hands_tonic": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/prep_hands_tonic",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/sal_petris": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/sal_petris",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/scholars_ink": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/scholars_ink",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/seamstress_thimble_drop": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/seamstress_thimble_drop",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/shadow_tonic": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/shadow_tonic",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/shield_bearer": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/shield_bearer",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/skinners_elixir": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/skinners_elixir",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/smelters_patience": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/smelters_patience",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/smiths_blood": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/smiths_blood",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/subtilum_tincture": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/subtilum_tincture",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/trappers_sense": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/trappers_sense",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/vital_ichor": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/vital_ichor",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/whip_hand": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/whip_hand",
+   "how": "new bottle"
+  },
+  "/obj/item/reagent_containers/glass/bottle/vial/wild_draught": {
+   "kind": "item",
+   "target": "/obj/item/reagent_containers/glass/bottle/alchemical/vibelin_alchemy/wild_draught",
+   "how": "new bottle"
+  }
+ }
+}

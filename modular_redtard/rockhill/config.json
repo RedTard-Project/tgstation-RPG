@@ -1998,7 +1998,6 @@
 			"ingredient_root": "/obj/item/alch",
 			"cauldron_root": "/datum/alch_cauldron_recipe",
 			"grind_root": "/datum/alch_grind_recipe",
-			"default_skill": "SKILL_LEVEL_APPRENTICE",
 			"extra_types": [
 				"/obj/item/reagent_containers/glass/mortar"
 			]

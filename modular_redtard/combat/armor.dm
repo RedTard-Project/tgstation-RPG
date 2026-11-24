@@ -65,6 +65,12 @@ GLOBAL_LIST_EMPTY(rogue_armor_cache)
 	return WOUND_BLUNT
 
 /proc/rogue_damage_armor_type(damagetype, sharpness, atom/attacking_item)
+	// A spell bolt names the armor it meets (magic/projectile.dm rogue_armor_type); a burning one meets fire armor.
+	if(istype(attacking_item, /obj/projectile/magic/rogue))
+		var/obj/projectile/magic/rogue/bolt = attacking_item
+		if(damagetype == BRUTE || (damagetype == BURN && bolt.rogue_armor_type == ROGUE_ARMOR_FIRE))
+			return bolt.rogue_armor_type
+		return null
 	if(damagetype != BRUTE)
 		return null
 	if(istype(attacking_item, /obj/projectile))

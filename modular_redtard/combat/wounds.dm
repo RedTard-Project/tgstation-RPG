@@ -585,6 +585,9 @@ GLOBAL_VAR_INIT(rogue_wound_numbers_revision, -1)
 	else if(istype(damage_source, /obj/projectile/rogue_ammo))
 		var/obj/projectile/rogue_ammo/shot = damage_source
 		bclass = shot.rogue_bclass
+	else if(istype(damage_source, /obj/projectile/magic/rogue))
+		var/obj/projectile/magic/rogue/bolt = damage_source
+		bclass = bolt.rogue_bclass
 	if(bclass && (wounding_type == WOUND_BLUNT || rogue_bclass_to_wound(bclass) == wounding_type))
 		return bclass
 	if(!isitem(damage_source) && !isprojectile(damage_source))

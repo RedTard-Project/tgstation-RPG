@@ -219,6 +219,7 @@
 		rogue_handle_shock(seconds_per_tick, numbers)
 		rogue_handle_shock_stage(seconds_per_tick, numbers)
 	rogue_update_pulse(seconds_per_tick, numbers)
+	rogue_organ_regen(seconds_per_tick)
 
 /// One Life tick of the blood: it comes back, too little of it reaching the body weakens and chokes it, too much tears an
 /// artery; then the parts bleed, as fast as the pulse pumps.

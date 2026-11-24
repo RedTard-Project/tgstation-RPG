@@ -41,3 +41,27 @@
 	if(usr != owner || !ishuman(owner) || !owner.rogue_mana)
 		return
 	to_chat(owner, span_info("<b>Mana:</b> [round(owner.rogue_mana.amount)] / [round(owner.rogue_mana.softcap())]"))
+
+/// Vibelin update_button_status(): a spell cast from a book's charges shows the charges left in the corner of its button, red
+/// at none (and the button goes red when it cannot be cast for that).
+/datum/action/cooldown/spell/rogue/update_button_status(atom/movable/screen/movable/action_button/current_button, force = FALSE)
+	. = ..()
+	if(!current_button)
+		return
+	if(charge_badge)
+		current_button.cut_overlay(charge_badge)
+	if(!uses_book_charges)
+		return
+	var/left = book_charges()
+	if(left < 0)
+		return
+	if(!charge_badge)
+		charge_badge = image(icon = 'icons/hud/screen_gen.dmi', icon_state = "")
+		charge_badge.pixel_x = 20
+		charge_badge.pixel_y = 20
+		charge_badge.maptext_width = 16
+		charge_badge.maptext_height = 16
+	charge_badge.maptext = MAPTEXT("<font color='[left <= 0 ? "#ff4444" : "#ffffff"]'>[left]</font>")
+	current_button.add_overlay(charge_badge)
+	if(left <= 0)
+		current_button.color = "#ff4444"

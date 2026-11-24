@@ -82,6 +82,41 @@
 	var/spell_failed = FALSE
 	/// A weapon was in hand at the cast.
 	var/weapon_penalty_active = FALSE
+	/// Vibelin spell_magnitude_modifier: how strong this cast is (1, more or less by the form and technique modifiers,
+	/// modifiers.dm), set once a cast goes ahead. A spell scales its damage, radius or duration by it.
+	var/magnitude = 1
+	/// The cast numbers below are spell_<type>_<name> of magic.txt, read by tune() (read_cast_numbers()); a spell without the
+	/// number has the mechanic off, as the two sample spells do.
+	/// Vibelin charge_drain: the price paid every ROGUE_SPELL_CHARGE_DRAIN_TICK while the spell charges.
+	var/charge_drain = 0
+	/// Azure Peak's hold of a charged pointed spell: held ready for hold_grace for free, then hold_drain every
+	/// ROGUE_SPELL_HOLD_DRAIN_TICK, rising as the spell grows unstable (shaking, "Straining", "Unraveling"), until hold_max
+	/// tears it loose at magic_hold_tear_cost times the price. hold_max of 0 holds it for as long as the charge lasts.
+	var/hold_drain = 0
+	var/hold_grace = 0
+	var/hold_max = 0
+	/// Azure Peak cancel_penalty_mult: a cast the caster backs out of once past the commitment (a share of the charge) costs a
+	/// share of the price and of the cooldown, times this; none when 0.
+	var/cancel_penalty = 0
+	/// Azure Peak recovery_time: the caster is left exposed and slow to act this long after the spell went off; none when 0.
+	var/recovery_time = 0
+	/// Azure Peak: medium and heavy armor, and armor one is not trained in, lengthen the cooldown (inverse of ignore_armor_penalty).
+	var/armor_penalized = FALSE
+	/// Vibelin uses_spellbook_charges: the spell is cast from a book's charges (/datum/rogue_spell_mastery has_charges() and
+	/// consume_charge(), magic/books.dm), and charge_source is the book or item that granted it.
+	var/uses_book_charges = FALSE
+	var/atom/movable/charge_source
+	/// Hold state: when the charge filled (0 while it fills), how unstable the hold is (0 to 1), the warning given, the next
+	/// shake, the hold loop's timer.
+	var/charged_at = 0
+	var/hold_instability = 0
+	var/hold_warned = ROGUE_SPELL_HOLD_CALM
+	var/next_hold_shake = 0
+	var/hold_timer
+	/// The revision of the mechanics numbers the cast numbers were read at.
+	var/cast_numbers_revision = -1
+	/// The number of book charges on the button (hud.dm).
+	var/image/charge_badge
 
 /datum/action/cooldown/spell/rogue/New(Target)
 	. = ..()
@@ -92,6 +127,8 @@
 	// A reach of its own (Vibelin cast_range = 12) instead of the kind's (cast_range_key).
 	var/range = tune("range")
 	cast_range = range > 0 ? range : rogue_value(cast_range_key)
+	read_tunable_vars()
+	read_cast_numbers()
 	if(!spell_color && required_form)
 		spell_color = GLOB.rogue_spell_form_colors[required_form]
 	if(!active_msg)
@@ -105,6 +142,9 @@
 /datum/action/cooldown/spell/rogue/Destroy()
 	if(currently_charging)
 		cancel_casting()
+	stop_hold_loop()
+	charge_source = null
+	charge_badge = null
 	return ..()
 
 /// The key of the type in magic.txt: spell_ and the path after /datum/action/cooldown/spell/rogue/, slashes as underscores.
@@ -114,6 +154,30 @@
 /// A number of the spell (magic.txt spell_<type>_<name>); a name the file lacks is none (0).
 /datum/action/cooldown/spell/rogue/proc/tune(var_name)
 	return rogue_value_or("[value_key()]_[var_name]", 0)
+
+/// The tunables the base reads itself (New(), ready_projectile()); the rest that name a var of the spell set it.
+GLOBAL_LIST_INIT(rogue_spell_base_tunables, list("cost", "cooldown", "charge", "slowdown", "range", "damage", "tile_time"))
+
+/// The numbers of a primitive or a spell reach its vars (the basket's generator lists aoe_radius, projectile_amount,
+/// duration... in tunables only): a tunable that is a var of the spell and that the base does not read is set from tune().
+/datum/action/cooldown/spell/rogue/proc/read_tunable_vars()
+	for(var/var_name in tunables)
+		if((var_name in GLOB.rogue_spell_base_tunables) || !(var_name in vars))
+			continue
+		vars[var_name] = tune(var_name)
+
+/// The cast numbers (charge_drain, the hold, the cancel penalty, recovery), read again at a charge when the mechanics
+/// numbers moved since, so an admin turning them on reaches spells already granted.
+/datum/action/cooldown/spell/rogue/proc/read_cast_numbers()
+	if(cast_numbers_revision == rogue_mechanics_revision())
+		return
+	cast_numbers_revision = rogue_mechanics_revision()
+	charge_drain = tune("charge_drain")
+	hold_drain = tune("hold_drain")
+	hold_grace = tune("hold_grace")
+	hold_max = tune("hold_max")
+	cancel_penalty = tune("cancel_penalty")
+	recovery_time = tune("recovery_time")
 
 /datum/action/cooldown/spell/rogue/Grant(mob/grant_to)
 	. = ..()
@@ -151,7 +215,32 @@
 		if(feedback)
 			owner.balloon_alert(owner, "too distracted riding to cast!")
 		return FALSE
+	if(uses_book_charges)
+		var/datum/rogue_spell_mastery/charges = charge_mastery()
+		if(!charges?.has_charges(type))
+			if(feedback)
+				owner.balloon_alert(owner, "no charges left!")
+			return FALSE
 	return check_cost(feedback = feedback)
+
+/// Whose charges a spell cast from a book spends (Vibelin mastery_source): the tome that gave it (charge_source), else the
+/// caster's own mastery, which answers for the tome in their hands (magic/mastery.dm).
+/datum/action/cooldown/spell/rogue/proc/charge_mastery()
+	RETURN_TYPE(/datum/rogue_spell_mastery)
+	if(!uses_book_charges)
+		return null
+	var/datum/rogue_spell_mastery/tome = charge_source?.rogue_charge_mastery()
+	if(tome)
+		return tome
+	if(ishuman(owner))
+		var/mob/living/carbon/human/caster = owner
+		return caster.rogue_spell_mastery
+	return null
+
+/// Charges left for this spell (Vibelin get_remaining_charges()); -1 for a spell not cast from charges.
+/datum/action/cooldown/spell/rogue/proc/book_charges()
+	var/datum/rogue_spell_mastery/charges = charge_mastery()
+	return charges ? charges.charges_left(type) : -1
 
 /datum/action/cooldown/spell/rogue/is_valid_target(atom/cast_on)
 	if(click_to_activate && !self_cast_possible && cast_on == owner)
@@ -171,6 +260,8 @@
 	factor -= (caster.rogue_stat(associated_stat) - ROGUE_ATTRIBUTE_MIDDLING) * rogue_value("magic_cost_per_stat_point")
 	if(weapon_cast_penalized && check_weapon_in_hand())
 		factor *= rogue_value("magic_weapon_penalty")
+	// The form and technique modifiers (Vibelin get_adjusted_cost() * SPELLMOD_COST); 1 with none.
+	factor *= get_modifiers()[ROGUE_SPELLMOD_COST]
 	return max(base * factor, 0)
 
 /// Vibelin get_adjusted_charge_time(), with Ratwood's Leyline's Clarity (TRAIT_LEYLINE_HASTE).
@@ -182,6 +273,10 @@
 	factor -= (caster.rogue_stat(associated_stat) - ROGUE_ATTRIBUTE_MIDDLING) * rogue_value("magic_charge_per_stat_point")
 	if(HAS_TRAIT(caster, TRAIT_LEYLINE_HASTE))
 		factor *= rogue_value("magic_leyline_haste")
+	// The form and technique modifiers (Vibelin get_adjusted_charge_time() / SPELLMOD_CASTSPEED); 1 with none.
+	var/cast_speed = get_modifiers()[ROGUE_SPELLMOD_CASTSPEED]
+	if(cast_speed > 0)
+		factor /= cast_speed
 	return max(charge_time * factor, rogue_value("magic_charge_min"))
 
 /// Vibelin check_cost().
@@ -287,7 +382,10 @@
 		end_charging()
 		if(!success)
 			owner.balloon_alert(owner, "channeling was interrupted!")
+			cancel_spell_visuals()
 			return . | SPELL_CANCEL_CAST
+	// Vibelin Activate(): the magnitude of this cast, from the modifiers at the moment it goes off.
+	magnitude = get_modifiers()[ROGUE_SPELLMOD_MAGNITUDE]
 
 /datum/action/cooldown/spell/rogue/proc/channel_checks()
 	return currently_charging && can_cast_spell(FALSE)
@@ -295,19 +393,53 @@
 /datum/action/cooldown/spell/rogue/after_cast(atom/cast_on)
 	if(spell_failed)
 		reset_spell_cooldown()
+		cancel_spell_visuals()
 	else
 		var/spent = invoke_cost()
 		if(spent)
 			handle_exp(spent)
 			give_residual_focus(spent)
-		if(weapon_penalty_active && cooldown_time)
-			StartCooldown(cooldown_time * rogue_value("magic_weapon_penalty"))
+		// A weapon in hand (Ratwood) and worn armor (Azure Peak get_adjusted_cooldown()) lengthen the cooldown.
+		var/cooldown_factor = weapon_penalty_active ? rogue_value("magic_weapon_penalty") : 1
+		if(armor_penalized)
+			cooldown_factor += armor_cooldown_penalty()
+		if(cooldown_factor != 1 && cooldown_time)
+			StartCooldown(cooldown_time * cooldown_factor)
 		var/obj/item/rogueweapon/implement = get_held_implement()
 		if(istype(implement) && spell_color)
 			rogue_attune_implement(implement, spell_color)
+		if(uses_book_charges)
+			charge_mastery()?.consume_charge(type)
+			build_all_button_icons(UPDATE_BUTTON_STATUS)
+		finish_spell_visuals()
+		start_recovery()
 	weapon_penalty_active = FALSE
 	charged = FALSE
 	return ..()
+
+/// Azure Peak get_armor_cd_multiplier(): the share of the cooldown worn armor adds - armor one is not trained in (combat/
+/// armor.dm rogue_armor_trained()) the most, else heavy, else medium; light armor and none add nothing.
+/datum/action/cooldown/spell/rogue/proc/armor_cooldown_penalty()
+	if(!ishuman(owner))
+		return 0
+	var/mob/living/carbon/human/caster = owner
+	if(!caster.rogue_armor_trained())
+		return rogue_value("magic_armor_untrained_penalty")
+	switch(caster.rogue_highest_armor_class())
+		if(ARMOR_CLASS_HEAVY)
+			return rogue_value("magic_armor_heavy_penalty")
+		if(ARMOR_CLASS_MEDIUM)
+			return rogue_value("magic_armor_medium_penalty")
+	return 0
+
+/// Azure Peak start_recovery(): for recovery_time after the spell went off the caster is exposed (combat/status.dm) and
+/// cannot act.
+/datum/action/cooldown/spell/rogue/proc/start_recovery()
+	if(recovery_time <= 0 || !isliving(owner))
+		return
+	var/mob/living/caster = owner
+	caster.apply_status_effect(/datum/status_effect/rogue/exposed, recovery_time)
+	caster.rogue_delay_action(recovery_time)
 
 /// Ratwood apply_residual_focus(): a staff or tome in hand gives back a share of the price over a while.
 /datum/action/cooldown/spell/rogue/proc/give_residual_focus(spent)
@@ -338,8 +470,9 @@
 		return
 	if(refund_cooldown)
 		to_chat(on_who, span_notice("[deactive_msg]"))
+	// The caster disarming it (right click, the button) backs out: Azure Peak's cancel penalty, if the spell has one.
 	if(currently_charging)
-		cancel_casting()
+		cancel_casting(voluntary = refund_cooldown)
 	if(on_who.client)
 		UnregisterSignal(on_who.client, list(COMSIG_CLIENT_MOUSEDOWN, COMSIG_CLIENT_MOUSEUP))
 
@@ -363,6 +496,11 @@
 /datum/action/cooldown/spell/rogue/proc/start_casting(client/source, atom/object, turf/location, control, params)
 	SIGNAL_HANDLER
 	var/list/modifiers = params2list(params)
+	// A right click while it charges or is held backs out of it (Azure Peak), with the cancel penalty if the spell has one;
+	// the click that follows reaches InterceptClickOn() and disarms it.
+	if(LAZYACCESS(modifiers, RIGHT_CLICK) && currently_charging && source.mob == owner)
+		cancel_casting(voluntary = TRUE)
+		return
 	if(LAZYACCESS(modifiers, SHIFT_CLICK) || LAZYACCESS(modifiers, CTRL_CLICK) || LAZYACCESS(modifiers, ALT_CLICK) || LAZYACCESS(modifiers, RIGHT_CLICK))
 		return
 	if(!owner || source.mob != owner || !isturf(owner.loc) || currently_charging)
@@ -371,15 +509,20 @@
 		return
 	if(!can_cast_spell(TRUE))
 		return
+	read_cast_numbers()
 	RegisterSignal(source, COMSIG_CLIENT_MOUSEUP, PROC_REF(try_casting), override = TRUE)
 	RegisterSignals(owner, list(COMSIG_LIVING_DEATH, COMSIG_MOB_LOGOUT), PROC_REF(signal_cancel), override = TRUE)
 	if(rogue_requirements & ROGUE_SPELL_REQUIRES_NO_MOVE)
 		RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(signal_cancel), override = TRUE)
-	// The click of this press is not to reach Click() (TG fullauto).
-	source.click_intercept_time = world.time + rogue_value("magic_charge_timeout")
-	auto_cancel_timer = addtimer(CALLBACK(src, PROC_REF(cancel_casting)), rogue_value("magic_charge_timeout"), TIMER_STOPPABLE)
 	charge_started_at = world.time
 	charge_target_time = get_adjusted_charge_time()
+	// A spell that tears loose (hold_max) is held for as long as that, past the usual timeout.
+	var/timeout = rogue_value("magic_charge_timeout")
+	if(hold_max > 0)
+		timeout = max(timeout, charge_target_time + hold_max + ROGUE_SPELL_HOLD_TICK * 2)
+	// The click of this press is not to reach Click() (TG fullauto).
+	source.click_intercept_time = world.time + timeout
+	auto_cancel_timer = addtimer(CALLBACK(src, PROC_REF(cancel_casting)), timeout, TIMER_STOPPABLE)
 	on_start_charge()
 
 /// Vibelin try_casting(): the mouse came up; cast at what is under it if the charge is full, else stay armed.
@@ -393,10 +536,17 @@
 	if(!currently_charging)
 		return
 	var/full = world.time >= charge_started_at + charge_target_time
-	end_charging()
 	if(!full)
-		owner.balloon_alert(owner, "released too early!")
+		// Let go too early: past the commitment that is backing out (Azure Peak try_casting()), with the penalty if any;
+		// the spell stays armed either way.
+		var/penalise = cancel_penalty > 0 && past_cancel_commitment()
+		end_charging()
+		if(penalise)
+			INVOKE_ASYNC(src, PROC_REF(apply_cancel_penalty), FALSE, 0)
+		else
+			owner.balloon_alert(owner, "released too early!")
 		return
+	end_charging()
 	if(!can_cast_spell(TRUE))
 		return
 	var/atom/target = object
@@ -411,15 +561,25 @@
 	SIGNAL_HANDLER
 	cancel_casting()
 
-/// Vibelin on_start_charge(): the caster slows, glows in the spell's colour, and the cursor fills while the charge runs.
+/// Vibelin on_start_charge(): the caster slows, glows in the spell's colour, a rune turns under them, and the cursor fills
+/// while the charge runs. A spell that drains while charging or is held (Azure Peak) runs the hold loop.
 /datum/action/cooldown/spell/rogue/proc/on_start_charge()
+	read_cast_numbers()
 	currently_charging = TRUE
+	charged_at = 0
+	hold_instability = 0
+	hold_warned = ROGUE_SPELL_HOLD_CALM
+	next_hold_shake = 0
+	if(isliving(owner))
+		var/mob/living/caster = owner
+		caster.rogue_charging_spell = src
+		caster.rogue_start_spell_visuals(spell_color || ROGUE_SPELL_DEFAULT_COLOR)
 	build_all_button_icons(UPDATE_BUTTON_STATUS|UPDATE_BUTTON_BACKGROUND)
 	if(charge_slowdown)
 		owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/rogue_spell_charge, multiplicative_slowdown = charge_slowdown)
 	// On a channel of its own, so end_charging() can cut it off (Vibelin CHANNEL_CHARGED_SPELL; TG has the same channel).
 	playsound(owner, ROGUE_SPELL_CHARGE_SOUND, 50, FALSE, channel = CHANNEL_CHARGED_SPELL)
-	owner.add_filter(ROGUE_SPELL_CHARGE_FILTER, 2, list("type" = "outline", "color" = spell_color || "#9932CC", "alpha" = 120, "size" = 1))
+	owner.add_filter(ROGUE_SPELL_CHARGE_FILTER, 2, list("type" = "outline", "color" = spell_color || ROGUE_SPELL_DEFAULT_COLOR, "alpha" = 120, "size" = 1))
 	if(owner.client)
 		owner.client.mouse_override_icon = ROGUE_SPELL_CHARGING_CURSOR
 		owner.update_mouse_pointer()
@@ -427,6 +587,8 @@
 			addtimer(CALLBACK(src, PROC_REF(show_charged), charge_started_at), charge_target_time)
 	if(rogue_requirements & ROGUE_SPELL_REQUIRES_NO_MOVE)
 		owner.balloon_alert(owner, "be still while channelling...")
+	if(charge_drain > 0 || hold_enabled())
+		hold_timer = addtimer(CALLBACK(src, PROC_REF(hold_tick)), ROGUE_SPELL_HOLD_TICK, TIMER_STOPPABLE|TIMER_LOOP)
 
 /// The charge is full: the cursor says so.
 /datum/action/cooldown/spell/rogue/proc/show_charged(started_at)
@@ -440,8 +602,18 @@
 	currently_charging = FALSE
 	charge_started_at = 0
 	charge_target_time = 0
+	charged_at = 0
+	hold_instability = 0
+	hold_warned = ROGUE_SPELL_HOLD_CALM
+	stop_hold_loop()
 	if(!owner)
 		return
+	if(isliving(owner))
+		var/mob/living/caster = owner
+		if(caster.rogue_charging_spell == src)
+			caster.rogue_charging_spell = null
+		// The rune goes with the charge; a cast that goes off leaves its wave (finish_spell_visuals()).
+		caster.rogue_cancel_spell_visuals()
 	UnregisterSignal(owner, list(COMSIG_LIVING_DEATH, COMSIG_MOB_LOGOUT, COMSIG_MOVABLE_MOVED))
 	// Vibelin end_charging(): the charge sound stops for the caster and, by a silent sound on its channel, for those near.
 	owner.stop_sound_channel(CHANNEL_CHARGED_SPELL)
@@ -453,8 +625,15 @@
 		owner.update_mouse_pointer()
 	build_all_button_icons(UPDATE_BUTTON_STATUS|UPDATE_BUTTON_BACKGROUND)
 
-/// Vibelin cancel_casting().
-/datum/action/cooldown/spell/rogue/proc/cancel_casting()
+/// Vibelin cancel_casting(), with Azure Peak's penalty: voluntary is TRUE only when the caster backs out (right click, the
+/// button, letting go early, failing to pay the hold); past the commitment that costs cancel_penalty times a share of the
+/// price and of the cooldown. cost_mult_override is the share of a hold torn loose (tear_loose()), paid even without
+/// cancel_penalty. Returns TRUE when a penalty was paid.
+/datum/action/cooldown/spell/rogue/proc/cancel_casting(voluntary = FALSE, cost_mult_override = 0)
+	if(QDELETED(src))
+		return FALSE
+	var/penalise = cost_mult_override > 0 || (voluntary && cancel_penalty > 0 && currently_charging && past_cancel_commitment())
+	var/was_charged = charged || charged_at || (currently_charging && world.time >= charge_started_at + charge_target_time)
 	if(auto_cancel_timer)
 		deltimer(auto_cancel_timer)
 		auto_cancel_timer = null
@@ -463,6 +642,130 @@
 		UnregisterSignal(owner.client, COMSIG_CLIENT_MOUSEUP)
 	charged = FALSE
 	end_charging()
+	if(!penalise)
+		return FALSE
+	// Async: a stamina price that knocks the caster down sleeps.
+	INVOKE_ASYNC(src, PROC_REF(apply_cancel_penalty), was_charged, cost_mult_override)
+	return TRUE
+
+/// Azure Peak past_cancel_commitment(): the charge is full, or past a share of it (and a least time).
+/datum/action/cooldown/spell/rogue/proc/past_cancel_commitment()
+	if(charged || charged_at)
+		return TRUE
+	if(charge_target_time <= 0 || !charge_started_at)
+		return FALSE
+	return world.time - charge_started_at >= max(charge_target_time * rogue_value("magic_cancel_grace_share"), rogue_value("magic_cancel_grace_min"))
+
+/// Azure Peak apply_cancel_penalty(): a share of the cooldown (at most magic_cancel_cooldown_max) and of the price.
+/datum/action/cooldown/spell/rogue/proc/apply_cancel_penalty(was_charged, cost_mult_override = 0)
+	if(QDELETED(src) || !owner)
+		return
+	var/factor = cancel_penalty > 0 ? cancel_penalty : 1
+	var/penalty_cooldown = min(round(cooldown_time * rogue_value("magic_cancel_cooldown_share") * factor), rogue_value("magic_cancel_cooldown_max"))
+	if(penalty_cooldown > 0)
+		StartCooldown(penalty_cooldown)
+	if(!cost_mult_override)
+		owner.balloon_alert(owner, was_charged ? "canceled! full cost applied!" : "canceled! partial cost applied!")
+	var/share = cost_mult_override
+	if(!share)
+		share = was_charged ? rogue_value("magic_cancel_cost_charged") : rogue_value("magic_cancel_cost_partial")
+	invoke_cost(get_adjusted_cost() * share * factor)
+
+/// A spell is held past its charge (Azure Peak has_hold_cap(), hold_drain): pointed spells only, the channel casts at once.
+/datum/action/cooldown/spell/rogue/proc/hold_enabled()
+	return click_to_activate && (hold_drain > 0 || hold_max > 0)
+
+/datum/action/cooldown/spell/rogue/proc/stop_hold_loop()
+	if(hold_timer)
+		deltimer(hold_timer)
+		hold_timer = null
+
+/// Azure Peak process() and Vibelin process() of a charging spell, every ROGUE_SPELL_HOLD_TICK: charge_drain while it fills,
+/// then the hold - free for hold_grace, then hold_drain rising with the instability, torn loose at hold_max. Reads only the
+/// spell's vars and hold_numbers() (one read a revision).
+/datum/action/cooldown/spell/rogue/proc/hold_tick()
+	if(QDELETED(src) || !isliving(owner) || !currently_charging)
+		stop_hold_loop()
+		return
+	var/mob/living/caster = owner
+	if(caster.stat != STABLE || HAS_TRAIT(caster, TRAIT_SPELLCOCKBLOCK))
+		cancel_casting()
+		return
+	if(!charged_at)
+		if(charge_drain > 0 && !pay_drain(charge_drain * ROGUE_SPELL_HOLD_TICK / ROGUE_SPELL_CHARGE_DRAIN_TICK))
+			caster.balloon_alert(caster, "i cannot uphold the channeling!")
+			cancel_casting()
+			return
+		if(click_to_activate && world.time >= charge_started_at + charge_target_time)
+			charged_at = world.time
+			if(!hold_enabled())
+				stop_hold_loop()
+		return
+	var/held_for = world.time - charged_at
+	if(held_for < hold_grace)
+		return
+	if(hold_max > hold_grace && held_for >= hold_max)
+		tear_loose()
+		return
+	var/list/numbers = hold_numbers()
+	handle_hold_instability(held_for, numbers["unravel"])
+	if(hold_drain > 0 && !pay_drain(hold_drain * ROGUE_SPELL_HOLD_TICK / ROGUE_SPELL_HOLD_DRAIN_TICK * (1 + hold_instability * numbers["ramp"])))
+		caster.balloon_alert(caster, "i cannot hold the spell any longer!")
+		cancel_casting(voluntary = TRUE)
+
+/// The hold's numbers, read once a revision of the mechanics numbers (the hold loop is a hot path).
+/datum/action/cooldown/spell/rogue/proc/hold_numbers()
+	var/static/list/numbers
+	var/static/numbers_revision = -1
+	if(numbers_revision != rogue_mechanics_revision())
+		numbers = list("ramp" = rogue_value("magic_hold_drain_ramp"), "unravel" = rogue_value("magic_hold_unravel_share"))
+		numbers_revision = rogue_mechanics_revision()
+	return numbers
+
+/// Pays a drain of the charge or hold; FALSE when the caster has not got it.
+/datum/action/cooldown/spell/rogue/proc/pay_drain(amount)
+	if(amount <= 0)
+		return TRUE
+	if(!check_cost(amount, feedback = FALSE))
+		return FALSE
+	invoke_cost(amount)
+	return TRUE
+
+/// Azure Peak handle_hold_instability(): past the grace the spell grows unstable towards hold_max; the caster shakes harder
+/// and those near see "Straining", then "Unraveling".
+/datum/action/cooldown/spell/rogue/proc/handle_hold_instability(held_for, unravel_share)
+	if(hold_max <= hold_grace)
+		return
+	hold_instability = clamp((held_for - hold_grace) / (hold_max - hold_grace), 0, 1)
+	var/mob/living/caster = owner
+	if(world.time >= next_hold_shake)
+		caster.do_jitter_animation(round(hold_instability * 300))
+		shake_camera(caster, 2, 0.05 + hold_instability * 0.15)
+		next_hold_shake = world.time + round(9 - hold_instability * 6, 1)
+	if(hold_warned == ROGUE_SPELL_HOLD_CALM)
+		hold_warned = ROGUE_SPELL_HOLD_STRAINING
+		caster.balloon_alert_to_viewers("<font color='#d4d36c'>straining</font>")
+	else if(hold_warned == ROGUE_SPELL_HOLD_STRAINING && hold_instability >= unravel_share)
+		hold_warned = ROGUE_SPELL_HOLD_UNRAVELING
+		caster.balloon_alert_to_viewers("<font color='#a8665a'>unraveling</font>")
+
+/// Azure Peak tear_loose(): held to hold_max, the spell unravels and costs magic_hold_tear_cost times its price.
+/datum/action/cooldown/spell/rogue/proc/tear_loose()
+	var/mob/living/caster = owner
+	if(istype(caster))
+		caster.do_jitter_animation(600)
+		shake_camera(caster, 4, 0.4)
+		caster.balloon_alert_to_viewers("<font color='#bb2b2b'>the spell unravels!</font>", "<font color='#bb2b2b'>the spell unravels - the backlash guts me!</font>")
+		playsound(caster, 'modular_redtard/magic/sound/magic_nulled.ogg', 60, TRUE)
+	cancel_casting(voluntary = TRUE, cost_mult_override = rogue_value("magic_hold_tear_cost"))
+
+/// The spell is armed, charging or held: the press is the spell's, not the weapon's (combat/charge.dm on_mouse_down()).
+/mob/living/proc/rogue_spell_holds_press()
+	return istype(click_intercept, /datum/action/cooldown/spell) || rogue_charging_spell?.click_to_activate
+
+/mob/living
+	/// The rogue spell charging or held right now (on_start_charge() to end_charging()).
+	var/datum/action/cooldown/spell/rogue/rogue_charging_spell
 
 /datum/action/cooldown/spell/rogue/is_action_active(atom/movable/screen/movable/action_button/current_button)
 	return currently_charging || ..()

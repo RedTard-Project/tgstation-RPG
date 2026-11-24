@@ -1,0 +1,94 @@
+{
+ "vibelin": {
+  "root": "../Vibelin",
+  "dme": "vanderlin.dme"
+ },
+ "azure": {
+  "root": "../Azure-Peak-Fork",
+  "dme": "roguetown.dme"
+ },
+ "ratwood_recipes": [
+  [
+   ".cache/ratwood",
+   "code/modules/roguetown/roguecrafting/alchemy/alch_cauldron_recipe_base.dm",
+   "code/modules/roguetown/roguecrafting/alchemy/alch_cauldron_recipes.dm"
+  ],
+  [
+   "../Ratwood-2.0-fork",
+   "code/modules/roguetown/roguecrafting/alchemy/alch_cauldron_recipe_base.dm",
+   "code/modules/roguetown/roguecrafting/alchemy/alch_cauldron_recipes.dm"
+  ]
+ ],
+ "final_dir": "modular_redtard/alchemy/vibelin",
+ "module_scan": "modular_redtard",
+ "tg_dme": "tgstation.dme",
+ "reagent_files": [
+  "code/modules/crafting/alchemy/reagents.dm",
+  "code/modules/reagents/chemistry/reagents/medicine_reagents.dm",
+  "code/modules/reagents/chemistry/reagents/toxin_reagents.dm",
+  "code/modules/reagents/chemistry/reagents/buff_reagents.dm",
+  "code/modules/reagents/chemistry/reagents/special_reagents.dm",
+  "code/modules/reagents/chemistry/reagents/other_reagents.dm"
+ ],
+ "reagent_files_later": {
+  "code/modules/reagents/chemistry/reagents/alcohol_reagents.dm": "alcohol: block VA2 (drinks and brewing)",
+  "code/modules/crafting/alchemy/herbal_recipes.dm": "herbal reagents: block VA2 (herbal pot)",
+  "code/modules/reagents/chemistry/reagents/drug_reagents.dm": "drugs: the module keeps Ratwood's (alchemy/drugs.dm, deeper)",
+  "code/modules/reagents/chemistry/reagents/drink_reagents.dm": "drinks: block VA2",
+  "code/modules/reagents/chemistry/reagents/food_reagents.dm": "food reagents: not alchemy",
+  "code/modules/cooking/NeuFood.dm": "food reagents: not alchemy",
+  "code/modules/cooking/Teas_and_Brews.dm": "teas: block VA2 (herbal pot)"
+ },
+ "module_overwrite_files": [
+  "modular_redtard/alchemy/potions.dm",
+  "modular_redtard/alchemy/poisons.dm",
+  "modular_redtard/alchemy/buffs.dm",
+  "modular_redtard/alchemy/medicines.dm",
+  "modular_redtard/alchemy/toxins.dm"
+ ],
+ "reagent_pairs": {
+  "/datum/reagent/poison/berry": "/datum/reagent/berrypoison",
+  "/datum/reagent/poison/stamina": "/datum/reagent/stampoison",
+  "/datum/reagent/poison/stamina_strong": "/datum/reagent/strongstampoison",
+  "/datum/reagent/poison/doom": "/datum/reagent/strongpoison",
+  "/datum/reagent/poison/organ": "/datum/reagent/organpoison",
+  "/datum/reagent/poison/killersice": "/datum/reagent/toxin/killersice",
+  "/datum/reagent/blood/fuel": "/datum/reagent/fuel/oil",
+  "/datum/reagent/water/salty": "/datum/reagent/water/salt",
+  "/datum/reagent/consumable/sodiumchloride": "/datum/reagent/consumable/salt"
+ },
+ "reagent_extra": [
+  "/datum/reagent/consumable/nutriment/bone_marrow"
+ ],
+ "reagent_skip": {
+  "/datum/reagent/water/blessed": "the module's holy water (Azure's, faith/) stays; Vibelin's is not taken"
+ },
+ "item_pairs": {
+  "/obj/item/fertilizer/bone_meal": "/obj/item/alch/bonemeal",
+  "/obj/item/reagent_containers/glass/bottle/vial": "/obj/item/reagent_containers/glass/bottle/alchemical",
+  "/obj/item/mana_battery/mana_crystal/standard": "/obj/item/magic/manacrystal",
+  "/obj/item/mana_battery/mana_crystal/small": "/obj/item/rogue_mana_crystal"
+ },
+ "item_rewrites": {
+  "/obj/item/alch/herb": "/obj/item/alch",
+  "/obj/item/neuFarm/seed": [
+   "/obj/item/herbseed",
+   "/obj/item/seeds"
+  ]
+ },
+ "ported_lists": [
+  ".cache/modular_redtard/agents/h2/h2g_lists/food_ported.tsv",
+  ".cache/modular_redtard/agents/k3/k3g_lists/k3g_ported.tsv"
+ ],
+ "k1v_duplicates": ".cache/modular_redtard/agents/k1/k1v_lists/duplicates.tsv",
+ "bottle_files": [
+  "code/modules/reagents/reagent_containers/bottles/alchemy.dm"
+ ],
+ "distill_sounds": {
+  "bubbles": "sound/effects/bubbles/bubbles.ogg"
+ },
+ "always_copy": [
+  "icons/roguetown/misc/alchemy.dmi"
+ ],
+ "reaction_skip_tg_only": true
+}

@@ -2,7 +2,8 @@
 // Alchemy, or one who knows brews and spirits (TRAIT_CICERONE), standing by a see-through vessel reads what it holds, reagent
 // by reagent; anyone aiming at the nose by an open vessel takes a whiff and smells it, and an expert alchemist
 // (TRAIT_ALCHEMY_EXPERT) tells by the smell what is in it. Everyone else reads TG's "various reagents". The vessels are the
-// reagent containers and the kegs (survival/brewing.dm).
+// reagent containers and the kegs (survival/brewing.dm). The smell is Vibelin's (reagents/chemistry/holder.dm
+// generate_scent_message()): a reagent's scent_description, else its taste, the nose being no tongue.
 
 /// Least learned rank of Alchemy that reads a vessel (Ratwood SKILL_LEVEL_APPRENTICE).
 #define ROGUE_REAGENT_SIGHT_RANK rogue_value("reagent_sight_rank")
@@ -56,7 +57,7 @@
 /datum/element/rogue_reagent_sight/proc/sniff(atom/vessel, mob/living/viewer, list/examine_list)
 	var/list/reagents_held = vessel.reagents.reagent_list
 	viewer.visible_message(span_info("[viewer] takes a whiff of [vessel]..."), span_info("I take a whiff of [vessel]..."))
-	examine_list += span_notice("I smell [generate_reagents_taste_message(reagents_held, viewer, ROGUE_SNIFF_THRESHOLD)].")
+	examine_list += span_notice("I smell [rogue_scent_message(reagents_held, ROGUE_SNIFF_THRESHOLD)].")
 	if(!HAS_TRAIT(viewer, TRAIT_ALCHEMY_EXPERT))
 		return
 	var/list/names = list()
@@ -64,6 +65,33 @@
 		if(reagent.volume > 0)
 			names += LOWER_TEXT(reagent.name)
 	examine_list += span_notice("My expert nose lets me distinguish this liquid as [jointext(names, ", ")].")
+
+/// Vibelin's generate_scent_message(): the smells of the reagents, each by its share (taste_mult x units; a food's nutriment by
+/// the tastes it carries), those under minimum_percent of the whole left out.
+/proc/rogue_scent_message(list/reagent_list, minimum_percent)
+	var/list/scents = list()
+	for(var/datum/reagent/reagent as anything in reagent_list)
+		if(!reagent.taste_mult)
+			continue
+		if(istype(reagent, /datum/reagent/consumable/nutriment))
+			var/list/taste_data = reagent.data
+			if(!islist(taste_data))
+				continue
+			for(var/taste in taste_data)
+				scents[taste] += taste_data[taste] * reagent.taste_mult * reagent.volume
+			continue
+		var/scent = reagent.scent_description || reagent.taste_description
+		if(scent)
+			scents[scent] += reagent.volume * reagent.taste_mult
+	var/total = 0
+	for(var/scent in scents)
+		total += scents[scent]
+	var/list/out = list()
+	if(total > 0)
+		for(var/scent in scents)
+			if(scents[scent] / total * 100 >= minimum_percent)
+				out += scent
+	return english_list(out, "something")
 
 #undef ROGUE_REAGENT_SIGHT_RANK
 #undef ROGUE_SNIFF_THRESHOLD

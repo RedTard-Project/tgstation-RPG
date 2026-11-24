@@ -351,14 +351,21 @@ GLOBAL_LIST_INIT(rogue_thirst_stages, list(
 /obj/structure/well/fountain/rogue_drink_sips()
 	return rogue_value("drink_fountain_sips")
 
-/// Ratwood's mana fountain gives a little mana potion a mouthful.
+/// Ratwood's mana fountain, as Vibelin's (magic/mana_pools.dm): a mouthful is liquid mana out of the fountain's own pool,
+/// which goes into the drinker's pool; a fountain drunk dry gives nothing until it fills again.
 /obj/structure/well/fountain/mana/rogue_drink_reagent()
-	return /datum/reagent/medicine/manapot
+	var/datum/rogue_mana/pool = rogue_mana_of(src)
+	if(!pool || pool.amount < rogue_mouthful_mana())
+		return null
+	return /datum/reagent/rogue_liquid_mana
 
 /obj/structure/well/fountain/mana/rogue_drink_sips()
 	return rogue_value("drink_mana_sips")
 
+/// Asked once for every mouthful, right before it is swallowed: the mouthful leaves the fountain's pool here.
 /obj/structure/well/fountain/mana/rogue_drink_amount()
+	var/datum/rogue_mana/pool = rogue_mana_of(src)
+	pool?.adjust(-rogue_mouthful_mana())
 	return rogue_value("drink_mana_sip")
 
 /// Ratwood's swamp fountain: one mouthful of bog water.

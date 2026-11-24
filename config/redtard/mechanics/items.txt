@@ -22544,6 +22544,24 @@ force = 10
 throw_force = 10
 break_percent = 10
 
+[natural/bundle/teeth]
+integrity = 10
+force = 10
+throw_force = 10
+break_percent = 10
+
+[natural/bundle/teeth/fang]
+integrity = 10
+force = 10
+throw_force = 10
+break_percent = 10
+
+[natural/bundle/teeth/gold]
+integrity = 10
+force = 10
+throw_force = 10
+break_percent = 10
+
 [natural/bundle/worms]
 integrity = 10
 force = 10
@@ -23712,6 +23730,12 @@ throw_force = 10
 break_percent = 10
 
 [natural/worms/leech/cheele]
+integrity = 10
+force = 10
+throw_force = 10
+break_percent = 10
+
+[natural/worms/leech/parasite]
 integrity = 10
 force = 10
 throw_force = 10

@@ -1,41 +1,11 @@
 # Alchemy (alchemy/): Ratwood's potions, poisons and blessed water. What each reagent does is the data of its type; these numbers are what they share.
 # Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
 
-# Units of a health potion in the blood over which the body sheds the excess: no overhealing (Ratwood).
-potion_overheal_volume = 10
-
-# Units of a health potion shed each Ratwood tick of two seconds while over potion_overheal_volume (Ratwood).
-potion_overheal_shed = 10
-
 # Least units of a potion or an antidote in the blood for its healing or cleansing to work (Ratwood volume).
 potion_min_volume = 10
 
 # Least units of a poison in the blood for it to work (Ratwood volume).
 poison_min_volume = 10
-
-# Units of a stamina poison in the blood over which the body sheds the excess, so the drain ends (Ratwood).
-stamina_poison_cap = 10
-
-# Units of a stamina poison shed each Ratwood tick while over stamina_poison_cap (Ratwood).
-stamina_poison_shed = 10
-
-# What a buff potion adds to its stat while it is in the blood (Ratwood).
-buff_potion_stat = 10
-
-# Deciseconds the stat of a buff potion lingers after the last of it is gone (Ratwood, renewed every tick).
-buff_potion_linger = 10
-
-# Units of every other buff potion in the blood a buff potion purges each Ratwood tick: they do not stack (Ratwood).
-buff_potion_purge = 10
-
-# Units of a buff potion in the blood from which it is an overdose (Ratwood): more than one vial at once.
-buff_potion_overdose = 10
-
-# Toxins an overdose of a buff potion deals each Ratwood tick (Ratwood).
-buff_overdose_toxin = 10
-
-# Deciseconds of jitters an overdose of a buff potion adds each Ratwood tick (Ratwood Jitter).
-buff_overdose_jitter = 10
 
 # Deciseconds a sip of the temperature potion keeps the body's heat in bounds (Ratwood).
 temperature_potion_time = 10
@@ -52,32 +22,8 @@ temperature_potion_step = 10
 # Deciseconds the fire resistance potion keeps fire off after the last of it (Ratwood).
 fire_resist_time = 10
 
-# Ratwood ticks of two seconds a cauldron boils its ingredients before the brew is done (Ratwood).
-cauldron_brew_ticks = 10
-
-# Points an ingredient gives the recipe it leans toward strongly (Ratwood major_pot).
-cauldron_major_points = 10
-
-# Points an ingredient gives the recipe it leans toward moderately (Ratwood med_pot).
-cauldron_med_points = 10
-
-# Points an ingredient gives the recipe it leans toward slightly (Ratwood minor_pot).
-cauldron_minor_points = 10
-
-# Least points a recipe needs from the ingredients to be brewed (Ratwood): the points of a few ingredients that lean toward it.
-cauldron_min_points = 10
-
 # Percent chance a boiling cauldron bubbles aloud each Ratwood tick (Ratwood).
 cauldron_bubble_chance = 10
-
-# Alchemy experience a finished or a ruined brew gives per point of the brewer's intelligence (Ratwood INT).
-cauldron_xp_per_int = 10
-
-# Deciseconds grinding a thing in the mortar takes (Ratwood).
-grind_time = 10
-
-# Alchemy experience grinding gives per point of intelligence (Ratwood INT).
-grind_xp_per_int = 10
 
 # Units of blessed water in the mortar that Dendor's blessing draws from tree sap seeds (Ratwood).
 seed_blessing_water = 10
@@ -91,13 +37,13 @@ grind_bonemeal_chance_low = 10
 # Percent chance natural bone gives more bone meal to a better alchemist (Ratwood).
 grind_bonemeal_chance_high = 10
 
-# Perception and intelligence (their mean) at which one smells what an ingredient leans toward strongly without Alchemy (Ratwood).
+# Keenness of nose (mean of perception and intelligence) at which an item smells of its strongest essence ("intensely") without Alchemy.
 sniff_major_keen = 10
 
-# The same for what it leans toward moderately (Ratwood).
+# Keenness of nose (mean of perception and intelligence) at which an item smells of its essences "strongly" without Alchemy.
 sniff_med_keen = 10
 
-# The same for what it leans toward slightly (Ratwood).
+# Keenness of nose (mean of perception and intelligence) at which an item smells of its essences "slightly" without Alchemy.
 sniff_minor_keen = 10
 
 # --- Block 1, B2: Ratwood's alcohol and drunkenness (alchemy/alcohol.dm; Ratwood alcohol_reagents.dm, carbon/life.dm handle_alcohol()). Drunkenness is TG's drunk value.
@@ -175,3 +121,1239 @@ keg_heat_decay = 10
 
 # Share of a recipe's time a distiller takes to brew what needs no heat (Ratwood).
 keg_distiller_speed = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list va1a)
+
+# Units of the reagents of the class potion (Health, mana, stamina, blood potions, the antidote and the herbal medicines that go as they come) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_potion = 10
+
+# Units of the reagents of the class potion_strong (The strong mana and stamina potions and the disease cure) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_potion_strong = 10
+
+# Units of the reagents of the class slow (Endorphin, adrenaline and the slow herbal medicines (marrowbrew, mirewort compress, sunpetal decoction)) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_slow = 10
+
+# Units of the reagents of the class mild (The mild herbal medicines (ichor of mending, pale serum, stonevein broth)) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_mild = 10
+
+# Units of the reagents of the class fast (The soulweave distillate and the mindclear tonic) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_fast = 10
+
+# Units of the reagents of the class quick (The strong health potion, the spiritwood elixir and the crystalline lymph) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_quick = 10
+
+# Units of the reagents of the class thornmorrow (The thornmorrow tincture, that stays in the blood long) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_thornmorrow = 10
+
+# Units of the reagents of the class gender (The gender potion, gone at once) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_gender = 10
+
+# Units of the reagents of the class strong_antidote (Ratwood's strong antidote, that lasts as long as a poison) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_strong_antidote = 10
+
+# Units of the reagents of the class elixir (The elixirs of size and springiness (gravitum, subtilum, phlogiston)) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_elixir = 10
+
+# Units of the reagents of the class undeadash (Spectral powder) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_undeadash = 10
+
+# Units of the reagents of the class soap (Soap) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_soap = 10
+
+# Units of the reagents of the class skill_elixir (The elixirs of skills, that last long) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_skill_elixir = 10
+
+# Units of the reagents of the class buff (The buff potions) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_buff = 10
+
+# Units of the reagents of the class buff_sustained (Ratwood's temperature potion) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_buff_sustained = 10
+
+# Units of the reagents of the class poison_full (The poisons that go as they come (blinding spore, ironblight, mirrorwaste, ashfall dust, blistergall)) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_poison_full = 10
+
+# Units of the reagents of the class poison_slow (The slow poisons (berry, mushroom, doom, organ, killersice, drowsbane, quietdeath)) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_poison_slow = 10
+
+# Units of the reagents of the class poison_quick (The stamina poison and gloomvenom) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_poison_quick = 10
+
+# Units of the reagents of the class poison_mild (The mirelung brew and the bloodstone essence) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_poison_mild = 10
+
+# Units of the reagents of the class poison_brisk (Dread death, the heatcramp oil, the soulbane ichor and rotwater) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_poison_brisk = 10
+
+# Units of the reagents of the class poison_fast (The hexblood poison) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_poison_fast = 10
+
+# Units of the reagents of the class strongstampoison (The strong stamina poison) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_strongstampoison = 10
+
+# Units of the reagents of the class fyritius (The fyritius nectar) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_fyritius = 10
+
+# Units of the reagents of the class manabloom (The manabloom juice) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_manabloom = 10
+
+# Units of the reagents of the class venom (The Aragn venom, that lingers) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_venom = 10
+
+# Units of the reagents of the class venom_inert (The inert Aragn venom, gone at once) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_venom_inert = 10
+
+# Units of the reagents of the class salpetris (Sal petris, gone at once) the body metabolises each Vibelin tick of two seconds.
+alch_rg_rate_salpetris = 10
+
+# Oxygen damage added each Vibelin tick of two seconds to one with the health potion in the blood (a minus heals).
+alch_rg_healthpot_oxy = 10
+
+# Brute damage added each Vibelin tick of two seconds to one with the health potion in the blood (a minus heals).
+alch_rg_healthpot_brute = 10
+
+# Burn damage added each Vibelin tick of two seconds to one with the health potion in the blood (a minus heals).
+alch_rg_healthpot_burn = 10
+
+# Wound health mended each Vibelin tick of two seconds to one with the health potion in the blood.
+alch_rg_healthpot_wounds = 10
+
+# Blood given (up to normal) each Vibelin tick of two seconds to one with the health potion in the blood.
+alch_rg_healthpot_blood = 10
+
+# Oxygen damage added each Vibelin tick of two seconds to one with the strong health potion in the blood (a minus heals).
+alch_rg_stronghealth_oxy = 10
+
+# Brute damage added each Vibelin tick of two seconds to one with the strong health potion in the blood (a minus heals).
+alch_rg_stronghealth_brute = 10
+
+# Burn damage added each Vibelin tick of two seconds to one with the strong health potion in the blood (a minus heals).
+alch_rg_stronghealth_burn = 10
+
+# Wound health mended each Vibelin tick of two seconds to one with the strong health potion in the blood.
+alch_rg_stronghealth_wounds = 10
+
+# Blood given (up to normal) each Vibelin tick of two seconds to one with the strong health potion in the blood.
+alch_rg_stronghealth_blood = 10
+
+# Mana given to the pool (up to its soft cap) each Vibelin tick of two seconds to one with the mana potion in the blood.
+alch_rg_manapot_mana = 10
+
+# Mana given to the pool (up to its soft cap) each Vibelin tick of two seconds to one with the weak mana potion in the blood.
+alch_rg_manapot_weak_mana = 10
+
+# Mana given to the pool (up to its soft cap) each Vibelin tick of two seconds to one with the strong mana potion in the blood.
+alch_rg_strongmana_mana = 10
+
+# Stamina damage added each Vibelin tick of two seconds to one with the stamina potion in the blood (a minus heals).
+alch_rg_stampot_stamina = 10
+
+# Stamina damage added each Vibelin tick of two seconds to one with the strong stamina potion in the blood (a minus heals).
+alch_rg_strongstam_stamina = 10
+
+# Blood given (up to normal) each Vibelin tick of two seconds to one with the blood potion in the blood.
+alch_rg_bloodpot_blood = 10
+
+# Blood given (up to normal) each Vibelin tick of two seconds to one with the strong blood potion in the blood.
+alch_rg_strongbloodpot_blood = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the antidote in the blood (a minus heals).
+alch_rg_antidote_tox = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the disease cure in the blood (a minus heals).
+alch_rg_diseasecure_tox = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with Ratwood's strong antidote in the blood (a minus heals).
+alch_rg_strong_antidote_tox = 10
+
+# Brute damage added each Vibelin tick of two seconds to one with rosa water in the blood (a minus heals).
+alch_rg_rosawater_brute = 10
+
+# Burn damage added each Vibelin tick of two seconds to one with rosa water in the blood (a minus heals).
+alch_rg_rosawater_burn = 10
+
+# Oxygen damage added each Vibelin tick of two seconds to one with rosa water in the blood (a minus heals).
+alch_rg_rosawater_oxy = 10
+
+# Wound health mended each Vibelin tick of two seconds to one with rosa water in the blood.
+alch_rg_rosawater_wounds = 10
+
+# Deciseconds of confusion added each Vibelin tick of two seconds to one with the soporific in the blood.
+alch_rg_soporpot_confusion = 10
+
+# Deciseconds of dizziness added each Vibelin tick of two seconds to one with the soporific in the blood.
+alch_rg_soporpot_dizzy = 10
+
+# Energy given each Vibelin tick of two seconds to one with the soporific in the blood.
+alch_rg_soporpot_energy = 10
+
+# Burn damage added each Vibelin tick of two seconds to one with the ashwarden brew in the blood (a minus heals).
+alch_rg_ashwarden_burn = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the ashwarden brew in the blood (a minus heals).
+alch_rg_ashwarden_tox = 10
+
+# Lung damage added each Vibelin tick of two seconds to one with the ashwarden brew in the blood (a minus heals).
+alch_rg_ashwarden_lungs = 10
+
+# Brute damage added each Vibelin tick of two seconds to one with the thornmorrow tincture in the blood (a minus heals).
+alch_rg_thornmorrow_brute = 10
+
+# Burn damage added each Vibelin tick of two seconds to one with the thornmorrow tincture in the blood (a minus heals).
+alch_rg_thornmorrow_burn = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the thornmorrow tincture in the blood (a minus heals).
+alch_rg_thornmorrow_tox = 10
+
+# Wound health mended each Vibelin tick of two seconds to one with the thornmorrow tincture in the blood.
+alch_rg_thornmorrow_wounds = 10
+
+# Brain damage added each Vibelin tick of two seconds to one with the soulweave distillate in the blood (a minus heals).
+alch_rg_soulweave_brain = 10
+
+# Burn damage added each Vibelin tick of two seconds to one with the coldvein compress in the blood (a minus heals).
+alch_rg_coldvein_burn = 10
+
+# Brute damage added each Vibelin tick of two seconds to one with the ichor of mending in the blood (a minus heals).
+alch_rg_ichor_brute = 10
+
+# Wound health mended each Vibelin tick of two seconds to one with the ichor of mending in the blood.
+alch_rg_ichor_wounds = 10
+
+# Burn damage added each Vibelin tick of two seconds to one with the ashbinder's salve in the blood (a minus heals).
+alch_rg_ashbinders_burn = 10
+
+# Oxygen damage added each Vibelin tick of two seconds to one with the vitalroot draught in the blood (a minus heals).
+alch_rg_vitalroot_oxy = 10
+
+# Lung damage added each Vibelin tick of two seconds to one with the vitalroot draught in the blood (a minus heals).
+alch_rg_vitalroot_lungs = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the tombsilt tincture in the blood (a minus heals).
+alch_rg_tombsilt_tox = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the mirewort compress in the blood (a minus heals).
+alch_rg_mirewort_tox = 10
+
+# Brute damage added each Vibelin tick of two seconds to one with the woundwrack oil in the blood (a minus heals).
+alch_rg_woundwrack_brute = 10
+
+# Brain damage added each Vibelin tick of two seconds to one with the pale serum in the blood (a minus heals).
+alch_rg_paleserum_brain = 10
+
+# Eye damage added each Vibelin tick of two seconds to one with the pale serum in the blood (a minus heals).
+alch_rg_paleserum_eyes = 10
+
+# Brute damage added each Vibelin tick of two seconds to one with the spiritwood elixir in the blood (a minus heals).
+alch_rg_spiritwood_brute = 10
+
+# Burn damage added each Vibelin tick of two seconds to one with the spiritwood elixir in the blood (a minus heals).
+alch_rg_spiritwood_burn = 10
+
+# Wound health mended each Vibelin tick of two seconds to one with the spiritwood elixir in the blood.
+alch_rg_spiritwood_wounds = 10
+
+# Brute damage added each Vibelin tick of two seconds to one with the marrowbrew in the blood (a minus heals).
+alch_rg_marrowbrew_brute = 10
+
+# Burn damage added each Vibelin tick of two seconds to one with the marrowbrew in the blood (a minus heals).
+alch_rg_marrowbrew_burn = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the marrowbrew in the blood (a minus heals).
+alch_rg_marrowbrew_tox = 10
+
+# Oxygen damage added each Vibelin tick of two seconds to one with the marrowbrew in the blood (a minus heals).
+alch_rg_marrowbrew_oxy = 10
+
+# Brain damage added each Vibelin tick of two seconds to one with the mindclear tonic in the blood (a minus heals).
+alch_rg_mindclear_brain = 10
+
+# Deciseconds of confusion added each Vibelin tick of two seconds to one with the mindclear tonic in the blood.
+alch_rg_mindclear_confusion = 10
+
+# Deciseconds of dizziness added each Vibelin tick of two seconds to one with the mindclear tonic in the blood.
+alch_rg_mindclear_dizzy = 10
+
+# Brute damage added each Vibelin tick of two seconds to one with the witchknit paste in the blood (a minus heals).
+alch_rg_witchknit_brute = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the fever oil in the blood (a minus heals).
+alch_rg_feveroil_tox = 10
+
+# Brute damage added each Vibelin tick of two seconds to one with the stonevein broth in the blood (a minus heals).
+alch_rg_stonevein_brute = 10
+
+# Wound health mended each Vibelin tick of two seconds to one with the stonevein broth in the blood.
+alch_rg_stonevein_wounds = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the sunpetal decoction in the blood (a minus heals).
+alch_rg_sunpetal_tox = 10
+
+# Brute damage added each Vibelin tick of two seconds to one with the sunpetal decoction in the blood (a minus heals).
+alch_rg_sunpetal_brute = 10
+
+# Heart damage added each Vibelin tick of two seconds to one with the bloodelder wine in the blood (a minus heals).
+alch_rg_bloodelder_heart = 10
+
+# Nausea added each Vibelin tick of two seconds to one with the berry poison in the blood.
+alch_rg_berry_nausea = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the berry poison in the blood (a minus heals).
+alch_rg_berry_tox = 10
+
+# Nausea added each Vibelin tick of two seconds to one with the mushroom poison in the blood.
+alch_rg_shroom_nausea = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the mushroom poison in the blood (a minus heals).
+alch_rg_shroom_tox = 10
+
+# Nausea added each Vibelin tick of two seconds to one with the doom poison in the blood.
+alch_rg_doom_nausea = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the doom poison in the blood (a minus heals).
+alch_rg_doom_tox = 10
+
+# Stamina damage added each Vibelin tick of two seconds to one with the stamina poison in the blood (a minus heals).
+alch_rg_stampoison_stamina = 10
+
+# Stamina damage added each Vibelin tick of two seconds to one with the strong stamina poison in the blood (a minus heals).
+alch_rg_strongstampoison_stamina = 10
+
+# Stamina damage added each Vibelin tick of two seconds to one with dread death in the blood (a minus heals).
+alch_rg_dreaddeath_stamina = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with dread death in the blood (a minus heals).
+alch_rg_dreaddeath_tox = 10
+
+# Oxygen damage added each Vibelin tick of two seconds to one with dread death in the blood (a minus heals).
+alch_rg_dreaddeath_oxy = 10
+
+# Oxygen damage added each Vibelin tick of two seconds to one with the mirelung brew in the blood (a minus heals).
+alch_rg_mirelung_oxy = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the mirelung brew in the blood (a minus heals).
+alch_rg_mirelung_tox = 10
+
+# Deciseconds of jitters added each Vibelin tick of two seconds to one with the heatcramp oil in the blood.
+alch_rg_heatcramp_jitter = 10
+
+# Stamina damage added each Vibelin tick of two seconds to one with the heatcramp oil in the blood (a minus heals).
+alch_rg_heatcramp_stamina = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the heatcramp oil in the blood (a minus heals).
+alch_rg_heatcramp_tox = 10
+
+# Deciseconds of blurred sight set at least each Vibelin tick of two seconds to one with the blinding spore in the blood.
+alch_rg_blindspore_blur = 10
+
+# Deciseconds of dizziness added each Vibelin tick of two seconds to one with the blinding spore in the blood.
+alch_rg_blindspore_dizzy = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the blinding spore in the blood (a minus heals).
+alch_rg_blindspore_tox = 10
+
+# Brute damage added each Vibelin tick of two seconds to one with the soulbane ichor in the blood (a minus heals).
+alch_rg_soulbane_brute = 10
+
+# Burn damage added each Vibelin tick of two seconds to one with the soulbane ichor in the blood (a minus heals).
+alch_rg_soulbane_burn = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the soulbane ichor in the blood (a minus heals).
+alch_rg_soulbane_tox = 10
+
+# Oxygen damage added each Vibelin tick of two seconds to one with the soulbane ichor in the blood (a minus heals).
+alch_rg_soulbane_oxy = 10
+
+# Brute damage added each Vibelin tick of two seconds to one with ironblight in the blood (a minus heals).
+alch_rg_ironblight_brute = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with ironblight in the blood (a minus heals).
+alch_rg_ironblight_tox = 10
+
+# Oxygen damage added each Vibelin tick of two seconds to one with the bloodstone essence in the blood (a minus heals).
+alch_rg_bloodstone_oxy = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with the bloodstone essence in the blood (a minus heals).
+alch_rg_bloodstone_tox = 10
+
+# Deciseconds of confusion added each Vibelin tick of two seconds to one with gloomvenom in the blood.
+alch_rg_gloomvenom_confusion = 10
+
+# Deciseconds of dizziness added each Vibelin tick of two seconds to one with gloomvenom in the blood.
+alch_rg_gloomvenom_dizzy = 10
+
+# Burn damage added each Vibelin tick of two seconds to one with ashfall dust in the blood (a minus heals).
+alch_rg_ashfall_burn = 10
+
+# Burn damage added each Vibelin tick of two seconds to one with blistergall in the blood (a minus heals).
+alch_rg_blistergall_burn = 10
+
+# Toxin damage added each Vibelin tick of two seconds to one with blistergall in the blood (a minus heals).
+alch_rg_blistergall_tox = 10
+
+# Nausea added each Vibelin tick to a dwarf (poison-resilient) with the berry poison in the blood.
+alch_rg_berry_nausea_resist = 10
+
+# Toxin damage added each Vibelin tick to a dwarf (poison-resilient) with the berry poison in the blood.
+alch_rg_berry_tox_resist = 10
+
+# Nausea added each Vibelin tick to a dwarf (poison-resilient) with the mushroom poison in the blood.
+alch_rg_shroom_nausea_resist = 10
+
+# Toxin damage added each Vibelin tick to a dwarf (poison-resilient) with the mushroom poison in the blood.
+alch_rg_shroom_tox_resist = 10
+
+# Nausea added each Vibelin tick to a dwarf (poison-resilient) with the doom poison in the blood.
+alch_rg_doom_nausea_resist = 10
+
+# Toxin damage added each Vibelin tick to a dwarf (poison-resilient) with the doom poison in the blood.
+alch_rg_doom_tox_resist = 10
+
+# Stamina damage added each Vibelin tick to a dwarf (poison-resilient) with the stamina poison in the blood.
+alch_rg_stampoison_stamina_resist = 10
+
+# Stamina damage added each Vibelin tick to a dwarf (poison-resilient) with the strong stamina poison in the blood.
+alch_rg_strongstampoison_stamina_resist = 10
+
+# Stamina damage added each Vibelin tick to a dwarf (poison-resilient) with dread death in the blood.
+alch_rg_dreaddeath_stamina_resist = 10
+
+# Toxin damage added each Vibelin tick to a dwarf (poison-resilient) with dread death in the blood.
+alch_rg_dreaddeath_tox_resist = 10
+
+# Oxygen damage added each Vibelin tick to a dwarf (poison-resilient) with dread death in the blood.
+alch_rg_dreaddeath_oxy_resist = 10
+
+# Power of the blood-restoring chemical effect the health potion keeps in the body while it is in the blood.
+alch_rg_healthpot_ce_bloodrestore = 10
+
+# Power of the stabilising chemical effect the health potion keeps in the body while it is in the blood.
+alch_rg_healthpot_ce_stable = 10
+
+# Power of the blood-restoring chemical effect the strong health potion keeps in the body while it is in the blood.
+alch_rg_stronghealth_ce_bloodrestore = 10
+
+# Power of the stabilising chemical effect the strong health potion keeps in the body while it is in the blood.
+alch_rg_stronghealth_ce_stable = 10
+
+# Power of the brain-regenerating chemical effect the strong health potion keeps in the body while it is in the blood.
+alch_rg_stronghealth_ce_brainfix = 10
+
+# Power of the antibiotic chemical effect the disease cure keeps in the body while it is in the blood.
+alch_rg_diseasecure_ce_antibiotic = 10
+
+# Power of the brain-regenerating chemical effect the soulweave distillate keeps in the body while it is in the blood.
+alch_rg_soulweave_ce_brainfix = 10
+
+# Power of the organ-regenerating chemical effect the soulweave distillate keeps in the body while it is in the blood.
+alch_rg_soulweave_ce_organ_regen = 10
+
+# Power of the stabilising chemical effect the soulweave distillate keeps in the body while it is in the blood.
+alch_rg_soulweave_ce_stable = 10
+
+# Power of the blood-restoring chemical effect the soulweave distillate keeps in the body while it is in the blood.
+alch_rg_soulweave_ce_bloodrestore = 10
+
+# Power of the painkiller chemical effect the coldvein compress keeps in the body while it is in the blood.
+alch_rg_coldvein_ce_painkiller = 10
+
+# Power of the oxygenating chemical effect the vitalroot draught keeps in the body while it is in the blood.
+alch_rg_vitalroot_ce_oxygen = 10
+
+# Power of the blood-restoring chemical effect the vitalroot draught keeps in the body while it is in the blood.
+alch_rg_vitalroot_ce_bloodrestore = 10
+
+# Power of the antibiotic chemical effect the tombsilt tincture keeps in the body while it is in the blood.
+alch_rg_tombsilt_ce_antibiotic = 10
+
+# Power of the brain-regenerating chemical effect the pale serum keeps in the body while it is in the blood.
+alch_rg_paleserum_ce_brainfix = 10
+
+# Power of the organ-regenerating chemical effect the pale serum keeps in the body while it is in the blood.
+alch_rg_paleserum_ce_organ_regen = 10
+
+# Power of the stabilising chemical effect the spiritwood elixir keeps in the body while it is in the blood.
+alch_rg_spiritwood_ce_stable = 10
+
+# Power of the blood-restoring chemical effect the spiritwood elixir keeps in the body while it is in the blood.
+alch_rg_spiritwood_ce_bloodrestore = 10
+
+# Power of the shrinking chemical effect the spiritwood elixir keeps in the body while it is in the blood.
+alch_rg_spiritwood_ce_shrink = 10
+
+# Power of the blood-restoring chemical effect the marrowbrew keeps in the body while it is in the blood.
+alch_rg_marrowbrew_ce_bloodrestore = 10
+
+# Power of the energising chemical effect the marrowbrew keeps in the body while it is in the blood.
+alch_rg_marrowbrew_ce_energetic = 10
+
+# Power of the brain-regenerating chemical effect the mindclear tonic keeps in the body while it is in the blood.
+alch_rg_mindclear_ce_brainfix = 10
+
+# Power of the antibiotic chemical effect the fever oil keeps in the body while it is in the blood.
+alch_rg_feveroil_ce_antibiotic = 10
+
+# Power of the antibiotic chemical effect the sunpetal decoction keeps in the body while it is in the blood.
+alch_rg_sunpetal_ce_antibiotic = 10
+
+# Power of the painkiller chemical effect the nervebind extract keeps in the body while it is in the blood.
+alch_rg_nervebind_ce_painkiller = 10
+
+# Power of the stabilising chemical effect the nervebind extract keeps in the body while it is in the blood.
+alch_rg_nervebind_ce_stable = 10
+
+# Power of the blood-restoring chemical effect the bloodelder wine keeps in the body while it is in the blood.
+alch_rg_bloodelder_ce_bloodrestore = 10
+
+# Power of the pulse chemical effect the bloodelder wine keeps in the body while it is in the blood.
+alch_rg_bloodelder_ce_pulse = 10
+
+# Power of the stabilising chemical effect the crystalline lymph keeps in the body while it is in the blood.
+alch_rg_lymph_ce_stable = 10
+
+# Power of the oxygenating chemical effect the crystalline lymph keeps in the body while it is in the blood.
+alch_rg_lymph_ce_oxygen = 10
+
+# Power of the enlarging chemical effect the crystalline lymph keeps in the body while it is in the blood.
+alch_rg_lymph_ce_enlarging = 10
+
+# Power of the painkiller chemical effect endorphin keeps in the body while it is in the blood.
+alch_rg_endorphin_ce_painkiller = 10
+
+# Power of the blood-restoring chemical effect adrenaline keeps in the body while it is in the blood.
+alch_rg_adrenaline_ce_bloodrestore = 10
+
+# Power of the stimulant chemical effect adrenaline keeps in the body while it is in the blood.
+alch_rg_adrenaline_ce_stimulant = 10
+
+# Power of the pulse chemical effect adrenaline keeps in the body while it is in the blood.
+alch_rg_adrenaline_ce_pulse = 10
+
+# Power of the enlarging chemical effect the gravitum elixir keeps in the body while it is in the blood.
+alch_rg_gravitum_ce_enlarging = 10
+
+# Power of the shrinking chemical effect the subtilum tincture keeps in the body while it is in the blood.
+alch_rg_subtilum_ce_shrink = 10
+
+# Power of the bouncing chemical effect the phlogiston elasticum keeps in the body while it is in the blood.
+alch_rg_phlogiston_ce_bouncy = 10
+
+# Power of the blood-restoring chemical effect bone marrow keeps in the body while it is in the blood.
+alch_rg_bonemarrow_ce_bloodrestore = 10
+
+# Power of the pulse chemical effect the soulbane ichor keeps in the body while it is in the blood.
+alch_rg_soulbane_ce_pulse = 10
+
+# Power of the blood-restoring chemical effect the soulbane ichor keeps in the body while it is in the blood.
+alch_rg_soulbane_ce_bloodrestore = 10
+
+# Power of the antibiotic chemical effect rotwater keeps in the body while it is in the blood.
+alch_rg_rotwater_ce_antibiotic = 10
+
+# Germs taken off each injury of the limb each time the disease cure is let into the limb from under a bandage.
+alch_rg_diseasecure_absorb_injury_germs = 10
+
+# Germs taken off the limb each time the disease cure is let into the limb from under a bandage.
+alch_rg_diseasecure_absorb_limb_germs = 10
+
+# Burn damage healed on the limb each time the coldvein compress is let into the limb from under a bandage.
+alch_rg_coldvein_absorb_burn = 10
+
+# Brute damage healed on the limb each time the ichor of mending is let into the limb from under a bandage.
+alch_rg_ichor_absorb_brute = 10
+
+# Damage healed on each injury of the limb each time the ashbinder's salve is let into the limb from under a bandage.
+alch_rg_ashbinders_absorb_injury_heal = 10
+
+# Germs taken off each injury of the limb each time the ashbinder's salve is let into the limb from under a bandage.
+alch_rg_ashbinders_absorb_injury_germs = 10
+
+# Germs taken off the limb each time the ashbinder's salve is let into the limb from under a bandage.
+alch_rg_ashbinders_absorb_limb_germs = 10
+
+# Germs taken off each injury of the limb each time the mirewort compress is let into the limb from under a bandage.
+alch_rg_mirewort_absorb_injury_germs = 10
+
+# Germs taken off the limb each time the mirewort compress is let into the limb from under a bandage.
+alch_rg_mirewort_absorb_limb_germs = 10
+
+# Damage healed on each injury of the limb each time the woundwrack oil is let into the limb from under a bandage.
+alch_rg_woundwrack_absorb_injury_heal = 10
+
+# Germs taken off the limb each time the woundwrack oil is let into the limb from under a bandage.
+alch_rg_woundwrack_absorb_limb_germs = 10
+
+# Damage healed on each injury of the limb each time the witchknit paste is let into the limb from under a bandage.
+alch_rg_witchknit_absorb_injury_heal = 10
+
+# Germs taken off the limb each time the witchknit paste is let into the limb from under a bandage.
+alch_rg_witchknit_absorb_limb_germs = 10
+
+# Units of endorphin in the blood from which it overdoses.
+alch_rg_overdose_endorphin = 10
+
+# Units of a potion in the blood under which its healing waits.
+alch_rg_gate_potion = 10
+
+# Units of a poison in the blood under which it does nothing.
+alch_rg_gate_poison = 10
+
+# Units of a health or blood potion in the blood from which the body sheds the excess: no overhealing.
+alch_rg_shed_volume = 10
+
+# Units of a health or blood potion shed each Vibelin tick while there are over shed_volume of them.
+alch_rg_shed = 10
+
+# Share of its size a body gains for each point of enlarging chemical effect, and loses for each of shrinking (never under a fifth).
+alch_rg_size_step = 10
+
+# Units of a buff potion in the blood that raise its buff (and are spent whole).
+alch_rg_buff_trigger = 10
+
+# Units of a concentrated buff potion in the blood that raise its buff.
+alch_rg_buff_trigger_concentrated = 10
+
+# Points a buff potion adds to its stat.
+alch_rg_buff_stat = 10
+
+# Points a concentrated buff potion adds to its stat.
+alch_rg_buff_stat_concentrated = 10
+
+# Deciseconds a buff potion keeps its stat up.
+alch_rg_buff_time = 10
+
+# Units of every harmful reagent Ratwood's strong antidote purges from the blood each Vibelin tick.
+alch_rg_strong_antidote_purge = 10
+
+# Burn damage added each Vibelin tick to a beast with rosa water in the blood.
+alch_rg_rosawater_beast_burn = 10
+
+# Stamina damage over which the soporific makes drowsy instead of tiring.
+alch_rg_soporpot_tired = 10
+
+# Deciseconds of drowsiness the soporific adds each Vibelin tick to one tired enough.
+alch_rg_soporpot_drowsy = 10
+
+# Stamina damage the soporific adds each Vibelin tick to one not yet tired enough.
+alch_rg_soporpot_stamina = 10
+
+# Percent chance each Vibelin tick that the ashwarden brew turns the stomach.
+alch_rg_ashwarden_nausea_chance = 10
+
+# Nausea the ashwarden brew adds when it does.
+alch_rg_ashwarden_nausea = 10
+
+# Percent chance each Vibelin tick that the fever oil makes one dizzy and jittery.
+alch_rg_feveroil_chance = 10
+
+# Deciseconds of dizziness the fever oil adds when it does.
+alch_rg_feveroil_dizzy = 10
+
+# Deciseconds of jitters the fever oil sets when it does.
+alch_rg_feveroil_jitter = 10
+
+# Percent chance each Vibelin tick that the nervebind extract sets the hands shaking.
+alch_rg_nervebind_chance = 10
+
+# Deciseconds of jitters the nervebind extract adds when it does.
+alch_rg_nervebind_jitter = 10
+
+# Percent chance each Vibelin tick that the bloodelder wine makes one dizzy.
+alch_rg_bloodelder_chance = 10
+
+# Deciseconds of dizziness the bloodelder wine adds when it does.
+alch_rg_bloodelder_dizzy = 10
+
+# Percent chance each Vibelin tick that an overdose of endorphin makes drowsy.
+alch_rg_endorphin_drowsy_chance = 10
+
+# Deciseconds of drowsiness an overdose of endorphin adds when it does.
+alch_rg_endorphin_drowsy = 10
+
+# Percent chance each Vibelin tick that an overdose of endorphin turns the stomach.
+alch_rg_endorphin_disgust_chance = 10
+
+# Nausea an overdose of endorphin adds when it does.
+alch_rg_endorphin_disgust = 10
+
+# Deciseconds of jitters an overdose of endorphin adds each Vibelin tick.
+alch_rg_endorphin_jitter = 10
+
+# Painkiller power adrenaline gives for each unit of it in the blood when it first takes hold.
+alch_rg_adrenaline_painkiller_unit = 10
+
+# Most painkiller power adrenaline gives.
+alch_rg_adrenaline_painkiller_max = 10
+
+# Nausea each Vibelin tick the organ poison adds to one of the kind it was taken from, before the constitution shrinks it.
+alch_rg_organ_nausea = 10
+
+# Constitution at which the organ poison no longer sickens (the nausea falls with constitution over this).
+alch_rg_organ_constitution = 10
+
+# Toxin damage added each Vibelin tick by the organ poison to one of the kind it was taken from.
+alch_rg_organ_tox = 10
+
+# Percent chance each Vibelin tick of each of the effects of drowsbane that are by chance (messages, coughing, gasping, blur).
+alch_rg_drowsbane_chance = 10
+
+# Brute and burn damage healed each Vibelin tick by drowsbane in a tiefling.
+alch_rg_drowsbane_heal = 10
+
+# Units of drowsbane in a tiefling from which the body sheds the excess.
+alch_rg_drowsbane_shed_volume = 10
+
+# Units of drowsbane shed each Vibelin tick by a tiefling over drowsbane_shed_volume.
+alch_rg_drowsbane_shed = 10
+
+# Toxin damage added each Vibelin tick by drowsbane to a dark elf or a half drow.
+alch_rg_drowsbane_tox = 10
+
+# Oxygen damage added each Vibelin tick by drowsbane to a dark elf or a half drow.
+alch_rg_drowsbane_oxy = 10
+
+# Oxygen damage added each Vibelin tick by drowsbane to the others.
+alch_rg_drowsbane_oxy_other = 10
+
+# Deciseconds of blurred sight drowsbane adds when the eyes water.
+alch_rg_drowsbane_blur = 10
+
+# Units of drowsbane in the blood over which the others too have watering eyes and a burning throat.
+alch_rg_drowsbane_irritate_volume = 10
+
+# Toxin damage added each Vibelin tick by Killer's Ice to one not used to rotten food.
+alch_rg_killersice_tox = 10
+
+# Units of the fyritius nectar in the blood over which it burns.
+alch_rg_fyritius_volume = 10
+
+# Percent chance each Vibelin tick that the fyritius nectar burns one.
+alch_rg_fyritius_chance = 10
+
+# Nausea the fyritius nectar adds when it burns.
+alch_rg_fyritius_nausea = 10
+
+# Burn damage the fyritius nectar does when it burns.
+alch_rg_fyritius_burn = 10
+
+# Fire stacks the fyritius nectar adds when it burns, and sets alight.
+alch_rg_fyritius_stacks = 10
+
+# Mana given to the pool each Vibelin tick for each unit of the manabloom juice in the blood (past the soft cap).
+alch_rg_manabloom_mana = 10
+
+# The middle of a stat the resistance to the Aragn venom counts from.
+alch_rg_venom_middle = 10
+
+# Resistance to the Aragn venom for each point of constitution over the middle.
+alch_rg_venom_constitution = 10
+
+# Resistance to the Aragn venom for each point of willpower (Vibelin endurance) over the middle.
+alch_rg_venom_willpower = 10
+
+# Resistance to the Aragn venom for each point of strength over the middle.
+alch_rg_venom_strength = 10
+
+# Resistance to the Aragn venom for each point of fortune when the stats give none.
+alch_rg_venom_fortune = 10
+
+# Ticks between the times the Aragn venom may paralyse (and the resistance, in percent, is divided by it).
+alch_rg_venom_period = 10
+
+# Deciseconds the Aragn venom paralyses for.
+alch_rg_venom_paralyze = 10
+
+# Tick from which a body may throw off the Aragn venom whole, by its resistance in percent.
+alch_rg_venom_late_cycle = 10
+
+# Units of the Aragn venom thrown off.
+alch_rg_venom_purge = 10
+
+# Units of sal petris splashed on one that turn it to stone.
+alch_rg_salpetris_min = 10
+
+# Deciseconds sal petris stuns for before it turns one to stone.
+alch_rg_salpetris_stun = 10
+
+# Deciseconds of stone for each unit of sal petris splashed.
+alch_rg_salpetris_time = 10
+
+# Tick of the mirelung brew after which it makes dizzy.
+alch_rg_mirelung_cycle = 10
+
+# Deciseconds of dizziness the mirelung brew adds each Vibelin tick after that.
+alch_rg_mirelung_dizzy = 10
+
+# Deciseconds of jitters the heatcramp oil sets on skin.
+alch_rg_heatcramp_touch_jitter = 10
+
+# Units of the blinding spore splashed on one that blind.
+alch_rg_blindspore_volume = 10
+
+# Deciseconds of blurred sight the blinding spore adds on skin.
+alch_rg_blindspore_touch_blur = 10
+
+# Deciseconds of dizziness the blinding spore adds on skin.
+alch_rg_blindspore_touch_dizzy = 10
+
+# Brute damage for each unit of ironblight splashed on skin.
+alch_rg_ironblight_touch = 10
+
+# Tick of quietdeath before which it does nothing.
+alch_rg_quietdeath_cycle = 10
+
+# Toxin damage added each Vibelin tick for each tick quietdeath has been in the blood, after it wakes.
+alch_rg_quietdeath_tox = 10
+
+# Brain damage quietdeath adds each Vibelin tick after it wakes.
+alch_rg_quietdeath_brain = 10
+
+# Tick of quietdeath from which it bursts when it leaves the blood.
+alch_rg_quietdeath_burst_cycle = 10
+
+# Toxin damage for each tick quietdeath has been in the blood, dealt at once when it leaves the blood.
+alch_rg_quietdeath_burst = 10
+
+# Brute damage for each unit of mirrorwaste splashed on the undead.
+alch_rg_mirrorwaste_touch_brute = 10
+
+# Burn damage for each unit of mirrorwaste splashed on the undead.
+alch_rg_mirrorwaste_touch_burn = 10
+
+# Brute damage added each Vibelin tick by mirrorwaste to the undead.
+alch_rg_mirrorwaste_undead_brute = 10
+
+# Toxin damage added each Vibelin tick by mirrorwaste to the undead.
+alch_rg_mirrorwaste_undead_tox = 10
+
+# Toxin damage added each Vibelin tick by mirrorwaste to the living.
+alch_rg_mirrorwaste_tox = 10
+
+# Brute damage for each unit of the hexblood poison splashed on one that has no wounds to open.
+alch_rg_hexblood_beast = 10
+
+# Damage with which each unit of the hexblood poison splashed opens each injury.
+alch_rg_hexblood_open = 10
+
+# Germs each unit of the hexblood poison splashed puts in each injury.
+alch_rg_hexblood_germs = 10
+
+# Tick of the bloodstone essence after which it makes dizzy.
+alch_rg_bloodstone_cycle = 10
+
+# Deciseconds of dizziness the bloodstone essence adds each Vibelin tick after that.
+alch_rg_bloodstone_dizzy = 10
+
+# Toxin damage rotwater adds each Vibelin tick when it is new in the blood.
+alch_rg_rotwater_tox = 10
+
+# Toxin damage added to that each tick rotwater has been in the blood.
+alch_rg_rotwater_tox_cycle = 10
+
+# Most toxin damage rotwater adds each Vibelin tick.
+alch_rg_rotwater_tox_max = 10
+
+# Nausea rotwater adds each Vibelin tick.
+alch_rg_rotwater_nausea = 10
+
+# Tick of rotwater after which it takes more of the body's guard against infection.
+alch_rg_rotwater_late_cycle = 10
+
+# Antibiotic power rotwater has taken from the body from rotwater_late_cycle on.
+alch_rg_rotwater_ce_antibiotic_late = 10
+
+# Germs each unit of rotwater splashed puts in each injury that can heal.
+alch_rg_rotwater_germs = 10
+
+# Tick of gloomvenom after which it damages the brain.
+alch_rg_gloomvenom_brain_cycle = 10
+
+# Brain damage gloomvenom adds each Vibelin tick after that.
+alch_rg_gloomvenom_brain = 10
+
+# Tick of gloomvenom after which it poisons.
+alch_rg_gloomvenom_tox_cycle = 10
+
+# Toxin damage gloomvenom adds each Vibelin tick after that.
+alch_rg_gloomvenom_tox = 10
+
+# Fire stacks for each unit of ashfall dust splashed on skin.
+alch_rg_ashfall_stacks = 10
+
+# Burn damage for each unit of ashfall dust splashed on skin.
+alch_rg_ashfall_touch = 10
+
+# Burn damage for each unit of blistergall splashed on skin.
+alch_rg_blistergall_touch = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list va1b)
+
+# Units of essence an ethereal link carries each tick of the essence machines (two seconds, SSobj) (Vibelin bandwidth).
+alch_ess_link_bandwidth = 10
+
+# Units of essence the essence splitter holds (Vibelin).
+alch_ess_splitter_capacity = 10
+
+# Kinds of essence the essence splitter holds at once (Vibelin).
+alch_ess_splitter_types = 10
+
+# Items the essence splitter takes in one batch (Vibelin).
+alch_ess_splitter_items = 10
+
+# Items the essence splitter takes in one batch once Multiplied Division is researched (Vibelin).
+alch_ess_splitter_items_5 = 10
+
+# Items the essence splitter takes in one batch once Infinite Fragmentation is researched (Vibelin).
+alch_ess_splitter_items_6 = 10
+
+# Units of essence the essence splitter holds once Multiplied Division is researched (Vibelin).
+alch_ess_splitter_capacity_5 = 10
+
+# Units of essence the essence splitter holds once Infinite Fragmentation is researched (Vibelin).
+alch_ess_splitter_capacity_6 = 10
+
+# Deciseconds a batch of the essence splitter takes before the time of its items, divided by the speed research (Vibelin).
+alch_ess_splitter_time = 10
+
+# Deciseconds each item adds to a batch of the essence splitter (Vibelin).
+alch_ess_splitter_time_item = 10
+
+# Alchemy experience of a split batch: intelligence times the items split times this share (Vibelin).
+alch_ess_splitter_xp_share = 10
+
+# Units of essence the essence extractor holds (Vibelin).
+alch_ess_extractor_capacity = 10
+
+# Kinds of essence the essence extractor holds at once (Vibelin).
+alch_ess_extractor_types = 10
+
+# Drips in which the essence extractor gives out what it draws from an item (Vibelin).
+alch_ess_extractor_ticks = 10
+
+# Deciseconds the essence extractor takes over an item, divided by the speed research (Vibelin).
+alch_ess_extractor_time = 10
+
+# Times as much essence as the splitter's that the essence extractor draws from an item (Vibelin).
+alch_ess_extractor_yield = 10
+
+# Units of essence the essence divider holds (Vibelin).
+alch_ess_divider_capacity = 10
+
+# Kinds of essence the essence divider holds at once (Vibelin).
+alch_ess_divider_types = 10
+
+# Units of raw essence the essence combiner holds (Vibelin).
+alch_ess_combiner_capacity = 10
+
+# Kinds of raw essence the essence combiner holds at once (Vibelin).
+alch_ess_combiner_types = 10
+
+# Units of combined essence the essence combiner holds (Vibelin).
+alch_ess_combiner_output_capacity = 10
+
+# Kinds of combined essence the essence combiner holds at once (Vibelin).
+alch_ess_combiner_output_types = 10
+
+# Mixes the essence combiner runs at once (Vibelin max_concurrent_recipes); by hand in automatic mode it runs one.
+alch_ess_combiner_batches = 10
+
+# Deciseconds a run of the essence combiner takes before the time of its mixes, divided by the speed research (Vibelin).
+alch_ess_combiner_time = 10
+
+# Deciseconds each mix adds to a run of the essence combiner (Vibelin).
+alch_ess_combiner_time_recipe = 10
+
+# Alchemy experience of a run of the essence combiner by hand: intelligence times the mixes made times this share (Vibelin).
+alch_ess_combiner_xp_share = 10
+
+# Units of essence the essence reservoir holds (Vibelin).
+alch_ess_reservoir_capacity = 10
+
+# Kinds of essence the essence reservoir holds at once (Vibelin).
+alch_ess_reservoir_types = 10
+
+# Units of essence a reservoir in void mode destroys each tick when it is built (Vibelin void_rate).
+alch_ess_reservoir_void_rate = 10
+
+# Most units of essence a reservoir in void mode may be set to destroy each tick (Vibelin).
+alch_ess_reservoir_void_max = 10
+
+# Most units of one essence a reservoir in void mode destroys at one pick, at random from one (Vibelin).
+alch_ess_reservoir_void_step = 10
+
+# Units of essence the essence infuser holds (Vibelin).
+alch_ess_infuser_capacity = 10
+
+# Kinds of essence the essence infuser holds at once (Vibelin).
+alch_ess_infuser_types = 10
+
+# Deciseconds an infusion takes, divided by the research of Essence Transmutation (Vibelin completion_time).
+alch_ess_infuser_time = 10
+
+# Units of essence the essence harvester holds (Vibelin).
+alch_ess_harvester_capacity = 10
+
+# Kinds of essence the essence harvester holds at once (Vibelin).
+alch_ess_harvester_types = 10
+
+# Units of essence the essence harvester draws from its node each tick (Vibelin harvest_rate).
+alch_ess_harvester_rate = 10
+
+# Times its own refill a node set in an essence harvester refills (Vibelin efficiency_bonus).
+alch_ess_harvester_recharge = 10
+
+# Deciseconds it takes to set a node into an essence harvester or take it out (Vibelin).
+alch_ess_harvester_install_time = 10
+
+# Units of life essence the homunculus breeding tube holds (Vibelin).
+alch_ess_tube_capacity = 10
+
+# Units of life essence a homunculus takes, before the research of essence handling (Vibelin).
+alch_ess_tube_life = 10
+
+# Deciseconds a homunculus grows, times the research of essence incorporation (Vibelin).
+alch_ess_tube_time = 10
+
+# Kinds of essence the Alchemical Engine holds at once (Vibelin).
+alch_ess_matrix_types = 10
+
+# Units of essence on their way into a cauldron its essence node holds (Vibelin).
+alch_ess_cauldron_node_capacity = 10
+
+# Kinds of essence a cauldron's essence node holds at once (Vibelin).
+alch_ess_cauldron_node_types = 10
+
+# Alchemy experience of completing a research in the Alchemical Engine (Vibelin experience_reward).
+alch_ess_research_xp = 10
+
+# Units of essence an essence vial holds (Vibelin max_essence).
+alch_ess_vial_capacity = 10
+
+# Units by which an essence vial's draw is set in hand (Vibelin increments).
+alch_ess_vial_step = 10
+
+# Units of essence a combat flask holds (Vibelin max_essence).
+alch_ess_flask_capacity = 10
+
+# Units by which a combat flask's draw is set in hand (Vibelin increments).
+alch_ess_flask_step = 10
+
+# Chance in percent that an essence node of the land is a rare one (Vibelin).
+alch_ess_node_rare_chance = 10
+
+# Least units of essence a common essence node holds (Vibelin, at random up to the most).
+alch_ess_node_capacity_min = 10
+
+# Most units of essence a common essence node holds (Vibelin).
+alch_ess_node_capacity_max = 10
+
+# Least units a common essence node refills a minute (Vibelin, at random up to the most).
+alch_ess_node_recharge_min = 10
+
+# Most units a common essence node refills a minute (Vibelin).
+alch_ess_node_recharge_max = 10
+
+# Integrity of a common essence node (Vibelin).
+alch_ess_node_integrity = 10
+
+# Least units of essence a rare essence node holds (Vibelin, at random up to the most).
+alch_ess_node_rare_capacity_min = 10
+
+# Most units of essence a rare essence node holds (Vibelin).
+alch_ess_node_rare_capacity_max = 10
+
+# Least units a rare essence node refills a minute (Vibelin, at random up to the most).
+alch_ess_node_rare_recharge_min = 10
+
+# Most units a rare essence node refills a minute (Vibelin).
+alch_ess_node_rare_recharge_max = 10
+
+# Integrity of a rare essence node (Vibelin).
+alch_ess_node_rare_integrity = 10
+
+# Least share of its capacity an essence node starts with (Vibelin, at random up to the most).
+alch_ess_node_fill_min = 10
+
+# Most share of its capacity an essence node starts with (Vibelin).
+alch_ess_node_fill_max = 10
+
+# Deciseconds between the refills of an essence node, in the land, in a jar or in a harvester (Vibelin one minute).
+alch_ess_node_recharge_time = 10
+
+# Least units a vial draws from an essence node at one use (Vibelin, at random up to the most).
+alch_ess_node_harvest_min = 10
+
+# Most units a vial draws from an essence node at one use (Vibelin).
+alch_ess_node_harvest_max = 10
+
+# Deciseconds it takes to lift an essence node into a containment jar (Vibelin).
+alch_ess_node_extract_time = 10
+
+# Slowdown of carrying a common essence node bare in hand (Vibelin).
+alch_ess_node_carry_slowdown = 10
+
+# Slowdown of carrying a rare essence node bare in hand (Vibelin slowdown_penalty).
+alch_ess_node_rare_carry_slowdown = 10
+
+# Energy a common essence node carried bare in hand takes each drain (Vibelin stamina_drain).
+alch_ess_node_carry_drain = 10
+
+# Energy a rare essence node carried bare in hand takes each drain (Vibelin stamina_drain).
+alch_ess_node_rare_carry_drain = 10
+
+# Deciseconds between the drains of an essence node carried bare in hand (Vibelin one minute).
+alch_ess_node_carry_drain_time = 10
+
+# Share of its refill a lifted essence node keeps outside the land and outside a harvester (Vibelin portable_penalty).
+alch_ess_node_portable_recharge = 10
+
+# Energy a containment jar with a node takes from its bearer each drain, times the node's tier plus one (Vibelin jar_stamina_drain).
+alch_ess_jar_drain = 10
+
+# Energy an advanced containment jar with a node takes from its bearer each drain, times the node's tier plus one (Vibelin).
+alch_ess_jar_advanced_drain = 10
+
+# Deciseconds between the drains of a containment jar with a node held in hand (Vibelin two minutes).
+alch_ess_jar_drain_time = 10
+
+# Deciseconds it takes to set a node down from a containment jar (Vibelin).
+alch_ess_jar_deploy_time = 10
+
+# Share added to what the splitter and the extractor draw from an item by the research "Essence Division" (Vibelin; the shares of a line add up).
+alch_ess_rs_splitter_efficiency = 10
+
+# Share added to what the splitter and the extractor draw from an item by the research "Refined Separation" (Vibelin; the shares of a line add up).
+alch_ess_rs_splitter_efficiency_2 = 10
+
+# Share added to what the splitter and the extractor draw from an item by the research "Master's Division" (Vibelin; the shares of a line add up).
+alch_ess_rs_splitter_efficiency_3 = 10
+
+# Share added to what the splitter and the extractor draw from an item by the research "Grandmaster's Cleaving" (Vibelin; the shares of a line add up).
+alch_ess_rs_splitter_efficiency_4 = 10
+
+# Share added to what the splitter and the extractor draw from an item by the research "Multiplied Division" (Vibelin; the shares of a line add up).
+alch_ess_rs_splitter_efficiency_5 = 10
+
+# Share added to what the splitter and the extractor draw from an item by the research "Infinite Fragmentation" (Vibelin; the shares of a line add up).
+alch_ess_rs_splitter_efficiency_6 = 10
+
+# Share added to the speed of the splitter and the extractor by the research "Swift Division" (Vibelin; the shares of a line add up).
+alch_ess_rs_splitter_speed = 10
+
+# Share added to the speed of the splitter and the extractor by the research "Rapid Separation" (Vibelin; the shares of a line add up).
+alch_ess_rs_splitter_speed_2 = 10
+
+# Share added to the speed of the splitter and the extractor by the research "Lightning Division" (Vibelin; the shares of a line add up).
+alch_ess_rs_splitter_speed_3 = 10
+
+# Share added to the speed of the essence infuser by the research "Essence Transmutation" (Vibelin).
+alch_ess_rs_transmutation = 10
+
+# Share added to the time a homunculus takes to grow by the research "Improved Essence Incorporation" (Vibelin multiplies the growth time by it).
+alch_ess_rs_gnome_speed = 10
+
+# Share added to the time a homunculus takes to grow by the research "Enhanced Essence Incorporation" (Vibelin multiplies the growth time by it).
+alch_ess_rs_gnome_speed_2 = 10
+
+# Share added to the time a homunculus takes to grow by the research "Perfected Essence Incorporation" (Vibelin multiplies the growth time by it).
+alch_ess_rs_gnome_speed_3 = 10
+
+# Share of the life essence a gnome homunculus costs that the research "Improved Essence Handling" takes off (Vibelin; the reductions multiply, the cost never falls under a twentieth).
+alch_ess_rs_gnome_efficency = 10
+
+# Share of the life essence a gnome homunculus costs that the research "Advanced Essence Handling" takes off (Vibelin; the reductions multiply, the cost never falls under a twentieth).
+alch_ess_rs_gnome_efficency_2 = 10
+
+# Share of the life essence a gnome homunculus costs that the research "Masterful Essence Handling" takes off (Vibelin; the reductions multiply, the cost never falls under a twentieth).
+alch_ess_rs_gnome_efficency_3 = 10
+
+# Chance, as a share, that a homunculus bred after the research "Gnomish Perfection" comes without a hat (Vibelin special bonus).
+alch_ess_rs_gnome_hat_chance = 10
+
+# Share added to what each mix of the combiner yields by the research "Enhanced Yield" (Vibelin; the shares of a line add up).
+alch_ess_rs_combiner_output = 10
+
+# Share added to what each mix of the combiner yields by the research "Amplified Production" (Vibelin; the shares of a line add up).
+alch_ess_rs_combiner_output_2 = 10
+
+# Share added to what each mix of the combiner yields by the research "Abundance Creation" (Vibelin; the shares of a line add up).
+alch_ess_rs_combiner_output_3 = 10
+
+# Share added to what each mix of the combiner yields by the research "Infinite Synthesis" (Vibelin; the shares of a line add up).
+alch_ess_rs_combiner_output_4 = 10
+
+# Share added to the speed of the combiner by the research "Swift Fusion" (Vibelin; the shares of a line add up).
+alch_ess_rs_combiner_speed = 10
+
+# Share added to the speed of the combiner by the research "Rapid Synthesis" (Vibelin; the shares of a line add up).
+alch_ess_rs_combiner_speed_2 = 10
+
+# Share added to the speed of the combiner by the research "Instantaneous Fusion" (Vibelin; the shares of a line add up).
+alch_ess_rs_combiner_speed_3 = 10
+
+# Share added to the speed of the combiner by the research "Transcendent Velocity" (Vibelin; the shares of a line add up).
+alch_ess_rs_combiner_speed_4 = 10
+
+# Share added to the speed of the combiner by the research "Eternal Swiftness" (Vibelin; the shares of a line add up).
+alch_ess_rs_combiner_speed_5 = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list va1v)
+
+# Ticks of two seconds a cauldron boils its essences before the brew is done (Vibelin).
+alch_brew_ticks = 10
+
+# Units of water a cauldron must hold to boil a brew; the brew spends all its water (Vibelin).
+alch_brew_water = 10
+
+# Most kinds of essence a cauldron holds at once (Vibelin).
+alch_brew_essence_types = 10
+
+# Alchemy experience a brewed batch gives per point of intelligence (Vibelin).
+alch_brew_xp_per_int = 10
+
+# Most weight (sum of the size classes of the things in it) a mortar holds to grind at once (Vibelin max_grind_capacity).
+alch_brew_mortar_load = 10
+
+# Deciseconds grinding a batch in the mortar into ingredients takes before its weight is counted (Vibelin).
+alch_brew_grind_time = 10
+
+# Deciseconds each point of weight in the mortar adds to grinding it into ingredients (Vibelin).
+alch_brew_grind_time_per_load = 10
+
+# Deciseconds grinding or juicing a batch in the mortar into reagents takes before its weight is counted (Vibelin).
+alch_brew_juice_time = 10
+
+# Deciseconds each point of weight in the mortar adds to grinding or juicing it into reagents (Vibelin).
+alch_brew_juice_time_per_load = 10
+
+# Deciseconds each point of weight in the mortar adds to taking everything out of it by hand (Vibelin).
+alch_brew_unload_time_per_load = 10
+
+# Most times slower than the median an unskilled alchemist grinds (Vibelin; the skill's median over the skill).
+alch_brew_grind_slow_cap = 10
+
+# Alchemy experience a ground batch gives per point of intelligence (Vibelin).
+alch_brew_grind_xp_per_int = 10
+
+# Multiplier of the chance of a mortar recipe's bonus outputs for a Journeyman of Alchemy (Vibelin).
+alch_brew_grind_bonus_journeyman = 10
+
+# Multiplier of the chance of a mortar recipe's bonus outputs for an Expert of Alchemy (Vibelin).
+alch_brew_grind_bonus_expert = 10
+
+# Multiplier of the chance of a mortar recipe's bonus outputs for a Master of Alchemy (Vibelin).
+alch_brew_grind_bonus_master = 10
+
+# Multiplier of the chance of a mortar recipe's bonus outputs for a Legend of Alchemy (Vibelin).
+alch_brew_grind_bonus_legendary = 10
+
+# Least units of an essence a thing splits into for it to smell intensely of it, to a Novice of Alchemy or a keen nose (Vibelin).
+alch_brew_smell_intense = 10
+
+# Least units of an essence a thing splits into for it to smell strongly of it, to an Apprentice of Alchemy or a keen nose (Vibelin).
+alch_brew_smell_strong = 10
+
+# Least units of an essence a thing splits into for it to smell slightly of it, to a Journeyman of Alchemy or a keen nose; less smells faintly, to an Expert (Vibelin).
+alch_brew_smell_slight = 10
+
+# Units a second the alembic turns a reagent with a distillation recipe into the recipe's results (Vibelin distillation_rate).
+alch_brew_still_rate = 10

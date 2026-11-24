@@ -70,6 +70,12 @@ PATH_FILES = {
 	"combat/medicine.dm": "medicine.txt",
 	"combat/splints.dm": "medicine.txt",
 	"combat/leeches.dm": "medicine.txt",
+	# Block VM1 (books and items of magic, VM1v): their numbers go to magic_items.txt.
+	"magic/_item_defines.dm": "magic_items.txt",
+	"magic/books.dm": "magic_items.txt",
+	"magic/spellcraft.dm": "magic_items.txt",
+	"magic/spell_items.dm": "magic_items.txt",
+	"magic/antimagic.dm": "magic_items.txt",
 }
 
 TIME_UNITS = {"MILLISECONDS": "*0.01", "DECISECONDS": "*1", "SECONDS": "*10", "MINUTES": "*600", "HOURS": "*36000"}

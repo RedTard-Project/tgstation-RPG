@@ -639,9 +639,14 @@
 	for(var/datum/reagent/reagent as anything in reagents.reagent_list.Copy())
 		if(istype(reagent, /datum/reagent/blood) || soakings[reagent.type])
 			continue
-		var/amount = round(min(reagent.volume, reagent.metabolization_rate * ticks), CHEMICAL_QUANTISATION_LEVEL)
+		// metabolization_rate is units a second (TG; the alchemy's rogue_set_rates()), ticks are Vibelin's of ROGUE_LIFE_TICK.
+		var/amount = round(min(reagent.volume, reagent.metabolization_rate * ticks * ROGUE_LIFE_TICK), CHEMICAL_QUANTISATION_LEVEL)
 		if(amount > 0)
-			reagents.trans_to(body, amount, target_id = reagent.type, show_message = FALSE)
+			// The reagent does to the limb what it does under a bandage (alchemy/potions.dm), then goes into the body, or is spent.
+			if(reagent.rogue_bodypart_absorb(body, limb, amount))
+				reagents.trans_to(body, amount, target_id = reagent.type, show_message = FALSE)
+			else
+				reagents.remove_reagent(reagent.type, amount)
 	update_appearance(UPDATE_OVERLAYS)
 
 /obj/item/natural/cloth/update_overlays()

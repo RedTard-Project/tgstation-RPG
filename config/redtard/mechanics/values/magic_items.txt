@@ -1,0 +1,1222 @@
+# Magic items: numbers moved from the code of modular_redtard.
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# --- From the code of modular_redtard (code_numbers.py, list vm1v)
+
+# Charges a tome gives each spell learned into it, when the spell has no _charges of its own (Vibelin initial_charges).
+magic_book_charges = 10
+
+# A spell without a technique gets this many times the tome charges (Vibelin, until balanced).
+magic_book_charges_untechniqued_mult = 10
+
+# How many besides the owner may be chained to read a tome.
+magic_book_allowed_readers = 10
+
+# Shock damage a tome deals to one less versed than its owner who tries to read it.
+magic_book_recoil_shock = 10
+
+# Quality of a themed starter tome that gives the baseline points.
+magic_book_theme_baseline_quality = 10
+
+# Form points a themed starter tome of baseline quality gives; scaled by its quality, rounded up.
+magic_book_theme_baseline_form_points = 10
+
+# Technique points a themed starter tome of baseline quality gives; scaled by its quality, rounded up.
+magic_book_theme_baseline_technique_points = 10
+
+# Share of a themed tome's form points that rank up its own form directly (rounded up); the rest are free.
+magic_book_theme_form_share = 10
+
+# Quality of a poorly made tome: scales the points of its themed starter.
+magic_book_horrible_quality = 10
+
+# Cost multiplier of spells of the theme's form while a poorly made themed tome is held.
+magic_book_horrible_theme_cost = 10
+
+# Cast speed multiplier of spells of the theme's form while a poorly made themed tome is held.
+magic_book_horrible_theme_castspeed = 10
+
+# Magnitude added to spells of the theme's form while a poorly made themed tome is held.
+magic_book_horrible_theme_magnitude = 10
+
+# Quality of a beginners tome: scales the points of its themed starter.
+magic_book_mid_quality = 10
+
+# Cost multiplier of spells of the theme's form while a beginners themed tome is held.
+magic_book_mid_theme_cost = 10
+
+# Cast speed multiplier of spells of the theme's form while a beginners themed tome is held.
+magic_book_mid_theme_castspeed = 10
+
+# Magnitude added to spells of the theme's form while a beginners themed tome is held.
+magic_book_mid_theme_magnitude = 10
+
+# Quality of a apprentice tome: scales the points of its themed starter.
+magic_book_apprentice_quality = 10
+
+# Cost multiplier of spells of the theme's form while a apprentice themed tome is held.
+magic_book_apprentice_theme_cost = 10
+
+# Cast speed multiplier of spells of the theme's form while a apprentice themed tome is held.
+magic_book_apprentice_theme_castspeed = 10
+
+# Magnitude added to spells of the theme's form while a apprentice themed tome is held.
+magic_book_apprentice_theme_magnitude = 10
+
+# Quality of a adept tome: scales the points of its themed starter.
+magic_book_adept_quality = 10
+
+# Cost multiplier of spells of the theme's form while a adept themed tome is held.
+magic_book_adept_theme_cost = 10
+
+# Cast speed multiplier of spells of the theme's form while a adept themed tome is held.
+magic_book_adept_theme_castspeed = 10
+
+# Magnitude added to spells of the theme's form while a adept themed tome is held.
+magic_book_adept_theme_magnitude = 10
+
+# Quality of a expert tome: scales the points of its themed starter.
+magic_book_expert_quality = 10
+
+# Cost multiplier of spells of the theme's form while a expert themed tome is held.
+magic_book_expert_theme_cost = 10
+
+# Cast speed multiplier of spells of the theme's form while a expert themed tome is held.
+magic_book_expert_theme_castspeed = 10
+
+# Magnitude added to spells of the theme's form while a expert themed tome is held.
+magic_book_expert_theme_magnitude = 10
+
+# Quality of a masterful tome: scales the points of its themed starter.
+magic_book_master_quality = 10
+
+# Cost multiplier of spells of the theme's form while a masterful themed tome is held.
+magic_book_master_theme_cost = 10
+
+# Cast speed multiplier of spells of the theme's form while a masterful themed tome is held.
+magic_book_master_theme_castspeed = 10
+
+# Magnitude added to spells of the theme's form while a masterful themed tome is held.
+magic_book_master_theme_magnitude = 10
+
+# Quality of a legendary tome: scales the points of its themed starter.
+magic_book_legendary_quality = 10
+
+# Cost multiplier of spells of the theme's form while a legendary themed tome is held.
+magic_book_legendary_theme_cost = 10
+
+# Cast speed multiplier of spells of the theme's form while a legendary themed tome is held.
+magic_book_legendary_theme_castspeed = 10
+
+# Magnitude added to spells of the theme's form while a legendary themed tome is held.
+magic_book_legendary_theme_magnitude = 10
+
+# Spells an arcyne scroll can hold.
+magic_spellobject_scroll_max_spells = 10
+
+# Lowest spell tier an arcyne scroll can hold (two form ranks a tier).
+magic_spellobject_scroll_min_tier = 10
+
+# Highest spell tier an arcyne scroll can hold (two form ranks a tier).
+magic_spellobject_scroll_max_tier = 10
+
+# Spells an arcyne spellstone can hold.
+magic_spellobject_spellstone_max_spells = 10
+
+# Lowest spell tier an arcyne spellstone can hold (two form ranks a tier).
+magic_spellobject_spellstone_min_tier = 10
+
+# Highest spell tier an arcyne spellstone can hold (two form ranks a tier).
+magic_spellobject_spellstone_max_tier = 10
+
+# Spells a lesser spellstone can hold.
+magic_spellobject_spellstone_lesser_max_spells = 10
+
+# Lowest spell tier a lesser spellstone can hold (two form ranks a tier).
+magic_spellobject_spellstone_lesser_min_tier = 10
+
+# Highest spell tier a lesser spellstone can hold (two form ranks a tier).
+magic_spellobject_spellstone_lesser_max_tier = 10
+
+# Spells a greater spellstone can hold.
+magic_spellobject_spellstone_greater_max_spells = 10
+
+# Lowest spell tier a greater spellstone can hold (two form ranks a tier).
+magic_spellobject_spellstone_greater_min_tier = 10
+
+# Highest spell tier a greater spellstone can hold (two form ranks a tier).
+magic_spellobject_spellstone_greater_max_tier = 10
+
+# Spells a supreme spellstone can hold.
+magic_spellobject_spellstone_supreme_max_spells = 10
+
+# Lowest spell tier a supreme spellstone can hold (two form ranks a tier).
+magic_spellobject_spellstone_supreme_min_tier = 10
+
+# Highest spell tier a supreme spellstone can hold (two form ranks a tier).
+magic_spellobject_spellstone_supreme_max_tier = 10
+
+# Spells an arcyne wand can hold.
+magic_spellobject_wand_max_spells = 10
+
+# Lowest spell tier an arcyne wand can hold (two form ranks a tier).
+magic_spellobject_wand_min_tier = 10
+
+# Highest spell tier an arcyne wand can hold (two form ranks a tier).
+magic_spellobject_wand_max_tier = 10
+
+# Spells a greater arcyne wand can hold.
+magic_spellobject_wand_greater_max_spells = 10
+
+# Lowest spell tier a greater arcyne wand can hold (two form ranks a tier).
+magic_spellobject_wand_greater_min_tier = 10
+
+# Highest spell tier a greater arcyne wand can hold (two form ranks a tier).
+magic_spellobject_wand_greater_max_tier = 10
+
+# Spells a chaotic arcyne wand can hold.
+magic_spellobject_wand_chaotic_max_spells = 10
+
+# Lowest spell tier a chaotic arcyne wand can hold (two form ranks a tier).
+magic_spellobject_wand_chaotic_min_tier = 10
+
+# Highest spell tier a chaotic arcyne wand can hold (two form ranks a tier).
+magic_spellobject_wand_chaotic_max_tier = 10
+
+# Aiming roll a scroll or wand needs at no skill in the spell's school (three six-sided dice under it).
+magic_spellobject_aim_none = 10
+
+# Aiming roll a scroll or wand needs at novice skill in the spell's school (three six-sided dice under it).
+magic_spellobject_aim_novice = 10
+
+# Aiming roll a scroll or wand needs at apprentice skill in the spell's school (three six-sided dice under it).
+magic_spellobject_aim_apprentice = 10
+
+# Aiming roll a scroll or wand needs at journeyman skill in the spell's school (three six-sided dice under it).
+magic_spellobject_aim_journeyman = 10
+
+# Aiming roll a scroll or wand needs at expert skill in the spell's school (three six-sided dice under it).
+magic_spellobject_aim_expert = 10
+
+# Aiming roll a scroll or wand needs at master skill in the spell's school (three six-sided dice under it).
+magic_spellobject_aim_master = 10
+
+# Aiming roll a scroll or wand needs at legendary skill in the spell's school (three six-sided dice under it).
+magic_spellobject_aim_legendary = 10
+
+# Margin of the aiming roll of a scroll or wand that makes a critical.
+magic_spellobject_aim_crit = 10
+
+# Range in which a chaotic wand's missed spell picks someone at random.
+magic_spellobject_misfire_range = 10
+
+# Range in which a chaotic wand's critically missed spell picks someone at random.
+magic_spellobject_wild_misfire_range = 10
+
+# Sealing a spell into a spell object costs this many times the spell's mana.
+magic_spellobject_imbue_cost_mult = 10
+
+# Fewest charges of the spell a randomly filled spell object comes with.
+magic_spellobject_random_charges_min = 10
+
+# Most charges of the spell a randomly filled spell object comes with.
+magic_spellobject_random_charges_max = 10
+
+# Time the wearer struggles to take off a mana binding collar alone.
+magic_antimagic_collar_self_remove = 10
+
+# Time the wearer struggles to take off mana binding gloves alone; none means never.
+magic_antimagic_gloves_self_remove = 10
+
+# Pages of scroll paper bound scrollpaper needs to become a tome in waiting.
+magic_spellcraft_pages = 10
+
+# Material slots of a tome in waiting.
+magic_spellcraft_slots = 10
+
+# Each rank of arcane skill takes this much off every step of binding a tome.
+magic_spellcraft_time_per_rank = 10
+
+# Time to start a tome: scroll paper on cured hide.
+magic_spellcraft_cover_time = 10
+
+# Time to add a page to bound scrollpaper.
+magic_spellcraft_page_time = 10
+
+# Time to bind a tome in waiting with its catalyst.
+magic_spellcraft_bind_time = 10
+
+# How strongly the materials count when a gem is the catalyst.
+magic_spellcraft_meld_gem_amplifier = 10
+
+# How strongly the materials count when a violet gem is the catalyst.
+magic_spellcraft_meld_violet_amplifier = 10
+
+# How strongly the materials count when an arcanic meld is the catalyst.
+magic_spellcraft_meld_t1_amplifier = 10
+
+# Shock dealt by an arcanic meld to one untrained in the arcyne who uses it as a catalyst.
+magic_spellcraft_meld_t1_shock = 10
+
+# Free form points a tome bound with an arcanic meld starts with.
+magic_spellcraft_meld_t1_form_points = 10
+
+# Free technique points a tome bound with an arcanic meld starts with.
+magic_spellcraft_meld_t1_technique_points = 10
+
+# How strongly the materials count when a dense arcanic meld is the catalyst.
+magic_spellcraft_meld_t2_amplifier = 10
+
+# Shock dealt by a dense arcanic meld to one untrained in the arcyne who uses it as a catalyst.
+magic_spellcraft_meld_t2_shock = 10
+
+# Free form points a tome bound with a dense arcanic meld starts with.
+magic_spellcraft_meld_t2_form_points = 10
+
+# Free technique points a tome bound with a dense arcanic meld starts with.
+magic_spellcraft_meld_t2_technique_points = 10
+
+# How strongly the materials count when a sorcerous weave is the catalyst.
+magic_spellcraft_meld_t3_amplifier = 10
+
+# Shock dealt by a sorcerous weave to one untrained in the arcyne who uses it as a catalyst.
+magic_spellcraft_meld_t3_shock = 10
+
+# Free form points a tome bound with a sorcerous weave starts with.
+magic_spellcraft_meld_t3_form_points = 10
+
+# Free technique points a tome bound with a sorcerous weave starts with.
+magic_spellcraft_meld_t3_technique_points = 10
+
+# How strongly the materials count when a magical confluence is the catalyst.
+magic_spellcraft_meld_t4_amplifier = 10
+
+# Shock dealt by a magical confluence to one untrained in the arcyne who uses it as a catalyst.
+magic_spellcraft_meld_t4_shock = 10
+
+# Free form points a tome bound with a magical confluence starts with.
+magic_spellcraft_meld_t4_form_points = 10
+
+# Free technique points a tome bound with a magical confluence starts with.
+magic_spellcraft_meld_t4_technique_points = 10
+
+# How strongly the materials count when an arcanic aberration is the catalyst.
+magic_spellcraft_meld_t5_amplifier = 10
+
+# Shock dealt by an arcanic aberration to one untrained in the arcyne who uses it as a catalyst.
+magic_spellcraft_meld_t5_shock = 10
+
+# Free form points a tome bound with an arcanic aberration starts with.
+magic_spellcraft_meld_t5_form_points = 10
+
+# Free technique points a tome bound with an arcanic aberration starts with.
+magic_spellcraft_meld_t5_technique_points = 10
+
+# Binding a tome, alch viscera as a material: magnitude added to the tome's spells of form life.
+magic_spellcraft_alch_viscera_fm_life = 10
+
+# Binding a tome, alch viscera as a material: form points it gives the tome in death.
+magic_spellcraft_alch_viscera_fp_death = 10
+
+# Binding a tome, alch coaldust as a material: cost multiplier of the tome's spells of form fire.
+magic_spellcraft_alch_coaldust_fc_fire = 10
+
+# Binding a tome, alch coaldust as a material: cast speed multiplier of the tome's spells of form fire.
+magic_spellcraft_alch_coaldust_fs_fire = 10
+
+# Binding a tome, alch silverdust as a material: cost multiplier of the tome's spells of form ice.
+magic_spellcraft_alch_silverdust_fc_ice = 10
+
+# Binding a tome, alch silverdust as a material: magnitude added to the tome's spells of form arcane.
+magic_spellcraft_alch_silverdust_fm_arcane = 10
+
+# Binding a tome, alch sinew as a material: form points it gives the tome in life.
+magic_spellcraft_alch_sinew_fp_life = 10
+
+# Binding a tome, alch sinew as a material: technique points it gives the tome in restoration.
+magic_spellcraft_alch_sinew_tp_restoration = 10
+
+# Binding a tome, alch irondust as a material: cost multiplier of the tome's spells of form earth.
+magic_spellcraft_alch_irondust_fc_earth = 10
+
+# Binding a tome, alch irondust as a material: cast speed multiplier of the tome's spells of form earth.
+magic_spellcraft_alch_irondust_fs_earth = 10
+
+# Binding a tome, alch tobaccodust as a material: cost multiplier of the tome's spells of form air.
+magic_spellcraft_alch_tobaccodust_fc_air = 10
+
+# Binding a tome, alch tobaccodust as a material: form points it gives the tome in air.
+magic_spellcraft_alch_tobaccodust_fp_air = 10
+
+# Binding a tome, alch horn as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_alch_horn_fm_earth = 10
+
+# Binding a tome, alch horn as a material: form points it gives the tome in life.
+magic_spellcraft_alch_horn_fp_life = 10
+
+# Binding a tome, alch golddust as a material: cost multiplier of the tome's spells of form arcane.
+magic_spellcraft_alch_golddust_fc_arcane = 10
+
+# Binding a tome, alch golddust as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_alch_golddust_fm_earth = 10
+
+# Binding a tome, alch ozium as a material: magnitude added to the tome's spells of form arcane.
+magic_spellcraft_alch_ozium_fm_arcane = 10
+
+# Binding a tome, alch ozium as a material: form points it gives the tome in air.
+magic_spellcraft_alch_ozium_fp_air = 10
+
+# Binding a tome, alch transisdust as a material: form points it gives the tome in arcane.
+magic_spellcraft_alch_transisdust_fp_arcane = 10
+
+# Binding a tome, alch transisdust as a material: technique points it gives the tome in alteration.
+magic_spellcraft_alch_transisdust_tp_alteration = 10
+
+# Binding a tome, alch herb atropa as a material: magnitude added to the tome's spells of form death.
+magic_spellcraft_alch_herb_atropa_fm_death = 10
+
+# Binding a tome, alch herb atropa as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_atropa_fp_life = 10
+
+# Binding a tome, alch herb matricaria as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_matricaria_fp_life = 10
+
+# Binding a tome, alch herb matricaria as a material: cast speed multiplier of the tome's spells of form ice.
+magic_spellcraft_alch_herb_matricaria_fs_ice = 10
+
+# Binding a tome, alch herb symphitum as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_symphitum_fp_life = 10
+
+# Binding a tome, alch herb symphitum as a material: technique points it gives the tome in restoration.
+magic_spellcraft_alch_herb_symphitum_tp_restoration = 10
+
+# Binding a tome, alch herb taraxacum as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_taraxacum_fp_life = 10
+
+# Binding a tome, alch herb taraxacum as a material: cast speed multiplier of the tome's spells of form air.
+magic_spellcraft_alch_herb_taraxacum_fs_air = 10
+
+# Binding a tome, alch herb euphrasia as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_euphrasia_fp_life = 10
+
+# Binding a tome, alch herb euphrasia as a material: technique points it gives the tome in illusion.
+magic_spellcraft_alch_herb_euphrasia_tp_illusion = 10
+
+# Binding a tome, alch herb paris as a material: magnitude added to the tome's spells of form death.
+magic_spellcraft_alch_herb_paris_fm_death = 10
+
+# Binding a tome, alch herb paris as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_paris_fp_life = 10
+
+# Binding a tome, alch herb calendula as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_calendula_fp_life = 10
+
+# Binding a tome, alch herb calendula as a material: technique points it gives the tome in restoration.
+magic_spellcraft_alch_herb_calendula_tp_restoration = 10
+
+# Binding a tome, alch herb mentha as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_mentha_fp_life = 10
+
+# Binding a tome, alch herb mentha as a material: cast speed multiplier of the tome's spells of form ice.
+magic_spellcraft_alch_herb_mentha_fs_ice = 10
+
+# Binding a tome, alch herb urtica as a material: magnitude added to the tome's spells of form lightning.
+magic_spellcraft_alch_herb_urtica_fm_lightning = 10
+
+# Binding a tome, alch herb urtica as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_urtica_fp_life = 10
+
+# Binding a tome, alch herb salvia as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_salvia_fp_life = 10
+
+# Binding a tome, alch herb salvia as a material: technique points it gives the tome in illusion.
+magic_spellcraft_alch_herb_salvia_tp_illusion = 10
+
+# Binding a tome, alch herb rosa as a material: magnitude added to the tome's spells of form death.
+magic_spellcraft_alch_herb_rosa_fm_death = 10
+
+# Binding a tome, alch herb rosa as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_rosa_fp_life = 10
+
+# Binding a tome, alch herb hypericum as a material: magnitude added to the tome's spells of form arcane.
+magic_spellcraft_alch_herb_hypericum_fm_arcane = 10
+
+# Binding a tome, alch herb hypericum as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_hypericum_fp_life = 10
+
+# Binding a tome, alch herb hypericum as a material: technique points it gives the tome in restoration.
+magic_spellcraft_alch_herb_hypericum_tp_restoration = 10
+
+# Binding a tome, alch herb benedictus as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_benedictus_fp_life = 10
+
+# Binding a tome, alch herb benedictus as a material: technique points it gives the tome in restoration.
+magic_spellcraft_alch_herb_benedictus_tp_restoration = 10
+
+# Binding a tome, alch herb valeriana as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_valeriana_fp_life = 10
+
+# Binding a tome, alch herb valeriana as a material: cast speed multiplier of the tome's spells of form ice.
+magic_spellcraft_alch_herb_valeriana_fs_ice = 10
+
+# Binding a tome, alch herb artemisia as a material: form points it gives the tome in life.
+magic_spellcraft_alch_herb_artemisia_fp_life = 10
+
+# Binding a tome, alch herb artemisia as a material: technique points it gives the tome in illusion.
+magic_spellcraft_alch_herb_artemisia_tp_illusion = 10
+
+# Binding a tome, fairydust as a material: cost multiplier of the tome's spells of form earth.
+magic_spellcraft_fairydust_fc_earth = 10
+
+# Binding a tome, fairydust as a material: cost multiplier of the tome's spells of form lightning.
+magic_spellcraft_fairydust_fc_lightning = 10
+
+# Binding a tome, fairydust as a material: form points it gives the tome in earth.
+magic_spellcraft_fairydust_fp_earth = 10
+
+# Binding a tome, earthdust as a material: form points it gives the tome in earth.
+magic_spellcraft_earthdust_fp_earth = 10
+
+# Binding a tome, earthdust as a material: cast speed multiplier of the tome's spells of form earth.
+magic_spellcraft_earthdust_fs_earth = 10
+
+# Binding a tome, earthdust as a material: cast speed multiplier of the tome's spells of form lightning.
+magic_spellcraft_earthdust_fs_lightning = 10
+
+# Binding a tome, iridescentscale as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_iridescentscale_fm_earth = 10
+
+# Binding a tome, iridescentscale as a material: magnitude added to the tome's spells of form lightning.
+magic_spellcraft_iridescentscale_fm_lightning = 10
+
+# Binding a tome, iridescentscale as a material: form points it gives the tome in earth.
+magic_spellcraft_iridescentscale_fp_earth = 10
+
+# Binding a tome, heartwoodcore as a material: cost multiplier of the tome's spells of form earth.
+magic_spellcraft_heartwoodcore_fc_earth = 10
+
+# Binding a tome, heartwoodcore as a material: cost multiplier of the tome's spells of form lightning.
+magic_spellcraft_heartwoodcore_fc_lightning = 10
+
+# Binding a tome, heartwoodcore as a material: form points it gives the tome in earth.
+magic_spellcraft_heartwoodcore_fp_earth = 10
+
+# Binding a tome, heartwoodcore as a material: technique points it gives the tome in creation.
+magic_spellcraft_heartwoodcore_tp_creation = 10
+
+# Binding a tome, sylvanessence as a material: cost multiplier of the tome's spells of form earth.
+magic_spellcraft_sylvanessence_fc_earth = 10
+
+# Binding a tome, sylvanessence as a material: cost multiplier of the tome's spells of form lightning.
+magic_spellcraft_sylvanessence_fc_lightning = 10
+
+# Binding a tome, sylvanessence as a material: form points it gives the tome in earth.
+magic_spellcraft_sylvanessence_fp_earth = 10
+
+# Binding a tome, sylvanessence as a material: technique points it gives the tome in creation.
+magic_spellcraft_sylvanessence_tp_creation = 10
+
+# Binding a tome, sylvanessence as a material: technique points it gives the tome in imbue.
+magic_spellcraft_sylvanessence_tp_imbue = 10
+
+# Binding a tome, stone as a material: cost multiplier of the tome's spells of form earth.
+magic_spellcraft_stone_fc_earth = 10
+
+# Binding a tome, stone as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_stone_fm_earth = 10
+
+# Binding a tome, stone as a material: cast speed multiplier of the tome's spells of form earth.
+magic_spellcraft_stone_fs_earth = 10
+
+# Binding a tome, elementalmote as a material: cost multiplier of the tome's spells of form lightning.
+magic_spellcraft_elementalmote_fc_lightning = 10
+
+# Binding a tome, elementalmote as a material: cost multiplier of the tome's spells of form water.
+magic_spellcraft_elementalmote_fc_water = 10
+
+# Binding a tome, elementalmote as a material: cost multiplier of the tome's spells of form ice.
+magic_spellcraft_elementalmote_fc_ice = 10
+
+# Binding a tome, elementalmote as a material: cost multiplier of the tome's spells of form air.
+magic_spellcraft_elementalmote_fc_air = 10
+
+# Binding a tome, elementalmote as a material: cost multiplier of the tome's spells of form earth.
+magic_spellcraft_elementalmote_fc_earth = 10
+
+# Binding a tome, airdust as a material: form points it gives the tome in air.
+magic_spellcraft_airdust_fp_air = 10
+
+# Binding a tome, waterdust as a material: form points it gives the tome in water.
+magic_spellcraft_waterdust_fp_water = 10
+
+# Binding a tome, seeddust as a material: form points it gives the tome in life.
+magic_spellcraft_seeddust_fp_life = 10
+
+# Binding a tome, feaudust as a material: form points it gives the tome in death.
+magic_spellcraft_feaudust_fp_death = 10
+
+# Binding a tome, magicdust as a material: form points it gives the tome in arcane.
+magic_spellcraft_magicdust_fp_arcane = 10
+
+# Binding a tome, runedust as a material: form points it gives the tome in lightning.
+magic_spellcraft_runedust_fp_lightning = 10
+
+# Binding a tome, swampdust as a material: form points it gives the tome in ice.
+magic_spellcraft_swampdust_fp_ice = 10
+
+# Binding a tome, firedust as a material: cost multiplier of the tome's spells of form fire.
+magic_spellcraft_firedust_fc_fire = 10
+
+# Binding a tome, firedust as a material: magnitude added to the tome's spells of form fire.
+magic_spellcraft_firedust_fm_fire = 10
+
+# Binding a tome, firedust as a material: cast speed multiplier of the tome's spells of form fire.
+magic_spellcraft_firedust_fs_fire = 10
+
+# Binding a tome, flint as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_flint_fm_earth = 10
+
+# Binding a tome, flint as a material: form points it gives the tome in fire.
+magic_spellcraft_flint_fp_fire = 10
+
+# Binding a tome, gem blood diamond as a material: cost multiplier of the tome's spells of form death.
+magic_spellcraft_gem_blood_diamond_fc_death = 10
+
+# Binding a tome, gem blood diamond as a material: magnitude added to the tome's spells of form arcane.
+magic_spellcraft_gem_blood_diamond_fm_arcane = 10
+
+# Binding a tome, gem blood diamond as a material: form points it gives the tome in death.
+magic_spellcraft_gem_blood_diamond_fp_death = 10
+
+# Binding a tome, gem blood diamond as a material: technique points it gives the tome in destruction.
+magic_spellcraft_gem_blood_diamond_tp_destruction = 10
+
+# Binding a tome, gem blood diamond as a material: technique points it gives the tome in imbue.
+magic_spellcraft_gem_blood_diamond_tp_imbue = 10
+
+# Binding a tome, gem green as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_gem_green_fm_earth = 10
+
+# Binding a tome, gem green as a material: form points it gives the tome in life.
+magic_spellcraft_gem_green_fp_life = 10
+
+# Binding a tome, gem blue as a material: form points it gives the tome in water.
+magic_spellcraft_gem_blue_fp_water = 10
+
+# Binding a tome, gem blue as a material: cast speed multiplier of the tome's spells of form ice.
+magic_spellcraft_gem_blue_fs_ice = 10
+
+# Binding a tome, gem yellow as a material: form points it gives the tome in lightning.
+magic_spellcraft_gem_yellow_fp_lightning = 10
+
+# Binding a tome, gem yellow as a material: cast speed multiplier of the tome's spells of form air.
+magic_spellcraft_gem_yellow_fs_air = 10
+
+# Binding a tome, gem violet as a material: form points it gives the tome in arcane.
+magic_spellcraft_gem_violet_fp_arcane = 10
+
+# Binding a tome, gem violet as a material: technique points it gives the tome in alteration.
+magic_spellcraft_gem_violet_tp_alteration = 10
+
+# Binding a tome, gem diamond as a material: cost multiplier of the tome's spells of form arcane.
+magic_spellcraft_gem_diamond_fc_arcane = 10
+
+# Binding a tome, gem diamond as a material: form points it gives the tome in arcane.
+magic_spellcraft_gem_diamond_fp_arcane = 10
+
+# Binding a tome, gem diamond as a material: technique points it gives the tome in imbue.
+magic_spellcraft_gem_diamond_tp_imbue = 10
+
+# Binding a tome, gem red as a material: magnitude added to the tome's spells of form life.
+magic_spellcraft_gem_red_fm_life = 10
+
+# Binding a tome, gem red as a material: form points it gives the tome in fire.
+magic_spellcraft_gem_red_fp_fire = 10
+
+# Binding a tome, gem onyxa as a material: cost multiplier of the tome's spells of form arcane.
+magic_spellcraft_gem_onyxa_fc_arcane = 10
+
+# Binding a tome, gem onyxa as a material: form points it gives the tome in death.
+magic_spellcraft_gem_onyxa_fp_death = 10
+
+# Binding a tome, gem onyxa as a material: technique points it gives the tome in illusion.
+magic_spellcraft_gem_onyxa_tp_illusion = 10
+
+# Binding a tome, gem jade as a material: cost multiplier of the tome's spells of form earth.
+magic_spellcraft_gem_jade_fc_earth = 10
+
+# Binding a tome, gem jade as a material: form points it gives the tome in life.
+magic_spellcraft_gem_jade_fp_life = 10
+
+# Binding a tome, gem oyster as a material: form points it gives the tome in water.
+magic_spellcraft_gem_oyster_fp_water = 10
+
+# Binding a tome, gem oyster as a material: technique points it gives the tome in illusion.
+magic_spellcraft_gem_oyster_tp_illusion = 10
+
+# Binding a tome, gem coral as a material: magnitude added to the tome's spells of form life.
+magic_spellcraft_gem_coral_fm_life = 10
+
+# Binding a tome, gem coral as a material: form points it gives the tome in water.
+magic_spellcraft_gem_coral_fp_water = 10
+
+# Binding a tome, gem turq as a material: form points it gives the tome in water.
+magic_spellcraft_gem_turq_fp_water = 10
+
+# Binding a tome, gem turq as a material: cast speed multiplier of the tome's spells of form air.
+magic_spellcraft_gem_turq_fs_air = 10
+
+# Binding a tome, gem amber as a material: magnitude added to the tome's spells of form fire.
+magic_spellcraft_gem_amber_fm_fire = 10
+
+# Binding a tome, gem amber as a material: form points it gives the tome in earth.
+magic_spellcraft_gem_amber_fp_earth = 10
+
+# Binding a tome, gem amber as a material: technique points it gives the tome in restoration.
+magic_spellcraft_gem_amber_tp_restoration = 10
+
+# Binding a tome, gem opal as a material: form points it gives the tome in arcane.
+magic_spellcraft_gem_opal_fp_arcane = 10
+
+# Binding a tome, gem opal as a material: technique points it gives the tome in illusion.
+magic_spellcraft_gem_opal_tp_illusion = 10
+
+# Binding a tome, gem amethyst as a material: form points it gives the tome in arcane.
+magic_spellcraft_gem_amethyst_fp_arcane = 10
+
+# Binding a tome, gem amethyst as a material: cast speed multiplier of the tome's spells of form ice.
+magic_spellcraft_gem_amethyst_fs_ice = 10
+
+# Binding a tome, gem amethyst as a material: technique points it gives the tome in restoration.
+magic_spellcraft_gem_amethyst_tp_restoration = 10
+
+# Binding a tome, natural head as a material: form points it gives the tome in death.
+magic_spellcraft_natural_head_fp_death = 10
+
+# Binding a tome, natural head volf as a material: form points it gives the tome in death.
+magic_spellcraft_natural_head_volf_fp_death = 10
+
+# Binding a tome, natural head volf as a material: cast speed multiplier of the tome's spells of form air.
+magic_spellcraft_natural_head_volf_fs_air = 10
+
+# Binding a tome, natural head saiga as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_natural_head_saiga_fm_earth = 10
+
+# Binding a tome, natural head saiga as a material: form points it gives the tome in death.
+magic_spellcraft_natural_head_saiga_fp_death = 10
+
+# Binding a tome, natural head troll as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_natural_head_troll_fm_earth = 10
+
+# Binding a tome, natural head troll as a material: form points it gives the tome in death.
+magic_spellcraft_natural_head_troll_fp_death = 10
+
+# Binding a tome, natural head troll as a material: technique points it gives the tome in restoration.
+magic_spellcraft_natural_head_troll_tp_restoration = 10
+
+# Binding a tome, natural head troll axe as a material: magnitude added to the tome's spells of form fire.
+magic_spellcraft_natural_head_troll_axe_fm_fire = 10
+
+# Binding a tome, natural head troll axe as a material: form points it gives the tome in death.
+magic_spellcraft_natural_head_troll_axe_fp_death = 10
+
+# Binding a tome, natural head troll axe as a material: technique points it gives the tome in destruction.
+magic_spellcraft_natural_head_troll_axe_tp_destruction = 10
+
+# Binding a tome, natural head troll cave as a material: magnitude added to the tome's spells of form ice.
+magic_spellcraft_natural_head_troll_cave_fm_ice = 10
+
+# Binding a tome, natural head troll cave as a material: form points it gives the tome in death.
+magic_spellcraft_natural_head_troll_cave_fp_death = 10
+
+# Binding a tome, natural head troll cave as a material: technique points it gives the tome in restoration.
+magic_spellcraft_natural_head_troll_cave_tp_restoration = 10
+
+# Binding a tome, natural head rous as a material: magnitude added to the tome's spells of form life.
+magic_spellcraft_natural_head_rous_fm_life = 10
+
+# Binding a tome, natural head rous as a material: form points it gives the tome in death.
+magic_spellcraft_natural_head_rous_fp_death = 10
+
+# Binding a tome, natural head direbear as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_natural_head_direbear_fm_earth = 10
+
+# Binding a tome, natural head direbear as a material: form points it gives the tome in death.
+magic_spellcraft_natural_head_direbear_fp_death = 10
+
+# Binding a tome, natural head fox as a material: form points it gives the tome in death.
+magic_spellcraft_natural_head_fox_fp_death = 10
+
+# Binding a tome, natural head fox as a material: technique points it gives the tome in illusion.
+magic_spellcraft_natural_head_fox_tp_illusion = 10
+
+# Binding a tome, natural head mole as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_natural_head_mole_fm_earth = 10
+
+# Binding a tome, natural head mole as a material: form points it gives the tome in death.
+magic_spellcraft_natural_head_mole_fp_death = 10
+
+# Binding a tome, skull as a material: form points it gives the tome in death.
+magic_spellcraft_skull_fp_death = 10
+
+# Binding a tome, bait as a material: magnitude added to the tome's spells of form life.
+magic_spellcraft_bait_fm_life = 10
+
+# Binding a tome, bait as a material: form points it gives the tome in life.
+magic_spellcraft_bait_fp_life = 10
+
+# Binding a tome, bait sweet as a material: cost multiplier of the tome's spells of form life.
+magic_spellcraft_bait_sweet_fc_life = 10
+
+# Binding a tome, bait sweet as a material: form points it gives the tome in life.
+magic_spellcraft_bait_sweet_fp_life = 10
+
+# Binding a tome, bait sweet as a material: cast speed multiplier of the tome's spells of form life.
+magic_spellcraft_bait_sweet_fs_life = 10
+
+# Binding a tome, bait bloody as a material: magnitude added to the tome's spells of form death.
+magic_spellcraft_bait_bloody_fm_death = 10
+
+# Binding a tome, bait bloody as a material: form points it gives the tome in life.
+magic_spellcraft_bait_bloody_fp_life = 10
+
+# Binding a tome, bait bloody as a material: technique points it gives the tome in summoning.
+magic_spellcraft_bait_bloody_tp_summoning = 10
+
+# Binding a tome, natural feather as a material: form points it gives the tome in air.
+magic_spellcraft_natural_feather_fp_air = 10
+
+# Binding a tome, natural feather as a material: cast speed multiplier of the tome's spells of form air.
+magic_spellcraft_natural_feather_fs_air = 10
+
+# Binding a tome, natural feather infernal as a material: magnitude added to the tome's spells of form air.
+magic_spellcraft_natural_feather_infernal_fm_air = 10
+
+# Binding a tome, natural feather infernal as a material: form points it gives the tome in fire.
+magic_spellcraft_natural_feather_infernal_fp_fire = 10
+
+# Binding a tome, natural feather infernal as a material: technique points it gives the tome in destruction.
+magic_spellcraft_natural_feather_infernal_tp_destruction = 10
+
+# Binding a tome, natural hide as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_natural_hide_fm_earth = 10
+
+# Binding a tome, natural hide as a material: form points it gives the tome in life.
+magic_spellcraft_natural_hide_fp_life = 10
+
+# Binding a tome, natural hide cured as a material: cost multiplier of the tome's spells of form life.
+magic_spellcraft_natural_hide_cured_fc_life = 10
+
+# Binding a tome, natural hide cured as a material: form points it gives the tome in life.
+magic_spellcraft_natural_hide_cured_fp_life = 10
+
+# Binding a tome, natural hide cured as a material: technique points it gives the tome in restoration.
+magic_spellcraft_natural_hide_cured_tp_restoration = 10
+
+# Binding a tome, natural cured essence as a material: magnitude added to the tome's spells of form arcane.
+magic_spellcraft_natural_cured_essence_fm_arcane = 10
+
+# Binding a tome, natural cured essence as a material: form points it gives the tome in life.
+magic_spellcraft_natural_cured_essence_fp_life = 10
+
+# Binding a tome, natural cured essence as a material: technique points it gives the tome in restoration.
+magic_spellcraft_natural_cured_essence_tp_restoration = 10
+
+# Binding a tome, natural fur as a material: form points it gives the tome in life.
+magic_spellcraft_natural_fur_fp_life = 10
+
+# Binding a tome, natural fur mole as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_natural_fur_mole_fm_earth = 10
+
+# Binding a tome, natural fur mole as a material: form points it gives the tome in life.
+magic_spellcraft_natural_fur_mole_fp_life = 10
+
+# Binding a tome, natural fur direbear as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_natural_fur_direbear_fm_earth = 10
+
+# Binding a tome, natural fur direbear as a material: form points it gives the tome in life.
+magic_spellcraft_natural_fur_direbear_fp_life = 10
+
+# Binding a tome, natural fur fox as a material: form points it gives the tome in life.
+magic_spellcraft_natural_fur_fox_fp_life = 10
+
+# Binding a tome, natural fur fox as a material: technique points it gives the tome in illusion.
+magic_spellcraft_natural_fur_fox_tp_illusion = 10
+
+# Binding a tome, natural fur raccoon as a material: form points it gives the tome in life.
+magic_spellcraft_natural_fur_raccoon_fp_life = 10
+
+# Binding a tome, natural fur raccoon as a material: technique points it gives the tome in alteration.
+magic_spellcraft_natural_fur_raccoon_tp_alteration = 10
+
+# Binding a tome, natural fur bobcat as a material: form points it gives the tome in life.
+magic_spellcraft_natural_fur_bobcat_fp_life = 10
+
+# Binding a tome, natural fur bobcat as a material: cast speed multiplier of the tome's spells of form air.
+magic_spellcraft_natural_fur_bobcat_fs_air = 10
+
+# Binding a tome, natural brick as a material: cost multiplier of the tome's spells of form earth.
+magic_spellcraft_natural_brick_fc_earth = 10
+
+# Binding a tome, natural brick as a material: form points it gives the tome in earth.
+magic_spellcraft_natural_brick_fp_earth = 10
+
+# Binding a tome, natural glass as a material: magnitude added to the tome's spells of form fire.
+magic_spellcraft_natural_glass_fm_fire = 10
+
+# Binding a tome, natural glass as a material: form points it gives the tome in earth.
+magic_spellcraft_natural_glass_fp_earth = 10
+
+# Binding a tome, natural glass as a material: cost multiplier of the tome's spells of technique illusion.
+magic_spellcraft_natural_glass_tc_illusion = 10
+
+# Binding a tome, natural glass as a material: technique points it gives the tome in illusion.
+magic_spellcraft_natural_glass_tp_illusion = 10
+
+# Binding a tome, natural poo as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_natural_poo_fm_earth = 10
+
+# Binding a tome, natural poo as a material: form points it gives the tome in life.
+magic_spellcraft_natural_poo_fp_life = 10
+
+# Binding a tome, natural worms as a material: magnitude added to the tome's spells of form death.
+magic_spellcraft_natural_worms_fm_death = 10
+
+# Binding a tome, natural worms as a material: form points it gives the tome in life.
+magic_spellcraft_natural_worms_fp_life = 10
+
+# Binding a tome, natural worms leech as a material: magnitude added to the tome's spells of form life.
+magic_spellcraft_natural_worms_leech_fm_life = 10
+
+# Binding a tome, natural worms leech as a material: form points it gives the tome in death.
+magic_spellcraft_natural_worms_leech_fp_death = 10
+
+# Binding a tome, natural worms leech parasite as a material: form points it gives the tome in death.
+magic_spellcraft_natural_worms_leech_parasite_fp_death = 10
+
+# Binding a tome, natural worms leech parasite as a material: technique points it gives the tome in destruction.
+magic_spellcraft_natural_worms_leech_parasite_tp_destruction = 10
+
+# Binding a tome, natural worms leech abyssoid as a material: magnitude added to the tome's spells of form arcane.
+magic_spellcraft_natural_worms_leech_abyssoid_fm_arcane = 10
+
+# Binding a tome, natural worms leech abyssoid as a material: form points it gives the tome in death.
+magic_spellcraft_natural_worms_leech_abyssoid_fp_death = 10
+
+# Binding a tome, natural worms leech abyssoid as a material: technique points it gives the tome in summoning.
+magic_spellcraft_natural_worms_leech_abyssoid_tp_summoning = 10
+
+# Binding a tome, natural worms leech abyssoid as a material: technique points it gives the tome in destruction.
+magic_spellcraft_natural_worms_leech_abyssoid_tp_destruction = 10
+
+# Binding a tome, natural teeth as a material: form points it gives the tome in death.
+magic_spellcraft_natural_teeth_fp_death = 10
+
+# Binding a tome, natural teeth as a material: cast speed multiplier of the tome's spells of form death.
+magic_spellcraft_natural_teeth_fs_death = 10
+
+# Binding a tome, natural teeth gold as a material: cost multiplier of the tome's spells of form arcane.
+magic_spellcraft_natural_teeth_gold_fc_arcane = 10
+
+# Binding a tome, natural teeth gold as a material: magnitude added to the tome's spells of form earth.
+magic_spellcraft_natural_teeth_gold_fm_earth = 10
+
+# Binding a tome, natural teeth gold as a material: form points it gives the tome in death.
+magic_spellcraft_natural_teeth_gold_fp_death = 10
+
+# Binding a tome, natural teeth fang as a material: cost multiplier of the tome's spells of form death.
+magic_spellcraft_natural_teeth_fang_fc_death = 10
+
+# Binding a tome, natural teeth fang as a material: form points it gives the tome in death.
+magic_spellcraft_natural_teeth_fang_fp_death = 10
+
+# Binding a tome, ore gold as a material: cost multiplier of the tome's spells of form arcane.
+magic_spellcraft_ore_gold_fc_arcane = 10
+
+# Binding a tome, ore gold as a material: form points it gives the tome in earth.
+magic_spellcraft_ore_gold_fp_earth = 10
+
+# Binding a tome, ore silver as a material: form points it gives the tome in earth.
+magic_spellcraft_ore_silver_fp_earth = 10
+
+# Binding a tome, ore silver as a material: cast speed multiplier of the tome's spells of form ice.
+magic_spellcraft_ore_silver_fs_ice = 10
+
+# Binding a tome, ore iron as a material: form points it gives the tome in earth.
+magic_spellcraft_ore_iron_fp_earth = 10
+
+# Binding a tome, ore copper as a material: form points it gives the tome in earth.
+magic_spellcraft_ore_copper_fp_earth = 10
+
+# Binding a tome, ore copper as a material: cast speed multiplier of the tome's spells of form lightning.
+magic_spellcraft_ore_copper_fs_lightning = 10
+
+# Binding a tome, ore tin as a material: form points it gives the tome in earth.
+magic_spellcraft_ore_tin_fp_earth = 10
+
+# Binding a tome, ore tin as a material: cast speed multiplier of the tome's spells of form air.
+magic_spellcraft_ore_tin_fs_air = 10
+
+# Binding a tome, ore coal as a material: magnitude added to the tome's spells of form fire.
+magic_spellcraft_ore_coal_fm_fire = 10
+
+# Binding a tome, ore coal as a material: form points it gives the tome in earth.
+magic_spellcraft_ore_coal_fp_earth = 10
+
+# Binding a tome, ore coal charcoal as a material: cost multiplier of the tome's spells of form fire.
+magic_spellcraft_ore_coal_charcoal_fc_fire = 10
+
+# Binding a tome, ore coal charcoal as a material: form points it gives the tome in fire.
+magic_spellcraft_ore_coal_charcoal_fp_fire = 10
+
+# Binding a tome, ore cinnabar as a material: magnitude added to the tome's spells of form arcane.
+magic_spellcraft_ore_cinnabar_fm_arcane = 10
+
+# Binding a tome, ore cinnabar as a material: form points it gives the tome in fire.
+magic_spellcraft_ore_cinnabar_fp_fire = 10
+
+# Binding a tome, ingot gold as a material: cost multiplier of the tome's spells of form arcane.
+magic_spellcraft_ingot_gold_fc_arcane = 10
+
+# Binding a tome, ingot gold as a material: form points it gives the tome in earth.
+magic_spellcraft_ingot_gold_fp_earth = 10
+
+# Binding a tome, ingot iron as a material: cost multiplier of the tome's spells of form earth.
+magic_spellcraft_ingot_iron_fc_earth = 10
+
+# Binding a tome, ingot iron as a material: form points it gives the tome in earth.
+magic_spellcraft_ingot_iron_fp_earth = 10
+
+# Binding a tome, ingot copper as a material: form points it gives the tome in earth.
+magic_spellcraft_ingot_copper_fp_earth = 10
+
+# Binding a tome, ingot copper as a material: cast speed multiplier of the tome's spells of form lightning.
+magic_spellcraft_ingot_copper_fs_lightning = 10
+
+# Binding a tome, ingot tin as a material: form points it gives the tome in earth.
+magic_spellcraft_ingot_tin_fp_earth = 10
+
+# Binding a tome, ingot tin as a material: cast speed multiplier of the tome's spells of form air.
+magic_spellcraft_ingot_tin_fs_air = 10
+
+# Binding a tome, ingot bronze as a material: magnitude added to the tome's spells of form fire.
+magic_spellcraft_ingot_bronze_fm_fire = 10
+
+# Binding a tome, ingot bronze as a material: form points it gives the tome in earth.
+magic_spellcraft_ingot_bronze_fp_earth = 10
+
+# Binding a tome, ingot silver as a material: form points it gives the tome in earth.
+magic_spellcraft_ingot_silver_fp_earth = 10
+
+# Binding a tome, ingot silver as a material: cast speed multiplier of the tome's spells of form ice.
+magic_spellcraft_ingot_silver_fs_ice = 10
+
+# Binding a tome, ingot silver as a material: technique points it gives the tome in restoration.
+magic_spellcraft_ingot_silver_tp_restoration = 10
+
+# Binding a tome, ingot steel as a material: cost multiplier of the tome's spells of form earth.
+magic_spellcraft_ingot_steel_fc_earth = 10
+
+# Binding a tome, ingot steel as a material: form points it gives the tome in earth.
+magic_spellcraft_ingot_steel_fp_earth = 10
+
+# Binding a tome, ingot steelholy as a material: magnitude added to the tome's spells of form life.
+magic_spellcraft_ingot_steelholy_fm_life = 10
+
+# Binding a tome, ingot steelholy as a material: form points it gives the tome in earth.
+magic_spellcraft_ingot_steelholy_fp_earth = 10
+
+# Binding a tome, ingot steelholy as a material: technique points it gives the tome in restoration.
+magic_spellcraft_ingot_steelholy_tp_restoration = 10
+
+# Binding a tome, ingot silverblessed as a material: form points it gives the tome in life.
+magic_spellcraft_ingot_silverblessed_fp_life = 10
+
+# Binding a tome, ingot silverblessed as a material: cast speed multiplier of the tome's spells of form ice.
+magic_spellcraft_ingot_silverblessed_fs_ice = 10
+
+# Binding a tome, ingot silverblessed as a material: technique points it gives the tome in restoration.
+magic_spellcraft_ingot_silverblessed_tp_restoration = 10
+
+# Binding a tome, ingot blacksteel as a material: magnitude added to the tome's spells of form death.
+magic_spellcraft_ingot_blacksteel_fm_death = 10
+
+# Binding a tome, ingot blacksteel as a material: form points it gives the tome in earth.
+magic_spellcraft_ingot_blacksteel_fp_earth = 10
+
+# Binding a tome, ingot blacksteel as a material: technique points it gives the tome in destruction.
+magic_spellcraft_ingot_blacksteel_tp_destruction = 10
+
+# Binding a tome, ingot aalloy as a material: magnitude added to the tome's spells of form arcane.
+magic_spellcraft_ingot_aalloy_fm_arcane = 10
+
+# Binding a tome, ingot aalloy as a material: form points it gives the tome in earth.
+magic_spellcraft_ingot_aalloy_fp_earth = 10
+
+# Binding a tome, ingot purifiedaalloy as a material: cost multiplier of the tome's spells of form arcane.
+magic_spellcraft_ingot_purifiedaalloy_fc_arcane = 10
+
+# Binding a tome, ingot purifiedaalloy as a material: form points it gives the tome in arcane.
+magic_spellcraft_ingot_purifiedaalloy_fp_arcane = 10
+
+# Binding a tome, ingot purifiedaalloy as a material: technique points it gives the tome in alteration.
+magic_spellcraft_ingot_purifiedaalloy_tp_alteration = 10
+
+# Binding a tome, ingot aaslag as a material: magnitude added to the tome's spells of form arcane.
+magic_spellcraft_ingot_aaslag_fm_arcane = 10
+
+# Binding a tome, ingot aaslag as a material: form points it gives the tome in earth.
+magic_spellcraft_ingot_aaslag_fp_earth = 10
+
+# Binding a tome, ingot weeping as a material: magnitude added to the tome's spells of form death.
+magic_spellcraft_ingot_weeping_fm_death = 10
+
+# Binding a tome, ingot weeping as a material: form points it gives the tome in water.
+magic_spellcraft_ingot_weeping_fp_water = 10
+
+# Binding a tome, ingot weeping as a material: technique points it gives the tome in restoration.
+magic_spellcraft_ingot_weeping_tp_restoration = 10
+
+# Binding a tome, ingot draconic as a material: magnitude added to the tome's spells of form arcane.
+magic_spellcraft_ingot_draconic_fm_arcane = 10
+
+# Binding a tome, ingot draconic as a material: form points it gives the tome in fire.
+magic_spellcraft_ingot_draconic_fp_fire = 10
+
+# Binding a tome, ingot draconic as a material: technique points it gives the tome in destruction.
+magic_spellcraft_ingot_draconic_tp_destruction = 10
+
+# Binding a tome, ingot draconic as a material: technique points it gives the tome in imbue.
+magic_spellcraft_ingot_draconic_tp_imbue = 10
+
+# Binding a tome, ingot avantyne as a material: magnitude added to the tome's spells of form arcane.
+magic_spellcraft_ingot_avantyne_fm_arcane = 10
+
+# Binding a tome, ingot avantyne as a material: form points it gives the tome in air.
+magic_spellcraft_ingot_avantyne_fp_air = 10
+
+# Binding a tome, ingot ketryl as a material: magnitude added to the tome's spells of form arcane.
+magic_spellcraft_ingot_ketryl_fm_arcane = 10
+
+# Binding a tome, ingot ketryl as a material: form points it gives the tome in lightning.
+magic_spellcraft_ingot_ketryl_fp_lightning = 10
+
+# Binding a tome, ingot lithmyc as a material: magnitude added to the tome's spells of form arcane.
+magic_spellcraft_ingot_lithmyc_fm_arcane = 10
+
+# Binding a tome, ingot lithmyc as a material: form points it gives the tome in ice.
+magic_spellcraft_ingot_lithmyc_fp_ice = 10
+
+# Binding a tome, ingot component glutcrystal as a material: form points it gives the tome in arcane.
+magic_spellcraft_ingot_component_glutcrystal_fp_arcane = 10
+
+# Binding a tome, ingot component glutcrystal as a material: technique points it gives the tome in creation.
+magic_spellcraft_ingot_component_glutcrystal_tp_creation = 10
+
+# Binding a tome, ingot component threadavantyne as a material: form points it gives the tome in air.
+magic_spellcraft_ingot_component_threadavantyne_fp_air = 10
+
+# Binding a tome, ingot component threadavantyne as a material: technique points it gives the tome in creation.
+magic_spellcraft_ingot_component_threadavantyne_tp_creation = 10
+
+# Binding a tome, ingot component threadketryl as a material: form points it gives the tome in lightning.
+magic_spellcraft_ingot_component_threadketryl_fp_lightning = 10
+
+# Binding a tome, ingot component threadketryl as a material: technique points it gives the tome in creation.
+magic_spellcraft_ingot_component_threadketryl_tp_creation = 10
+
+# Binding a tome, ingot component zizo as a material: form points it gives the tome in arcane.
+magic_spellcraft_ingot_component_zizo_fp_arcane = 10
+
+# Binding a tome, ingot component zizo as a material: technique points it gives the tome in summoning.
+magic_spellcraft_ingot_component_zizo_tp_summoning = 10
+
+# Binding a tome, ingot component graggar as a material: form points it gives the tome in earth.
+magic_spellcraft_ingot_component_graggar_fp_earth = 10
+
+# Binding a tome, ingot component graggar as a material: technique points it gives the tome in creation.
+magic_spellcraft_ingot_component_graggar_tp_creation = 10
+
+# Binding a tome, ingot component matthios as a material: form points it gives the tome in life.
+magic_spellcraft_ingot_component_matthios_fp_life = 10
+
+# Binding a tome, ingot component matthios as a material: technique points it gives the tome in restoration.
+magic_spellcraft_ingot_component_matthios_tp_restoration = 10
+
+# Binding a tome, ingot component baotha as a material: form points it gives the tome in water.
+magic_spellcraft_ingot_component_baotha_fp_water = 10
+
+# Binding a tome, ingot component baotha as a material: technique points it gives the tome in creation.
+magic_spellcraft_ingot_component_baotha_tp_creation = 10
+
+# Binding a tome, quicksilver as a material: magnitude added to the tome's spells of form water.
+magic_spellcraft_quicksilver_fm_water = 10
+
+# Binding a tome, quicksilver as a material: form points it gives the tome in arcane.
+magic_spellcraft_quicksilver_fp_arcane = 10
+
+# Binding a tome, quicksilver as a material: technique points it gives the tome in illusion.
+magic_spellcraft_quicksilver_tp_illusion = 10
+
+# Binding a tome, voidstone as a material: technique points it gives the tome in destruction.
+magic_spellcraft_voidstone_tp_destruction = 10
+
+# Binding a tome, voidstone as a material: technique points it gives the tome in creation.
+magic_spellcraft_voidstone_tp_creation = 10
+
+# Binding a tome, voidstone as a material: technique points it gives the tome in alteration.
+magic_spellcraft_voidstone_tp_alteration = 10
+
+# Binding a tome, voidstone as a material: technique points it gives the tome in summoning.
+magic_spellcraft_voidstone_tp_summoning = 10
+
+# Binding a tome, voidstone as a material: technique points it gives the tome in restoration.
+magic_spellcraft_voidstone_tp_restoration = 10
+
+# Binding a tome, bone as a material: cost multiplier of the tome's spells of form death.
+magic_spellcraft_bone_fc_death = 10
+
+# Binding a tome, bone as a material: cost multiplier of the tome's spells of form life.
+magic_spellcraft_bone_fc_life = 10
+
+# Binding a tome, riddleofsteel as a material: form points it gives the tome in earth.
+magic_spellcraft_riddleofsteel_fp_earth = 10
+
+# Binding a tome, riddleofsteel as a material: technique points it gives the tome in creation.
+magic_spellcraft_riddleofsteel_tp_creation = 10
+
+# Binding a tome, riddleofsteel as a material: technique points it gives the tome in destruction.
+magic_spellcraft_riddleofsteel_tp_destruction = 10
+
+# Binding a tome, mimictrinket as a material: form points it gives the tome in arcane.
+magic_spellcraft_mimictrinket_fp_arcane = 10
+
+# Binding a tome, mimictrinket as a material: technique points it gives the tome in illusion.
+magic_spellcraft_mimictrinket_tp_illusion = 10
+
+# Binding a tome, mimictrinket as a material: technique points it gives the tome in summoning.
+magic_spellcraft_mimictrinket_tp_summoning = 10
+
+# Binding a tome, natural leyline as a material: cost multiplier of the tome's spells of form arcane.
+magic_spellcraft_natural_leyline_fc_arcane = 10
+
+# Binding a tome, natural leyline as a material: form points it gives the tome in arcane.
+magic_spellcraft_natural_leyline_fp_arcane = 10
+
+# Binding a tome, natural leyline as a material: technique points it gives the tome in creation.
+magic_spellcraft_natural_leyline_tp_creation = 10
+
+# Binding a tome, natural leyline as a material: technique points it gives the tome in restoration.
+magic_spellcraft_natural_leyline_tp_restoration = 10
+
+# Binding a tome, natural artifact as a material: cost multiplier of the tome's spells of form arcane.
+magic_spellcraft_natural_artifact_fc_arcane = 10
+
+# Binding a tome, natural artifact as a material: form points it gives the tome in arcane.
+magic_spellcraft_natural_artifact_fp_arcane = 10
+
+# Binding a tome, natural artifact as a material: technique points it gives the tome in alteration.
+magic_spellcraft_natural_artifact_tp_alteration = 10
+
+# Binding a tome, natural artifact as a material: technique points it gives the tome in imbue.
+magic_spellcraft_natural_artifact_tp_imbue = 10
