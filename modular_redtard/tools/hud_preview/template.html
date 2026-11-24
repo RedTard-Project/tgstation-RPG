@@ -209,6 +209,8 @@ h1 {
   font: 500 9px/30px var(--font-mono);
   text-align: center;
 }
+.buff-slot { border-color: var(--ok); color: var(--ok); }
+.action-slot { border-color: var(--muted); color: var(--muted); }
 .pick {
   z-index: 9500;
   box-shadow: 0 0 0 1px var(--accent), 0 0 0 2px rgba(0, 0, 0, 0.7);
@@ -381,7 +383,7 @@ select:focus-visible, input:focus-visible, textarea:focus-visible, button:focus-
         <label class="check"><input type="checkbox" id="showRmb"> <span>Список ПКМ-намерений раскрыт</span></label>
         <label class="check"><input type="checkbox" id="showDoll" checked> <span>Горгулья</span></label>
         <label class="check"><input type="checkbox" id="showMana"> <span>Мана (видна только магам)</span></label>
-        <label class="check"><input type="checkbox" id="showAlerts"> <span>Места алертов ТГ</span></label>
+        <label class="check"><input type="checkbox" id="showAlerts"> <span>Места алертов (1–6), баффов (Б) и кнопок действий ТГ (Д)</span></label>
         <label class="check"><input type="checkbox" id="showGrid"> <span>Разметка: клетки, поле, чёрные бордюры</span></label>
         <label class="field-label" for="scene">Сцена под ХУДом
           <select id="scene">
@@ -493,7 +495,7 @@ function foldAxis(axis) {
 
 // ---- the frame: fit_frame() and frame_loc() of hud/rogue_frame.dm ----
 function fitFrame(width, height, enabled) {
-  let left = 1, right = 0, top = 0, gap = 0, shift = 0;
+  let left = 1, right = 0, top = 0, gap = 0;
   if (enabled && width >= FRAME.minControl && height >= FRAME.minControl) {
     const leastColumns = VIEW.w + 1;
     const leastRows = VIEW.h + 1;
@@ -506,28 +508,14 @@ function fitFrame(width, height, enabled) {
     const extraRows = Math.min(rows - leastRows, FRAME.maxRows * 2);
     top = Math.floor(extraRows / 2);
     gap = extraRows - top;
-    const sliver = Math.max(0, width - (VIEW.w + left + right) * tile) / 2;
-    shift = Math.max(0, Math.floor(((left - 1) * tile - sliver) / 2 / tile * ICON));
   }
-  return { left, right, top, gap, shift };
+  return { left, right, top, gap };
 }
 const COLUMN = /^WEST-1(?::(-?\d+))?,/;
 const BOTTOM = /,SOUTH-1(?::(-?\d+))?$/;
 function frameLoc(base, fit) {
-  let place = base;
-  let moved = false;
-  let match = COLUMN.exec(place);
-  if (match) {
-    const px = parseInt(match[1] || '0', 10) + fit.shift;
-    place = 'WEST-' + fit.left + (px ? ':' + px : '') + ',' + place.slice(match[0].length);
-    moved = true;
-  }
-  match = BOTTOM.exec(place);
-  if (match) {
-    place = place.slice(0, match.index) + ',SOUTH-' + (fit.gap + 1) + (match[1] ? ':' + match[1] : '');
-    moved = true;
-  }
-  return moved ? place : null;
+  const match = BOTTOM.exec(base);
+  return match ? base.slice(0, match.index) + ',SOUTH-' + (fit.gap + 1) + (match[1] ? ':' + match[1] : '') : null;
 }
 /** How the client window is split into the map and the right pane. TG's Fit Viewport makes the map as wide as its height
     times the shape of the view and leaves the right pane its least width; a player may also drag the splitter. */
@@ -587,14 +575,23 @@ function locOf(piece) {
   }
   return piece.define ? cur(piece.define) : piece.loc;
 }
+/** Where an element's picture lies: BYOND draws a scaled element (a ring cell) about the middle of its icon. */
+function shapeOf(piece, at) {
+  const scale = piece.scale || 1;
+  const width = piece.sprite.w * scale;
+  const height = piece.sprite.h * scale;
+  return { left: at.x - piece.ox + (piece.sprite.w - width) / 2, bottom: at.y - piece.oy + (piece.sprite.h - height) / 2, width, height };
+}
 /** The box of the drawn part of an element, in icon pixels from the screen's lower left corner. */
 function drawnBox(piece, at) {
   const sprite = piece.sprite;
+  const shape = shapeOf(piece, at);
+  const scale = piece.scale || 1;
   return {
-    left: at.x - piece.ox + sprite.box[0],
-    right: at.x - piece.ox + sprite.box[2],
-    bottom: at.y - piece.oy + sprite.h - sprite.box[3],
-    top: at.y - piece.oy + sprite.h - sprite.box[1],
+    left: shape.left + sprite.box[0] * scale,
+    right: shape.left + sprite.box[2] * scale,
+    bottom: shape.bottom + (sprite.h - sprite.box[3]) * scale,
+    top: shape.bottom + (sprite.h - sprite.box[1]) * scale,
   };
 }
 function groupOf(name) {
@@ -607,7 +604,7 @@ function zoneOf(text) {
   const column = COLUMN.test(text);
   const bottom = BOTTOM.test(text);
   if (column && bottom) return 'угол: колонка и нижний ряд';
-  if (column) return 'левая колонка — стоит на черноте, посередине её ширины';
+  if (column) return 'левая колонка — стоит на черноте вплотную к рамке поля';
   if (bottom) return 'нижний ряд — стоит на нижнем краю окна';
   return 'поле — стоит относительно игрового поля';
 }
@@ -641,13 +638,21 @@ const zoneEls = ['zone zone-dark', 'zone zone-dark', 'zone zone-dark', 'zone zon
   screenEl.appendChild(node);
   return node;
 });
-const alertEls = [1, 2, 3, 4, 5].map(index => {
-  const node = document.createElement('div');
-  node.className = 'alert-slot';
-  node.textContent = String(index);
-  screenEl.appendChild(node);
-  return node;
-});
+/** Places the game fills on the run, drawn as dashed boxes: alerts, buffs, TG's action buttons. */
+function slots(count, kind, letter) {
+  return Array.from({ length: count }, (unused, index) => {
+    const node = document.createElement('div');
+    node.className = 'alert-slot' + (kind ? ' ' + kind : '');
+    node.textContent = letter + (index + 1);
+    screenEl.appendChild(node);
+    return node;
+  });
+}
+const alertEls = slots(HUD.alerts.slots, '', '');
+const buffEls = slots(HUD.buffs.slots, 'buff-slot', 'Б');
+// check_against_view() of hud/rogue_hud_bridges.dm: as many buttons in a row as fit, ten at most as in TG.
+const actionColumns = Math.max(1, Math.min(10, Math.floor((VIEW.w * ICON - HUD.actions.inset - HUD.actions.left - ICON) / (ICON + 2)) + 1));
+const actionEls = slots(actionColumns * HUD.actions.rows, 'action-slot', 'Д');
 const pickEl = document.createElement('div');
 pickEl.className = 'pick';
 screenEl.appendChild(pickEl);
@@ -700,10 +705,23 @@ function drawScene() {
   pen.fill();
 }
 function alertPlace(index) {
-  // get_ui_alert_placement() of hud/rogue_hud.dm
-  const offset = (6 - index) * ICON + 29 - index * 2 - HUD.alertDrop;
+  // get_ui_alert_placement() of hud/rogue_hud.dm: a row from the frame's inner top left corner
+  const across = HUD.alerts.inset + (index - 1) * HUD.alerts.step;
+  return 'WEST+' + Math.floor(across / ICON) + ':' + across % ICON + ',NORTH:-' + HUD.alerts.inset;
+}
+function buffPlace(index) {
+  // get_ui_buff_placement() of hud/rogue_hud.dm: the column under the gargoyle
+  const offset = (6 - index) * ICON + 29 - index * 2 - HUD.buffs.drop;
   const rows = Math.floor(offset / ICON);
-  return 'EAST-1:28,CENTER' + (rows < 0 ? '' : '+') + rows + ':' + (offset - rows * ICON);
+  return HUD.buffs.column + ',CENTER' + (rows < 0 ? '' : '+') + rows + ':' + (offset - rows * ICON);
+}
+function actionPlace(index) {
+  // rogueui_action_place() of hud/rogue_hud_bridges.dm: rows filled left to right, the first one the lowest
+  const column = (index - 1) % actionColumns;
+  const row = Math.floor((index - 1) / actionColumns);
+  const across = HUD.actions.left + column * (ICON + 2);
+  const up = HUD.actions.inset + row * ICON;
+  return 'WEST+' + Math.floor(across / ICON) + ':' + across % ICON + ',SOUTH+' + Math.floor(up / ICON) + ':' + up % ICON;
 }
 
 function render() {
@@ -753,7 +771,8 @@ function render() {
       continue;
     }
     piece.at = at;
-    putBox(piece.node, at.x - piece.ox, at.y - piece.oy, piece.sprite.w, piece.sprite.h);
+    const shape = shapeOf(piece, at);
+    putBox(piece.node, shape.left, shape.bottom, shape.width, shape.height);
   }
 
   gridEl.hidden = !state.show.grid;
@@ -767,11 +786,13 @@ function render() {
   putBox(zoneEls[3], geo.fieldLeft, fieldTop, fieldWidth, screenHeight - fieldTop);
   putBox(zoneEls[4], geo.fieldLeft, geo.fieldBottom, fieldWidth, fieldHeight);
   for (const node of zoneEls) node.hidden = node.hidden || !state.show.grid;
-  alertEls.forEach((node, index) => {
-    const at = spot(alertPlace(index + 1), geo);
-    putBox(node, at.x, at.y, ICON, ICON);
-    node.hidden = !state.show.alerts;
-  });
+  for (const [nodes, place] of [[alertEls, alertPlace], [buffEls, buffPlace], [actionEls, actionPlace]]) {
+    nodes.forEach((node, index) => {
+      const at = spot(place(index + 1), geo);
+      putBox(node, at.x, at.y, ICON, ICON);
+      node.hidden = !state.show.alerts;
+    });
+  }
 
   const picked = groupOf(state.selected);
   let box = null;
@@ -821,8 +842,8 @@ function setPlace(name, text) {
   if (text === BASE[name]) delete state.moves[name];
   else state.moves[name] = text;
 }
-/** Where an element belongs is where its middle is: left of the field it is of the column, under the field of the
-    bottom row, else of the field. The place is rewritten for that, the element staying where it is drawn. */
+/** An element whose middle is under the field is of the bottom row, which the frame keeps on the window's bottom
+    edge; the place is rewritten for that, the element staying where it is drawn. */
 function settle(name) {
   const text = cur(name);
   const loc = parseLoc(text);
@@ -830,13 +851,9 @@ function settle(name) {
   const at = spot(text, geo);
   if (!loc || !piece || !at) return text;
   const box = drawnBox(piece, at);
-  const middleX = (box.left + box.right) / 2;
   const middleY = (box.bottom + box.top) / 2;
-  const wasColumn = loc.x.anchor === 'WEST' && loc.x.tiles === -1;
   const wasBottom = loc.y.anchor === 'SOUTH' && loc.y.tiles === -1;
-  if (middleX < geo.fieldLeft) loc.x = { anchor: 'WEST', tiles: -1, px: at.x - geo.fit.shift };
-  else if (wasColumn) loc.x = splitAxis('WEST', at.x - geo.fieldLeft);
-  else foldAxis(loc.x);
+  foldAxis(loc.x);
   if (middleY < geo.fieldBottom) loc.y = { anchor: 'SOUTH', tiles: -1, px: at.y };
   else if (wasBottom) loc.y = splitAxis('SOUTH', at.y - geo.fieldBottom);
   else foldAxis(loc.y);

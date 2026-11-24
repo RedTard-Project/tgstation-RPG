@@ -39,43 +39,43 @@
 
 // The inventory opens over the field from its left edge; its button is in the corner of the column and the bottom row.
 #define rogueui_inventory_toggle "WEST-1,SOUTH-1"
-#define rogueui_mask "WEST:8,SOUTH+5"
-#define rogueui_head "WEST+1:8,SOUTH+5"
-#define rogueui_mouth "WEST+2:8,SOUTH+5"
-#define rogueui_backr "WEST:8,SOUTH+4"
-#define rogueui_cloak "WEST+1:8,SOUTH+4"
-#define rogueui_backl "WEST+2:8,SOUTH+4"
-#define rogueui_neck "WEST:8,SOUTH+3"
-#define rogueui_armor "WEST+1:8,SOUTH+3"
-#define rogueui_wrists "WEST+2:8,SOUTH+3"
-#define rogueui_ring1 "WEST,SOUTH+2:8"
-#define rogueui_ring2 "WEST:16,SOUTH+2:8"
-#define rogueui_ring3 "WEST,SOUTH+2:-8"
-#define rogueui_ring4 "WEST:16,SOUTH+2:-8"
-#define rogueui_shirt "WEST+1:8,SOUTH+2"
-#define rogueui_gloves "WEST+2:8,SOUTH+2"
-#define rogueui_beltr "WEST:8,SOUTH+1"
-#define rogueui_belt "WEST+1:8,SOUTH+1"
-#define rogueui_beltl "WEST+2:8,SOUTH+1"
-#define rogueui_pants "WEST+1:8,SOUTH"
-#define rogueui_shoes "WEST+2:8,SOUTH"
+#define rogueui_mask "WEST:10,SOUTH+5:10"
+#define rogueui_head "WEST+1:10,SOUTH+5:10"
+#define rogueui_mouth "WEST+2:10,SOUTH+5:10"
+#define rogueui_backr "WEST:10,SOUTH+4:10"
+#define rogueui_cloak "WEST+1:10,SOUTH+4:10"
+#define rogueui_backl "WEST+2:10,SOUTH+4:10"
+#define rogueui_neck "WEST:10,SOUTH+3:10"
+#define rogueui_armor "WEST+1:10,SOUTH+3:10"
+#define rogueui_wrists "WEST+2:10,SOUTH+3:10"
+#define rogueui_ring1 "WEST:2,SOUTH+2:18"
+#define rogueui_ring2 "WEST:18,SOUTH+2:18"
+#define rogueui_ring3 "WEST:2,SOUTH+2:2"
+#define rogueui_ring4 "WEST:18,SOUTH+2:2"
+#define rogueui_shirt "WEST+1:10,SOUTH+2:10"
+#define rogueui_gloves "WEST+2:10,SOUTH+2:10"
+#define rogueui_beltr "WEST:10,SOUTH+1:10"
+#define rogueui_belt "WEST+1:10,SOUTH+1:10"
+#define rogueui_beltl "WEST+2:10,SOUTH+1:10"
+#define rogueui_pants "WEST+1:10,SOUTH:10"
+#define rogueui_shoes "WEST+2:10,SOUTH:10"
 
 // The elements of the left column.
 #define rogueui_stress "WEST-1,NORTH-1"
-#define rogueui_blood "WEST-1:5,NORTH-2:15"
-#define rogueui_fat "WEST-1:3,NORTH-4:13"
-#define rogueui_craft "WEST-1,NORTH-5:11"
-#define rogueui_skills "WEST-1,NORTH-5:11"
-#define rogueui_build "WEST-1,NORTH-6:9"
-#define rogueui_def "WEST-1,NORTH-7:23"
-#define rogueui_cmode "WEST-1,NORTH-8:21"
-#define rogueui_drop "WEST-1,NORTH-9:19"
-#define rogueui_throw "WEST-1,NORTH-9:19"
-#define rogueui_give "WEST-1,NORTH-9:19"
-#define rogueui_eye "WEST-1,NORTH-10:17"
-#define rogueui_moves "WEST-1,NORTH-11:15"
-#define rogueui_quad "WEST-1,NORTH-12:13"
-#define rogueui_stance "WEST-1,NORTH-13:11"
+#define rogueui_blood "WEST-1:5,NORTH-2:8"
+#define rogueui_fat "WEST-1:6,NORTH-5:30"
+#define rogueui_craft "WEST-1,NORTH-6:28"
+#define rogueui_skills "WEST-1,NORTH-6:28"
+#define rogueui_build "WEST-1,NORTH-7:26"
+#define rogueui_def "WEST-1,NORTH-7:8"
+#define rogueui_cmode "WEST-1,NORTH-8:6"
+#define rogueui_drop "WEST-1,NORTH-9:4"
+#define rogueui_throw "WEST-1,NORTH-9:4"
+#define rogueui_give "WEST-1,NORTH-9:4"
+#define rogueui_eye "WEST-1,NORTH-10:2"
+#define rogueui_moves "WEST-1,NORTH-11"
+#define rogueui_quad "WEST-1,NORTH-13:30"
+#define rogueui_stance "WEST-1,NORTH-14:28"
 
 // The block of the bottom row.
 #define rogueui_hand_left "CENTER-1:16,SOUTH-1"
@@ -92,10 +92,22 @@
 #define rogueui_feint "WEST-1,NORTH"
 #define rogueui_defdelay "WEST-1,NORTH"
 
-#define rogueui_targetdoll "EAST-1,NORTH-1"
-#define rogueui_doll_back "EAST-1,NORTH-1"
-#define rogueui_doll_toggle "EAST:-2,NORTH-2"
-#define rogueui_alert_drop 72
+#define rogueui_targetdoll "EAST-1:-10,NORTH-1:-10"
+#define rogueui_doll_back "EAST-1:-10,NORTH-1:-10"
+#define rogueui_doll_toggle "EAST:-8,NORTH-3:24"
+// Alerts stand in a row along the top of the field from the inner left corner of its frame, left to right; buffs (the
+// alerts of status effects) stand in the column under the gargoyle and its button, where TG's alerts stood.
+#define rogueui_alert_slots 6
+#define rogueui_alert_inset 10
+#define rogueui_alert_step 34
+#define rogueui_buff_slots 5
+#define rogueui_buff_drop 72
+// TG's action buttons stand a little right of the inventory's outermost cell, in rows filled left to right that grow
+// up from the inner bottom edge of the field's frame: pixels from the field's left edge to the first button, pixels kept
+// clear at the bottom and at the right, and the most rows.
+#define rogueui_action_left 110
+#define rogueui_action_inset 10
+#define rogueui_action_rows 3
 #define rogueui_fov_blocker "SOUTH,WEST"
 #define rogueui_advsetup "CENTER-1,CENTER-1:16"
 

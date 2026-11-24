@@ -55,7 +55,7 @@ def zone(place):
     if column and bottom:
         return 'угол: левая колонка и нижний ряд'
     if column:
-        return 'левая колонка (на черноте слева от поля)'
+        return 'левая колонка (на черноте, вплотную к рамке поля)'
     if bottom:
         return 'нижний ряд (на черноте под полем)'
     return 'поле'

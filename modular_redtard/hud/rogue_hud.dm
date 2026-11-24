@@ -70,12 +70,36 @@
 	screen_objects[HUD_HUMAN_TOGGLE_INVENTORY]?.update_appearance()
 	return inventory_shown
 
+/// Alerts stand in a row along the top of the field, from the inner left corner of its frame to the right (owner's
+/// decision 2026-11-24).
 /datum/hud/rogue/get_ui_alert_placement(index)
-	if(index > 5)
+	if(index > rogueui_alert_slots)
 		return ""
-	var/offset = (6 - index) * ICON_SIZE_Y + 29 - index * 2 - rogueui_alert_drop
+	var/across = rogueui_alert_inset + (index - 1) * rogueui_alert_step
+	return "WEST+[round(across / ICON_SIZE_X)]:[across % ICON_SIZE_X],NORTH:-[rogueui_alert_inset]"
+
+/// Buffs stand where TG's alerts stood, lowered under the gargoyle and its button: a column inside the field's frame.
+/datum/hud/rogue/proc/get_ui_buff_placement(index)
+	if(index > rogueui_buff_slots)
+		return ""
+	var/offset = (6 - index) * ICON_SIZE_Y + 29 - index * 2 - rogueui_buff_drop
 	var/rows = round(offset / ICON_SIZE_Y)
-	return "EAST-1:28,CENTER[rows < 0 ? "" : "+"][rows]:[offset - rows * ICON_SIZE_Y]"
+	return "EAST-1:22,CENTER[rows < 0 ? "" : "+"][rows]:[offset - rows * ICON_SIZE_Y]"
+
+/// TG places every alert by its number in the mob's list; here the alerts of status effects (the buffs and the debuffs)
+/// are counted apart from the rest and go to their own column.
+/datum/hud/rogue/reorganize_alerts(mob/viewmob)
+	. = ..()
+	if(!. || hud_version != HUD_STYLE_STANDARD)
+		return
+	var/alerts_placed = 0
+	var/buffs_placed = 0
+	for(var/category in mymob.alerts)
+		var/atom/movable/screen/alert/alert = mymob.alerts[category]
+		if(istype(alert, /atom/movable/screen/alert/status_effect))
+			alert.screen_loc = get_ui_buff_placement(++buffs_placed)
+		else
+			alert.screen_loc = get_ui_alert_placement(++alerts_placed)
 
 /datum/hud/rogue/show_hud(version = 0, mob/viewmob)
 	. = ..()

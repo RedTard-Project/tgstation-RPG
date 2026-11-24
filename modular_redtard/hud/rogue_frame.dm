@@ -1,14 +1,15 @@
 /// The frame of the rogue HUD (owner's requests of 2026-11-24): Roguetown's frame around the field, plain darkness around
-/// it and the buttons on that darkness — the left column in the middle of the darkness left of the field, the bottom row
-/// on the bottom edge of the window, none of them over the field.
+/// it and the buttons on that darkness — the left column against the field's frame, the bottom row on the bottom edge of
+/// the window, none of them over the field.
 ///
 /// BYOND fits the whole screen (the view and the borders that screen objects add to it) into the map control and leaves
 /// blank bars where their shapes differ. Nothing can be drawn on those bars (DM reference, screen_loc: "letterboxing ...
 /// is not considered usable space"), so the buttons could not reach the window's edges: a wide window had a bar left of
 /// the left column, a tall one a bar under the bottom row. The darkness makes the bars part of the screen: border rows and
 /// columns of black tiles, as many as give the screen the shape of the control. The bottom row then lies on the control's
-/// bottom edge and the left column stands in the middle of the black space left of the field, while the field keeps its
-/// view and stays in the middle. The tiles are the black of the bars, so no edge shows between them.
+/// bottom edge, while the field keeps its view and stays in the middle with the left column against its frame (the
+/// column stood in the middle of the black space for a day; the owner had it stick to the frame). The tiles are the
+/// black of the bars, so no edge shows between them.
 ///
 /// The planes of the world are drawn on borders too (they are screen objects, not the map BYOND clips to the view), and a
 /// ring of the map one tile wide is known to the client beyond the view: every border tile is covered by an opaque piece
@@ -45,8 +46,6 @@
 	/// Border rows above the field, and rows between the field and the bottom row.
 	var/frame_top = 0
 	var/frame_gap = 0
-	/// Pixels of an icon the left column stands right of the screen's left edge, to be in the middle of the black space.
-	var/frame_left_shift = 0
 	/// The size of the view the frame is laid out for, "15x15".
 	var/frame_field
 	/// The elements have been moved to their places in the frame at least once.
@@ -162,7 +161,6 @@ GAME_VERB_NATIVE(/client, rogue_frame_resized, ".rogue-frame", null, width as nu
 	var/right = 0
 	var/top = 0
 	var/gap = 0
-	var/shift = 0
 	if(CONFIG_GET(flag/rogue_hud_frame) && isnum(width) && isnum(height) && width >= ROGUE_FRAME_MIN_CONTROL && height >= ROGUE_FRAME_MIN_CONTROL)
 		// The least screen: the field, the left column and the bottom row.
 		var/least_columns = view_size[1] + 1
@@ -179,21 +177,15 @@ GAME_VERB_NATIVE(/client, rogue_frame_resized, ".rogue-frame", null, width as nu
 		var/extra_rows = min(rows - least_rows, ROGUE_FRAME_MAX_ROWS * 2)
 		top = FLOOR(extra_rows / 2, 1)
 		gap = extra_rows - top
-		// The left column in the middle of all that is black left of the field: the border columns and the blank sliver
-		// BYOND leaves beside the screen.
-		var/sliver = max(0, width - (view_size[1] + left + right) * tile) / 2
-		shift = max(0, round(((left - 1) * tile - sliver) / 2 / tile * ICON_SIZE_X))
-	if(frame_applied && field == frame_field && left == frame_left && right == frame_right && top == frame_top && gap == frame_gap && shift == frame_left_shift)
+	if(frame_applied && field == frame_field && left == frame_left && right == frame_right && top == frame_top && gap == frame_gap)
 		return
 	frame_left = left
 	frame_right = right
 	frame_top = top
 	frame_gap = gap
-	frame_left_shift = shift
 	apply_frame()
 
-/// Puts the frame of the field, the darkness and the elements of the left column and the bottom row where the frame has
-/// them.
+/// Puts the frame of the field, the darkness and the elements of the bottom row where the frame has them.
 /datum/hud/rogue/proc/apply_frame()
 	frame_applied = TRUE
 	var/client/viewer = mymob?.client
@@ -214,7 +206,7 @@ GAME_VERB_NATIVE(/client, rogue_frame_resized, ".rogue-frame", null, width as nu
 		if(!istype(piece) || istype(piece, /atom/movable/screen/rogue/darkness))
 			continue
 		if(isnull(piece.rogue_frame_base))
-			// FALSE: not an element of the left column or of the bottom row. The frame never moves it, whatever else
+			// FALSE: not an element of the bottom row. The frame never moves it, whatever else
 			// changes its place later (TG moves its palette buttons, for one).
 			var/layout_place = piece.screen_loc
 			piece.rogue_frame_base = (istext(layout_place) && !findtext(layout_place, " to ") && frame_loc(layout_place)) ? layout_place : FALSE
@@ -228,23 +220,15 @@ GAME_VERB_NATIVE(/client, rogue_frame_resized, ".rogue-frame", null, width as nu
 	piece.screen_loc = place || "CENTER"
 	piece.invisibility = place ? INVISIBILITY_NONE : INVISIBILITY_ABSTRACT
 
-/// The place in the frame of an element the layout has at `base`: one in the left column (its x is WEST-1) goes to the
-/// middle of the black space left of the field, one in the bottom row (its y is SOUTH-1) to the screen's bottom row.
-/// Null for anything else: the frame leaves it alone.
+/// The place in the frame of an element the layout has at `base`: one in the bottom row (its y is SOUTH-1) goes to the
+/// screen's bottom row. Null for anything else: the frame leaves it alone, the left column included — it stands at
+/// WEST-1, against the field's frame.
 /datum/hud/rogue/proc/frame_loc(base)
-	var/static/regex/column = regex(@"^WEST-1(?::(-?\d+))?,")
 	var/static/regex/bottom = regex(@",SOUTH-1(?::(-?\d+))?$")
-	var/place = base
-	var/moved = FALSE
-	if(column.Find(place))
-		var/pixels = text2num(column.group[1] || "0") + frame_left_shift
-		place = "WEST-[frame_left][pixels ? ":[pixels]" : ""]," + copytext(place, length(column.match) + 1)
-		moved = TRUE
-	if(bottom.Find(place))
-		var/pixels = bottom.group[1]
-		place = copytext(place, 1, bottom.index) + ",SOUTH-[frame_gap + 1][pixels ? ":[pixels]" : ""]"
-		moved = TRUE
-	return moved ? place : null
+	if(!bottom.Find(base))
+		return null
+	var/pixels = bottom.group[1]
+	return copytext(base, 1, bottom.index) + ",SOUTH-[frame_gap + 1][pixels ? ":[pixels]" : ""]"
 
 #undef ROGUE_FRAME_MIN_CONTROL
 #undef ROGUE_FRAME_OVERHANG

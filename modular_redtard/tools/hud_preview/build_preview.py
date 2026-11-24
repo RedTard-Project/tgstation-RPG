@@ -37,6 +37,7 @@ INTENT_ICON = 'modular_redtard/icons/mob/rogueintents.dmi'
 # where the table leaves it to the game, and the overlays as (icon or None for the element's own, state, x, y).
 PREVIEW = {
     'HUD_MOB_MOOD': {'state': 'mood_idle', 'under': [(None, 'stressback', 0, 0)]},
+    'HUD_MOB_HEALTH': {'under': [(HUD_ICON, 'stressback', -5, -8)]},
     'HUD_MOB_MOVE_INTENT': {'state': 'sprint0'},
     'HUD_MOB_ZONE_SELECTOR': {
         'state': 'm-zone_sel',
@@ -51,6 +52,11 @@ PREVIEW = {
     'HUD_ROGUE_EYE': {'over': [(None, 'oeye', 0, 0)]},
     'HUD_KEY_HAND_SLOT(1)': {'over': [(None, 'hand_active', 0, 0)]},
     'HUD_ROGUE_MANA': {'state': 'mana100'},
+}
+
+# Elements the game draws at another size: the type's `transform` (the ring cells are half cells).
+SCALES = {
+    '/atom/movable/screen/inventory/rogue/indexed/ring': 0.5,
 }
 
 LABELS = {
@@ -339,6 +345,8 @@ def build():
             'group': GROUPS.get(group, 'none'),
         }
         element.update(picture)
+        if type_path in SCALES:
+            element['scale'] = SCALES[type_path]
         if key == 'HUD_ROGUE_FIELD_FRAME':
             element['kind'] = 'frame'
         rmb = re.match(r'HUD_ROGUE_RMB_SLOT\((\d+)\)', key)
@@ -367,7 +375,23 @@ def build():
             'maxRows': number_define(frame, 'ROGUE_FRAME_MAX_ROWS'),
             'fieldTiles': number_define(frame, 'ROGUE_FIELD_FRAME_TILES'),
         },
-        'alertDrop': defines['rogueui_alert_drop'],
+        # Where the game puts what it adds on the run: alerts, buffs and TG's action buttons (hud/rogue_hud.dm,
+        # hud/rogue_hud_bridges.dm).
+        'alerts': {
+            'slots': int(defines['rogueui_alert_slots']),
+            'inset': int(defines['rogueui_alert_inset']),
+            'step': int(defines['rogueui_alert_step']),
+        },
+        'buffs': {
+            'slots': int(defines['rogueui_buff_slots']),
+            'drop': int(defines['rogueui_buff_drop']),
+            'column': re.search(r'return "(EAST[^,"]*),CENTER', (MODULE / 'hud' / 'rogue_hud.dm').read_text(encoding='utf-8')).group(1),
+        },
+        'actions': {
+            'left': int(defines['rogueui_action_left']),
+            'inset': int(defines['rogueui_action_inset']),
+            'rows': int(defines['rogueui_action_rows']),
+        },
         'defines': {name: defines[name] for name in sorted(used)},
         'elements': elements,
         'sprites': sprites.sheet,

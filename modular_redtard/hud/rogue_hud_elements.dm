@@ -254,6 +254,15 @@
 	layer = ROGUE_HUD_LAYER
 	mouse_over_pointer = MOUSE_HAND_POINTER
 
+/// The heart stands on the same square as the mood's face (owner's request 2026-11-24). The heart is drawn in the lower
+/// left corner of its 64x64 icon, so the square is set about the heart, not about the icon.
+/atom/movable/screen/healths/rogue/Initialize(mapload, datum/hud/hud_owner)
+	. = ..()
+	var/mutable_appearance/square = mutable_appearance(ROGUE_HUD_ICON, "stressback")
+	square.pixel_x = -5
+	square.pixel_y = -8
+	underlays += square
+
 /atom/movable/screen/healths/rogue/Click(location, control, params)
 	var/mob/living/carbon/user = usr
 	if(!iscarbon(user) || user != get_mob())
