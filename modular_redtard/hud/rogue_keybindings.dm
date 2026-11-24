@@ -289,13 +289,6 @@
 	hud.toggle_group(group_key, user.mob)
 	return TRUE
 
-/datum/keybinding/rogue/hud_group/panel
-	name = "rogue_panel"
-	full_name = "Fold the left panel"
-	description = "Fold or unfold the left panel of the HUD"
-	keybind_signal = COMSIG_KB_ROGUE_PANEL_DOWN
-	group_key = HUD_GROUP_ROGUE_PANEL
-
 /datum/keybinding/rogue/hud_group/doll
 	name = "rogue_doll"
 	full_name = "Hide the gargoyle"

@@ -53,8 +53,9 @@
 #define ROGUE_SPELL_CHARGE_SOUND 'modular_redtard/combat/sound/magic/charging.ogg'
 #define ROGUE_SPELL_CAST_SOUND 'modular_redtard/combat/sound/magic/whiteflame.ogg'
 
-/// Where the mana orb sits on the medieval HUD: right of the stamina orb (rogueui_fat). To be checked in game.
-#define rogueui_mana "WEST+2:5,NORTH-4:13"
+/// Where the mana orb sits on the medieval HUD: right of the stamina orb (rogueui_fat), which stands in the left column
+/// beside the field; the orb itself is over the field's first tiles. To be checked in game.
+#define rogueui_mana "WEST+1:3,NORTH-4:13"
 
 /// Mana changed on a mob: (amount after the change).
 #define COMSIG_MOB_ROGUE_MANA_CHANGED "mob_rogue_mana_changed"

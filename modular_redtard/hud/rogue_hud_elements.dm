@@ -1,12 +1,12 @@
 /atom/movable/screen/proc/rogue_has_click_listener()
 	return !isnull(_listen_lookup?[COMSIG_SCREEN_ELEMENT_CLICK])
 
+/// A button that shows or hides a group of the HUD. The left column has none: it stands beside the field and stays.
 /atom/movable/screen/rogue/panel_toggle
 	name = "panel"
 	icon_state = "template_small"
-	screen_loc = rogueui_panel_toggle
 	mouse_over_pointer = MOUSE_HAND_POINTER
-	var/group_key = HUD_GROUP_ROGUE_PANEL
+	var/group_key
 
 /atom/movable/screen/rogue/panel_toggle/update_overlays()
 	. = ..()
@@ -31,6 +31,12 @@
 	screen_loc = rogueui_panel_strip
 	layer = ROGUE_HUD_LAYER - 1
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/// The row under the field, one button high: the hands, the intents and the RMB button stand on it. The left column runs
+/// down past it, so the corner under the column (the inventory button) belongs to the column.
+/atom/movable/screen/rogue/panel_strip/bottom
+	icon_state = "strip_bottom"
+	screen_loc = rogueui_bottom_strip
 
 /atom/movable/screen/rogue/doll_back
 	name = ""
@@ -710,6 +716,28 @@ GLOBAL_LIST_INIT(rogue_precise_zone_map, list(
 	var/static/list/rogue_hover_cache = list()
 	var/static/list/zone_parts
 	var/limb_state_key
+	/// The part a click on the gargoyle names, while set_selected_zone() runs for that click.
+	var/clicked_part
+
+/// A click names its part itself. TG's zone keys (body_chest and the rest) name a zone of TG, and left at that the gargoyle
+/// lit every part of the zone at once — the chest together with the stomach. A key picks the first part of its zone, and
+/// the same key again the next one: chest, then stomach; arm, then hand; leg, then foot — as the keys of Azure do.
+/atom/movable/screen/zone_sel/rogue/set_selected_zone(choice, mob/user, should_log = TRUE)
+	var/mob/owner = get_mob()
+	if(!owner || user != owner)
+		return ..()
+	var/part = clicked_part
+	if(!part)
+		var/list/parts = get_zone_parts(choice)
+		var/at = parts.Find(owner.rogue_zone_precise)
+		part = (at && choice == owner.zone_selected) ? parts[at % length(parts) + 1] : parts[1]
+	// TG redraws the selector only when its own zone changes; chest to stomach is one zone of TG.
+	var/same_zone = choice == owner.zone_selected
+	var/new_part = part != owner.rogue_zone_precise
+	owner.rogue_zone_precise = part
+	. = ..()
+	if(same_zone && new_part)
+		update_appearance()
 
 /atom/movable/screen/zone_sel/rogue/Click(location, control, params)
 	var/list/modifiers = params2list(params)
@@ -724,9 +752,9 @@ GLOBAL_LIST_INIT(rogue_precise_zone_map, list(
 	var/mob/owner = get_mob()
 	if(!part || usr != owner)
 		return TRUE
-	owner.rogue_zone_precise = part
+	clicked_part = part
 	set_selected_zone(GLOB.rogue_precise_zone_map[part], usr)
-	update_appearance()
+	clicked_part = null
 	return TRUE
 
 /atom/movable/screen/zone_sel/rogue/MouseMove(location, control, params)

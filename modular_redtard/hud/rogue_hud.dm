@@ -23,8 +23,8 @@
 	. = ..()
 	add_screen_object(/atom/movable/screen/rogue/placeholder/grain, HUD_ROGUE_GRAIN, group_key = FALSE)
 	add_screen_object(/atom/movable/screen/rogue/placeholder/scannies, HUD_ROGUE_SCANNIES, group_key = FALSE)
-	add_screen_object(/atom/movable/screen/rogue/panel_toggle, HUD_ROGUE_PANEL_TOGGLE, HUD_GROUP_STATIC)
 	add_screen_object(/atom/movable/screen/rogue/panel_strip, HUD_ROGUE_PANEL_STRIP, HUD_GROUP_ROGUE_PANEL)
+	add_screen_object(/atom/movable/screen/rogue/panel_strip/bottom, HUD_ROGUE_BOTTOM_STRIP, HUD_GROUP_ROGUE_PANEL)
 
 /datum/hud/rogue/proc/group_shown(group_key)
 	return !(group_key in folded_groups)
@@ -35,6 +35,9 @@
 	return viewer
 
 /datum/hud/rogue/proc/toggle_group(group_key, mob/viewer)
+	// The left column stands beside the field and is never folded (owner's decision 2026-11-23).
+	if(group_key == HUD_GROUP_ROGUE_PANEL)
+		return TRUE
 	var/mob/watched = watched_mob(viewer)
 	var/datum/hud/rogue/watched_hud = watched.hud_used
 	var/list/pieces = istype(watched_hud) ? watched_hud.screen_groups[group_key] : null
@@ -55,7 +58,7 @@
 			return HUD_ROGUE_DOLL_TOGGLE
 		if(HUD_GROUP_ROGUE_RMB)
 			return HUD_ROGUE_RMB_BUTTON
-	return HUD_ROGUE_PANEL_TOGGLE
+	return null
 
 /datum/hud/rogue/proc/toggle_inventory(mob/viewer)
 	var/mob/watched = watched_mob(viewer)
@@ -154,7 +157,7 @@
 	add_screen_object(/atom/movable/screen/rogue/feint, HUD_ROGUE_FEINT, HUD_GROUP_ROGUE_PANEL)
 
 /datum/hud/rogue/human/proc/rmb_screen_loc(index)
-	return "CENTER+1:20,SOUTH:[rogueui_rmb_menu_base + (index - 1) * rogueui_rmb_menu_step]"
+	return rogueui_rmb_menu_slot(index)
 
 /datum/hud/rogue/human/show_hud(version = 0, mob/viewmob)
 	. = ..()

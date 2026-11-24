@@ -34,6 +34,7 @@ type BuildOptions = {
   ignoreWarningCodes: string[];
   port: string;
   map: string;
+  era: string;
   focus: boolean;
   noBuild: boolean;
   noRun: boolean;
@@ -92,6 +93,7 @@ function parseArgs(args: string[]): BuildOptions {
     ignoreWarningCodes: [],
     port: '1337',
     map: 'runtimestation',
+    era: 'medieval',
     focus: false,
     noBuild: false,
     noRun: false,
@@ -127,6 +129,11 @@ function parseArgs(args: string[]): BuildOptions {
       options.port = value();
     } else if (arg === '--map') {
       options.map = value();
+    } else if (arg === '--era') {
+      options.era = value().toLowerCase();
+      if (options.era !== 'medieval' && options.era !== 'modern') {
+        throw new Error(`--era takes "medieval" or "modern", not "${options.era}"`);
+      }
     } else if (arg === '--focus') {
       options.focus = true;
     } else if (arg === '--no-build') {
@@ -254,6 +261,13 @@ async function runLowMemory(options: BuildOptions) {
   map.space_ruin_levels = 0;
   map.space_empty_levels = 1;
   map[LOWMEM_MARKER] = true;
+  // The test map runs every rule of Roguetown (owner's decision 2026-11-24): the light launch loads its map as a
+  // medieval one, whatever era its own config names (maps/era.dm reads "era"). --era modern leaves the map its own era,
+  // as the light launch was before: then only the module's combat is on (rogue_combat_enabled()).
+  const ownEra = map.era ?? 'modern';
+  if (options.era === 'medieval') {
+    map.era = 'medieval';
+  }
   // The dungeon level is skipped on load (maps/other_z.dm), like Ratwood's and Vanderlin's NO_DUNGEON.
   if (options.noDungeon) {
     map.no_dungeon = true;
@@ -264,7 +278,7 @@ async function runLowMemory(options: BuildOptions) {
     fs.renameSync(NEXT_MAP, NEXT_MAP_BACKUP);
   }
   fs.writeFileSync(NEXT_MAP, `${JSON.stringify(map, null, '\t')}\n`);
-  console.log(`modular_redtard: low-memory launch of ${map.map_name} on port ${options.port}: no mining level, no space ruins${options.noDungeon ? ', no dungeon' : ''}.`);
+  console.log(`modular_redtard: low-memory launch of ${map.map_name} on port ${options.port}: no mining level, no space ruins${options.noDungeon ? ', no dungeon' : ''}; era ${map.era ?? 'modern'}${map.era !== ownEra ? ` (the map's own is ${ownEra}; --era modern keeps it)` : ''}.`);
   try {
     await DreamDaemon({ dmbFile: FINAL_DMB, namedDmVersion: options.dmVersion }, options.port, '-trusted');
   } finally {
