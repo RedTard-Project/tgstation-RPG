@@ -1,5 +1,5 @@
-#define ROGUE_HUD_MAX_SCREEN_OBJECTS 72
-#define ROGUE_HUD_MAX_SHOWN_OBJECTS 38
+#define ROGUE_HUD_MAX_SCREEN_OBJECTS 76
+#define ROGUE_HUD_MAX_SHOWN_OBJECTS 42
 
 #define ROGUE_HUD_STUB_TEXT "не реализовано"
 
@@ -29,8 +29,10 @@
 // The row under the field (2026-11-24) is the same for the bottom: with the column alone the screen was 16x15, and the
 // window, fitted to a square view, showed an empty bar under it. The row makes that bar the HUD's own, one button high;
 // the hands, the intents and the RMB button stand on it, the inventory button in the corner under the column.
-#define rogueui_panel_strip "WEST-1,SOUTH-1 to WEST-1,NORTH"
-#define rogueui_bottom_strip "WEST,SOUTH-1 to EAST,SOUTH-1"
+// These are the places of the least screen; the frame (hud/rogue_frame.dm) adds black borders to fit the player's map
+// window and moves the column (x of WEST-1) and the bottom panel (y of SOUTH-1) within them.
+#define rogueui_panel_strip "WEST-1,SOUTH to WEST-1,NORTH"
+#define rogueui_bottom_strip "WEST-1,SOUTH-1 to EAST,SOUTH-1"
 
 // The inventory opens over the field from its left edge; its button is in the corner of the column and the bottom row.
 #define rogueui_inventory_toggle "WEST-1,SOUTH-1"
@@ -102,6 +104,10 @@
 
 #define HUD_ROGUE_PANEL_STRIP "rogue_panel_strip"
 #define HUD_ROGUE_BOTTOM_STRIP "rogue_bottom_strip"
+#define HUD_ROGUE_FRAME_LEFT "rogue_frame_left"
+#define HUD_ROGUE_FRAME_RIGHT "rogue_frame_right"
+#define HUD_ROGUE_FRAME_TOP "rogue_frame_top"
+#define HUD_ROGUE_FRAME_GAP "rogue_frame_gap"
 #define HUD_ROGUE_BUILD "rogue_build"
 #define HUD_ROGUE_DOLL_TOGGLE "rogue_doll_toggle"
 #define HUD_ROGUE_DOLL_BACK "rogue_doll_back"

@@ -29,6 +29,7 @@
 #include "hud\rogue_hud_mechanics.dm"
 #include "hud\rogue_hud.dm"
 #include "hud\rogue_hud_bridges.dm"
+#include "hud\rogue_frame.dm"
 #include "hud\rogue_keybindings.dm"
 #include "hud\human_hud_switch.dm"
 #include "hud\view_range.dm"
