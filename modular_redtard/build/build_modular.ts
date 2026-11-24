@@ -18,6 +18,50 @@ const NEXT_MAP_BACKUP = 'data/next_map.json.redtard-backup';
 const LOWMEM_MARKER = 'redtard_lowmem';
 const PREREQUISITES = ['icon-cutter', 'behavior-tree-compiler', 'tgui', 'tg-font'];
 const CONTENT_CHECK = 'modular_redtard/tools/check_modular_content.py';
+const BUILD_STAMP = '.cache/modular_redtard/build_stamp.json';
+// What the game binary is compiled from: TG's own list (tools/build/build.ts, DmTarget) and the module with the value
+// files it compiles in. The light launch compiles only when one of these is newer than the binary.
+const DM_INPUTS = [
+  'tgstation.dme',
+  '_maps/map_files/generic',
+  'code',
+  'html',
+  'icons',
+  'interface',
+  'sound',
+  'tgui/public/tgui.html',
+  'modular_redtard',
+  'config/redtard/mechanics',
+];
+// Folders of the module that hold no game source, and files that are never compiled in.
+const DM_INPUT_SKIP_FOLDERS = [
+  'modular_redtard/build',
+  'modular_redtard/tools',
+  'modular_redtard/tgui',
+  'modular_redtard/tests',
+];
+const DM_INPUT_SKIP_FILES = /\.(md|py|pyc|ts|cmd|sh|log|int|lk|rsc|dmb)$/i;
+// What the tgui bundles are built from (TG's TguiTarget and the module's two bundles) and what must exist after it.
+const INTERFACE_INPUTS = [
+  'tgui/packages',
+  'tgui/rspack.config.ts',
+  'tgui/package.json',
+  'tgui/bun.lock',
+  'tgui/tsconfig.json',
+  'modular_redtard/tgui',
+];
+const INTERFACE_OUTPUTS = [
+  'tgui/public/tgui.bundle.js',
+  'tgui/public/tgui.bundle.css',
+  'tgui/public/tgui-panel.bundle.js',
+  'tgui/public/tgui-rogue-lobby.bundle.js',
+  'tgui/public/tgui-rogue-panel.bundle.js',
+];
+// When the compile of the game binary began: sources are compared with this moment, not with the binary's own time,
+// so a file saved while the compiler ran counts as changed.
+let compileStartedAt = 0;
+// The list of the binary's source files at that moment (scanSources()).
+let compileSourceList = '';
 const MODULE_DEFINES = ['MINIMAL_CENTCOM'];
 const ROGUE_LOBBY_CONFIG = '../modular_redtard/tgui/rspack.rogue_lobby.ts';
 const ROGUE_LOBBY_INPUTS = ['modular_redtard/tgui', 'tgui/packages/tgui-lobby', 'tgui/rspack.config.ts'];
@@ -37,6 +81,8 @@ type BuildOptions = {
   era: string;
   focus: boolean;
   noBuild: boolean;
+  rebuild: boolean;
+  maps: boolean;
   noRun: boolean;
   noDungeon: boolean;
   rawArgs: string[];
@@ -50,20 +96,38 @@ async function main() {
     case 'build':
       await runPrerequisites();
       await compileModular(BUILD_BASE, ['CBT', ...options.defines], options);
-      promoteArtifacts();
+      promoteArtifacts(options);
       break;
     case 'server':
       await runPrerequisites();
       await compileModular(BUILD_BASE, ['CBT', ...options.defines], options);
-      promoteArtifacts();
+      promoteArtifacts(options);
       resetNextMapForNormalStart();
       await DreamDaemon({ dmbFile: FINAL_DMB, namedDmVersion: options.dmVersion }, options.port, '-trusted');
       break;
     case 'lowmem':
+      // The light launch is for getting onto the test map fast (owner's decision 2026-11-24): tgui is rebuilt when its
+      // sources changed, the game is compiled when its sources changed, and nothing else runs. The maps of Rockhill are
+      // not touched at all — no question to the map source's server, no comparison, no conversion, no maplint (--maps
+      // asks for them) — and the content check is left to the dm target.
       if (!options.noBuild) {
-        await runPrerequisites();
-        await compileModular(BUILD_BASE, ['CBT', ...options.defines], options);
-        promoteArtifacts();
+        const stale = options.rebuild ? 'asked with --rebuild' : binaryStaleness(options);
+        const interfaceStale = options.rebuild ? 'asked with --rebuild' : interfaceStaleness();
+        // TG's own build decides what of its prerequisites to redo, but asking it takes seconds: it is asked only when
+        // something it builds from has changed.
+        if (stale || interfaceStale) {
+          console.log(`modular_redtard: running the prerequisites (${interfaceStale ?? stale}).`);
+          await runPrerequisites();
+        } else {
+          console.log('modular_redtard: tgui is newer than its sources: prerequisites skipped.');
+        }
+        if (stale) {
+          console.log(`modular_redtard: compiling the game (${stale}).`);
+          await compileModular(BUILD_BASE, ['CBT', ...options.defines], options, !options.maps);
+          promoteArtifacts(options);
+        } else {
+          console.log(`modular_redtard: ${FINAL_DMB} is newer than everything it is compiled from: compile skipped (--rebuild compiles anyway).`);
+        }
       }
       await runLowMemory(options);
       break;
@@ -96,8 +160,11 @@ function parseArgs(args: string[]): BuildOptions {
     era: 'medieval',
     focus: false,
     noBuild: false,
+    rebuild: false,
+    maps: false,
     noRun: false,
-    noDungeon: false,
+    // The light launch takes the lightest form of whatever map it is given: no dungeon level unless --dungeon asks.
+    noDungeon: true,
     rawArgs: args,
     parameterArgs: [],
   };
@@ -138,10 +205,16 @@ function parseArgs(args: string[]): BuildOptions {
       options.focus = true;
     } else if (arg === '--no-build') {
       options.noBuild = true;
+    } else if (arg === '--rebuild') {
+      options.rebuild = true;
+    } else if (arg === '--maps') {
+      options.maps = true;
     } else if (arg === '--no-run') {
       options.noRun = true;
     } else if (arg === '--no-dungeon') {
       options.noDungeon = true;
+    } else if (arg === '--dungeon') {
+      options.noDungeon = false;
     } else if (!arg.startsWith('-') && targetIndex === -1) {
       options.target = arg;
       targetIndex = i;
@@ -160,14 +233,21 @@ function checkModularContent(): void {
   }
 }
 
-async function compileModular(baseName: string, defines: string[], options: BuildOptions) {
-  try {
-    await prepareRockhill();
-  } catch (error) {
-    printMapFailure(error);
-    process.exit(1);
+/// quick: the compile alone, without the maps of Rockhill and the content check (the light launch).
+async function compileModular(baseName: string, defines: string[], options: BuildOptions, quick = false) {
+  compileStartedAt = Date.now();
+  compileSourceList = scanSources(DM_INPUTS, DM_INPUT_SKIP_FILES, Number.POSITIVE_INFINITY).list;
+  if (quick) {
+    console.log('modular_redtard: light launch: the maps of Rockhill are left as they are (--maps prepares them), no content check.');
+  } else {
+    try {
+      await prepareRockhill();
+    } catch (error) {
+      printMapFailure(error);
+      process.exit(1);
+    }
+    checkModularContent();
   }
-  checkModularContent();
   const dme = fs.readFileSync(UPSTREAM_DME, 'utf-8');
   if (!dme.includes(END_INCLUDE)) {
     throw new Error(`${UPSTREAM_DME} has no ${END_INCLUDE} marker`);
@@ -195,11 +275,148 @@ async function compileModular(baseName: string, defines: string[], options: Buil
   }
 }
 
-function promoteArtifacts() {
+function promoteArtifacts(options: BuildOptions) {
   fs.copyFileSync(`${BUILD_BASE}.dmb`, FINAL_DMB);
   fs.copyFileSync(`${BUILD_BASE}.rsc`, FINAL_RSC);
   removeIfExists(`${BUILD_BASE}.dmb`);
   removeIfExists(`${BUILD_BASE}.rsc`);
+  // What the game binary was compiled with and when: the light launch compiles again when it is asked for other
+  // defines, when a source changed after the compile began, or when something else has replaced the binary since.
+  writeStamp({
+    defines: buildDefines(options),
+    started: compileStartedAt,
+    built: fs.statSync(FINAL_DMB).mtimeMs,
+    sources: compileSourceList,
+  });
+}
+
+/// What the last builds of this wrapper did, for the light launch to tell what it can skip (BUILD_STAMP).
+type BuildStamp = {
+  /// Defines the game binary was compiled with.
+  defines?: string[];
+  /// When that compile began.
+  started?: number;
+  /// The binary's own time right after it: another tool's binary in its place has another one.
+  built?: number;
+  /// The list of the binary's source files as that compile found it (scanSources()): a file added or removed since.
+  sources?: string;
+  /// When the last run of the prerequisites (TG's tgui and the module's bundles) that ended well began.
+  prerequisites?: number;
+  /// The list of the source files of tgui as that run found it.
+  interfaceSources?: string;
+};
+
+function readStamp(): BuildStamp {
+  try {
+    return JSON.parse(fs.readFileSync(BUILD_STAMP, 'utf-8')) ?? {};
+  } catch {
+    return {};
+  }
+}
+
+function writeStamp(patch: BuildStamp): void {
+  fs.mkdirSync(BUILD_STAMP.slice(0, BUILD_STAMP.lastIndexOf('/')), { recursive: true });
+  fs.writeFileSync(BUILD_STAMP, `${JSON.stringify({ ...readStamp(), ...patch })}\n`);
+}
+
+function buildDefines(options: BuildOptions): string[] {
+  return [...MODULE_DEFINES, 'CBT', ...options.defines].sort();
+}
+
+/// Why the game binary has to be compiled again, or null when it is newer than every file it is compiled from and was
+/// compiled with the same defines. The light launch asks: a compile is most of its wait, and most launches follow a
+/// change in tgui or no change at all.
+function binaryStaleness(options: BuildOptions): string | null {
+  if (options.dmVersion) {
+    return 'a BYOND version is named';
+  }
+  if (!fs.existsSync(FINAL_DMB) || !fs.existsSync(FINAL_RSC)) {
+    return `no ${FINAL_DMB}`;
+  }
+  const stamp = readStamp();
+  if (!stamp.started || !stamp.built) {
+    return 'no record of the last compile';
+  }
+  if (JSON.stringify(stamp.defines) !== JSON.stringify(buildDefines(options))) {
+    return 'the defines differ from the last compile';
+  }
+  if (fs.statSync(FINAL_DMB).mtimeMs !== stamp.built) {
+    return `${FINAL_DMB} is not the one this wrapper compiled last`;
+  }
+  const scan = scanSources(DM_INPUTS, DM_INPUT_SKIP_FILES, stamp.started);
+  if (scan.changed) {
+    return `${scan.changed} changed`;
+  }
+  if (scan.list !== stamp.sources) {
+    return 'a source file was added or removed';
+  }
+  return null;
+}
+
+/// Why the prerequisites have to run again (TG's tgui bundles and the module's own), or null when no source of theirs has
+/// changed since they last ran to the end. What TG's other prerequisites build from (cut icons, behaviour trees) is among
+/// the sources of the game binary, so binaryStaleness() answers for them.
+function interfaceStaleness(): string | null {
+  const stamp = readStamp();
+  if (!stamp.prerequisites) {
+    return 'no record of the last prerequisites run';
+  }
+  for (const output of INTERFACE_OUTPUTS) {
+    if (!fs.existsSync(output)) {
+      return `no ${output}`;
+    }
+  }
+  const scan = scanSources(INTERFACE_INPUTS, null, stamp.prerequisites);
+  if (scan.changed) {
+    return `${scan.changed} changed`;
+  }
+  if (scan.list !== stamp.interfaceSources) {
+    return 'a source file of tgui was added or removed';
+  }
+  return null;
+}
+
+/// The source files under the inputs: the first of them changed after the moment `since`, and their list as one value
+/// (their count and a hash of their names), by which a file added or removed is told. The times of folders are not
+/// looked at: a folder's time also moves when an editor saves a file in it through a temporary one, be it a note that is
+/// not a source at all. node_modules is passed over; with skipFiles (the sources of the game binary) so are the files it
+/// matches and the module's folders that hold no game source (DM_INPUT_SKIP_FOLDERS).
+function scanSources(inputs: string[], skipFiles: RegExp | null, since: number): { changed: string | null; list: string } {
+  const names: string[] = [];
+  let changed: string | null = null;
+  const visitFile = (path: string) => {
+    if (skipFiles?.test(path)) {
+      return;
+    }
+    names.push(path);
+    if (!changed && fs.statSync(path).mtimeMs > since) {
+      changed = path;
+    }
+  };
+  const visitFolder = (path: string) => {
+    for (const entry of fs.readdirSync(path, { withFileTypes: true })) {
+      const child = `${path}/${entry.name}`;
+      if (entry.isDirectory()) {
+        if (entry.name !== 'node_modules' && !(skipFiles && DM_INPUT_SKIP_FOLDERS.includes(child))) {
+          visitFolder(child);
+        }
+      } else {
+        visitFile(child);
+      }
+    }
+  };
+  for (const input of inputs) {
+    if (!fs.existsSync(input)) {
+      continue;
+    }
+    if (fs.statSync(input).isDirectory()) {
+      visitFolder(input);
+    } else {
+      visitFile(input);
+    }
+  }
+  names.sort();
+  return { changed, list: `${names.length}:${Bun.hash(names.join('\n'))}` };
 }
 
 async function runTests(options: BuildOptions) {
@@ -272,6 +489,10 @@ async function runLowMemory(options: BuildOptions) {
   if (options.noDungeon) {
     map.no_dungeon = true;
   }
+  if (options.noRun) {
+    console.log(`modular_redtard: --no-run: ${map.map_name} (era ${map.era ?? 'modern'}) is ready to launch; nothing is started and ${NEXT_MAP} is left alone.`);
+    return;
+  }
   restoreNextMap();
   fs.mkdirSync('data', { recursive: true });
   if (fs.existsSync(NEXT_MAP)) {
@@ -311,11 +532,15 @@ function restoreNextMap() {
 }
 
 async function runPrerequisites() {
+  const began = Date.now();
+  const interfaceSources = scanSources(INTERFACE_INPUTS, null, Number.POSITIVE_INFINITY).list;
   await runUpstream(PREREQUISITES);
   // The medieval main menu (modular_redtard/lobby/rogue_lobby.dm) and the chat panel with the translation
   // (modular_redtard/localization/panel.dm).
   await buildModuleBundle('tgui-rogue-lobby', ROGUE_LOBBY_CONFIG, ROGUE_LOBBY_INPUTS, ROGUE_LOBBY_OUTPUTS);
   await buildModuleBundle('tgui-rogue-panel', ROGUE_PANEL_CONFIG, ROGUE_PANEL_INPUTS, ROGUE_PANEL_OUTPUTS);
+  // The light launch skips all of this while no source of tgui has changed since (interfaceStaleness()).
+  writeStamp({ prerequisites: began, interfaceSources });
 }
 
 /// A bundle of the module, built with its own rspack config over TG's after TG's tgui, and only when its sources
@@ -336,6 +561,14 @@ async function buildModuleBundle(name: string, config: string, inputs: string[],
   const code = await proc.exited;
   if (code !== 0) {
     throw new Error(`${name} build exited with code ${code}`);
+  }
+  // rspack leaves a bundle that came out the same untouched, and it then stayed older than its sources: the bundle was
+  // built anew by every build. Its time says when it was last found current.
+  const now = new Date();
+  for (const file of outputs) {
+    if (fs.existsSync(file)) {
+      fs.utimesSync(file, now, now);
+    }
   }
 }
 

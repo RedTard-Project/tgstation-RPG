@@ -44,6 +44,7 @@
 #include "maps\no_shuttles.dm"
 #include "maps\medieval_quiet.dm"
 #include "attributes\test_role.dm"
+#include "maps\lowmem.dm"
 #include "maps\medieval_round.dm"
 #include "lobby\rogue_lobby.dm"
 #include "combat\armor.dm"
