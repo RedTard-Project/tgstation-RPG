@@ -19,8 +19,8 @@ export default {
     ...base.module,
     rules: [
       ...(base.module?.rules ?? []),
-      // Ratwood's chat font, inlined into the stylesheet: the panel is served as its two bundle files only.
-      { test: /\.ttf$/, type: 'asset/inline' },
+      // The chat's fonts, inlined into the stylesheet: the panel is served as its two bundle files only.
+      { test: /\.(ttf|otf)$/, type: 'asset/inline' },
     ],
   },
   resolve: {

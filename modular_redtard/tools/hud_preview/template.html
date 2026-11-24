@@ -480,10 +480,6 @@ function shifted(text, dx, dy) {
   loc.y.px += dy;
   return formatLoc(loc);
 }
-function splitAxis(anchor, total) {
-  const tiles = Math.floor(total / ICON);
-  return { anchor, tiles, px: total - tiles * ICON };
-}
 function foldAxis(axis) {
   if (Math.abs(axis.px) >= ICON) {
     const whole = Math.trunc(axis.px / ICON);
@@ -493,9 +489,9 @@ function foldAxis(axis) {
   return axis;
 }
 
-// ---- the frame: fit_frame() and frame_loc() of hud/rogue_frame.dm ----
+// ---- the frame: fit_frame() of hud/rogue_frame.dm ----
 function fitFrame(width, height, enabled) {
-  let left = 1, right = 0, top = 0, gap = 0;
+  let left = 1, right = 0, top = 0, bottom = 1;
   if (enabled && width >= FRAME.minControl && height >= FRAME.minControl) {
     const leastColumns = VIEW.w + 1;
     const leastRows = VIEW.h + 1;
@@ -507,16 +503,12 @@ function fitFrame(width, height, enabled) {
     right = Math.min(Math.floor(spare / 2), FRAME.maxColumns);
     const extraRows = Math.min(rows - leastRows, FRAME.maxRows * 2);
     top = Math.floor(extraRows / 2);
-    gap = extraRows - top;
+    bottom = 1 + extraRows - top;
   }
-  return { left, right, top, gap };
+  return { left, right, top, bottom };
 }
 const COLUMN = /^WEST-1(?::(-?\d+))?,/;
 const BOTTOM = /,SOUTH-1(?::(-?\d+))?$/;
-function frameLoc(base, fit) {
-  const match = BOTTOM.exec(base);
-  return match ? base.slice(0, match.index) + ',SOUTH-' + (fit.gap + 1) + (match[1] ? ':' + match[1] : '') : null;
-}
 /** How the client window is split into the map and the right pane. TG's Fit Viewport makes the map as wide as its height
     times the shape of the view and leaves the right pane its least width; a player may also drag the splitter. */
 function clientLayout() {
@@ -530,14 +522,14 @@ function clientLayout() {
 function geometry() {
   const fit = fitFrame(state.ctrl.w, state.ctrl.h, state.frameOn);
   const cols = VIEW.w + fit.left + fit.right;
-  const rows = VIEW.h + fit.top + fit.gap + 1;
+  const rows = VIEW.h + fit.top + fit.bottom;
   // BYOND stretches the whole screen to fit the control and leaves the rest blank.
   const tile = Math.min(state.ctrl.w / cols, state.ctrl.h / rows);
-  return { fit, cols, rows, tile, fieldLeft: fit.left * ICON, fieldBottom: (fit.gap + 1) * ICON };
+  return { fit, cols, rows, tile, fieldLeft: fit.left * ICON, fieldBottom: fit.bottom * ICON };
 }
 /** Icon pixels from the screen's lower left corner to the lower left corner of an element standing at `text`. */
 function spot(text, geo) {
-  const loc = parseLoc(frameLoc(text, geo.fit) || text);
+  const loc = parseLoc(text);
   if (!loc) return null;
   const x = loc.x.anchor === 'WEST' ? 0 : loc.x.anchor === 'EAST' ? VIEW.w - 1 : (VIEW.w - 1) / 2;
   const y = loc.y.anchor === 'SOUTH' ? 0 : loc.y.anchor === 'NORTH' ? VIEW.h - 1 : (VIEW.h - 1) / 2;
@@ -605,7 +597,7 @@ function zoneOf(text) {
   const bottom = BOTTOM.test(text);
   if (column && bottom) return 'угол: колонка и нижний ряд';
   if (column) return 'левая колонка — стоит на черноте вплотную к рамке поля';
-  if (bottom) return 'нижний ряд — стоит на нижнем краю окна';
+  if (bottom) return 'нижний ряд — стоит на черноте вплотную к нижнему краю поля';
   return 'поле — стоит относительно игрового поля';
 }
 
@@ -816,7 +808,7 @@ function render() {
   add('карта ' + state.ctrl.w + ' × ' + state.ctrl.h, true);
   add(', правая панель ' + split.sideWidth + ' px (' + Math.round(split.sideWidth / state.client.w * 100) + '% ширины окна). Экран ');
   add(geo.cols + ' × ' + geo.rows + ' клеток', true);
-  add(': поле ' + VIEW.w + ' × ' + VIEW.h + ', чёрных столбцов слева ' + fit.left + ', справа ' + fit.right + ', чёрных рядов сверху ' + fit.top + ', под полем ' + (fit.gap + 1) + '. Клетка в игре ≈ ');
+  add(': поле ' + VIEW.w + ' × ' + VIEW.h + ', чёрных столбцов слева ' + fit.left + ', справа ' + fit.right + ', чёрных рядов сверху ' + fit.top + ', под полем ' + fit.bottom + '. Клетка в игре ≈ ');
   add(geo.tile.toFixed(1) + ' px', true);
   add(', значок увеличен в ' + (geo.tile / ICON).toFixed(2) + ' раза.');
 }
@@ -842,21 +834,13 @@ function setPlace(name, text) {
   if (text === BASE[name]) delete state.moves[name];
   else state.moves[name] = text;
 }
-/** An element whose middle is under the field is of the bottom row, which the frame keeps on the window's bottom
-    edge; the place is rewritten for that, the element staying where it is drawn. */
+/** After a move the place is written tidily: whole tiles go to the tile count, the element stays where it is drawn. */
 function settle(name) {
   const text = cur(name);
   const loc = parseLoc(text);
-  const piece = pieces.find(other => other.define === name && other.at) || pieces.find(other => other.define === name);
-  const at = spot(text, geo);
-  if (!loc || !piece || !at) return text;
-  const box = drawnBox(piece, at);
-  const middleY = (box.bottom + box.top) / 2;
-  const wasBottom = loc.y.anchor === 'SOUTH' && loc.y.tiles === -1;
+  if (!loc) return text;
   foldAxis(loc.x);
-  if (middleY < geo.fieldBottom) loc.y = { anchor: 'SOUTH', tiles: -1, px: at.y };
-  else if (wasBottom) loc.y = splitAxis('SOUTH', at.y - geo.fieldBottom);
-  else foldAxis(loc.y);
+  foldAxis(loc.y);
   return formatLoc(loc);
 }
 function moveBy(dx, dy) {

@@ -1,7 +1,12 @@
 // The chat's faces, shared by its stylesheets (ratwood.scss, speech_fonts.scss).
 
-// Ratwood's Pterra has no Cyrillic, so a Russian chat reads in a book face that has it.
+// The chat's own face: Mookmania, the main chat face of Twilight Axis (owner's choice 2026-11-24, from a screenshot of
+// that server). It has Latin and Cyrillic alike, so both languages read in it.
+$chat: 'Mookmania';
+
+// What a glyph the chat's face lacks falls back to: a book face that has Cyrillic.
 $book: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
 
-// Pterra is drawn small for its size: it is scaled up to the panel's own font size setting.
-$pterra-scale: 145%;
+// Twilight Axis sets its chat at 19 px where TG's panel starts at 13: the face is scaled up to the panel's own font
+// size setting, and the speech faces with it.
+$chat-scale: 145%;

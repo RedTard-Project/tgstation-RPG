@@ -1,15 +1,14 @@
 /// The frame of the rogue HUD (owner's requests of 2026-11-24): Roguetown's frame around the field, plain darkness around
-/// it and the buttons on that darkness — the left column against the field's frame, the bottom row on the bottom edge of
-/// the window, none of them over the field.
+/// it and the buttons on that darkness against the field — the left column against its left edge, the bottom row
+/// against its bottom edge, none of them over the field.
 ///
 /// BYOND fits the whole screen (the view and the borders that screen objects add to it) into the map control and leaves
-/// blank bars where their shapes differ. Nothing can be drawn on those bars (DM reference, screen_loc: "letterboxing ...
-/// is not considered usable space"), so the buttons could not reach the window's edges: a wide window had a bar left of
-/// the left column, a tall one a bar under the bottom row. The darkness makes the bars part of the screen: border rows and
-/// columns of black tiles, as many as give the screen the shape of the control. The bottom row then lies on the control's
-/// bottom edge, while the field keeps its view and stays in the middle with the left column against its frame (the
-/// column stood in the middle of the black space for a day; the owner had it stick to the frame). The tiles are the
-/// black of the bars, so no edge shows between them.
+/// blank bars where their shapes differ; nothing can be drawn on those bars (DM reference, screen_loc: "letterboxing ...
+/// is not considered usable space"). The darkness makes the bars part of the screen: border rows and columns of black
+/// tiles, as many as give the screen the shape of the control, shared between the sides so that the field stays in the
+/// middle. The tiles are the black of the bars, so no edge shows between them. No element is moved for it: for a day
+/// the column stood in the middle of the black space and the bottom row on the control's bottom edge, then the owner
+/// had both stick to the field.
 ///
 /// The planes of the world are drawn on borders too (they are screen objects, not the map BYOND clips to the view), and a
 /// ring of the map one tile wide is known to the client beyond the view: every border tile is covered by an opaque piece
@@ -20,7 +19,7 @@
 /// Part of a tile the screen may hang over the control before another row or column is counted: a few pixels of blank
 /// bar are not worth a row.
 #define ROGUE_FRAME_OVERHANG 0.03
-/// Most border columns on one side of the field, and most border rows above it or between it and the bottom row.
+/// Most border columns on one side of the field, and most border rows above it or under it.
 #define ROGUE_FRAME_MAX_COLUMNS 24
 #define ROGUE_FRAME_MAX_ROWS 16
 /// Tiles each way of the field the picture of the field's frame is drawn for.
@@ -35,20 +34,16 @@
 	/// The map control of this client reports its size when the player resizes it (request_frame() asked it to).
 	var/rogue_frame_hooked = FALSE
 
-/atom/movable/screen
-	/// Where the rogue HUD's layout has this element before the frame moves it (frame_loc()).
-	var/rogue_frame_base
-
 /datum/hud/rogue
 	/// Border columns left of the field (the left column is one of them) and right of it.
 	var/frame_left = 1
 	var/frame_right = 0
-	/// Border rows above the field, and rows between the field and the bottom row.
+	/// Border rows above the field and under it (the bottom row is the first of those).
 	var/frame_top = 0
-	var/frame_gap = 0
+	var/frame_bottom = 1
 	/// The size of the view the frame is laid out for, "15x15".
 	var/frame_field
-	/// The elements have been moved to their places in the frame at least once.
+	/// The frame has been laid out at least once.
 	var/frame_applied = FALSE
 
 /// Roguetown's frame around the field: the picture Azure Peak and Vibelin draw with the back of their HUD, without the
@@ -104,12 +99,6 @@
 	apply_frame()
 	request_frame()
 
-/// TG makes the hand boxes anew when the number of hands changes: the new ones stand where the layout has them.
-/datum/hud/rogue/build_hand_slots(update_hud = FALSE)
-	. = ..()
-	if(frame_applied)
-		apply_frame()
-
 /// TG tells the HUD of a changed view (a scope, the widescreen preference): the frame is laid out for the new field.
 /datum/hud/rogue/on_viewdata_update(datum/source, view)
 	. = ..()
@@ -160,13 +149,12 @@ GAME_VERB_NATIVE(/client, rogue_frame_resized, ".rogue-frame", null, width as nu
 	var/left = 1
 	var/right = 0
 	var/top = 0
-	var/gap = 0
+	var/bottom = 1
 	if(CONFIG_GET(flag/rogue_hud_frame) && isnum(width) && isnum(height) && width >= ROGUE_FRAME_MIN_CONTROL && height >= ROGUE_FRAME_MIN_CONTROL)
 		// The least screen: the field, the left column and the bottom row.
 		var/least_columns = view_size[1] + 1
 		var/least_rows = view_size[2] + 1
-		// As few rows as leave the screen no wider than the control: its height then fills the control, and the bottom
-		// row lies on the control's bottom edge.
+		// As few rows as leave the screen no wider than the control: its height then fills the control.
 		var/rows = max(least_rows, CEILING(least_columns * height / width - ROGUE_FRAME_OVERHANG, 1))
 		var/tile = height / rows
 		var/columns = max(least_columns, FLOOR(width / tile + ROGUE_FRAME_OVERHANG, 1))
@@ -175,17 +163,18 @@ GAME_VERB_NATIVE(/client, rogue_frame_resized, ".rogue-frame", null, width as nu
 		left = min(CEILING(spare / 2, 1), ROGUE_FRAME_MAX_COLUMNS)
 		right = min(FLOOR(spare / 2, 1), ROGUE_FRAME_MAX_COLUMNS)
 		var/extra_rows = min(rows - least_rows, ROGUE_FRAME_MAX_ROWS * 2)
+		// The border rows go to both sides of the field as well, the odd one under it, where the bottom row is.
 		top = FLOOR(extra_rows / 2, 1)
-		gap = extra_rows - top
-	if(frame_applied && field == frame_field && left == frame_left && right == frame_right && top == frame_top && gap == frame_gap)
+		bottom = 1 + extra_rows - top
+	if(frame_applied && field == frame_field && left == frame_left && right == frame_right && top == frame_top && bottom == frame_bottom)
 		return
 	frame_left = left
 	frame_right = right
 	frame_top = top
-	frame_gap = gap
+	frame_bottom = bottom
 	apply_frame()
 
-/// Puts the frame of the field, the darkness and the elements of the bottom row where the frame has them.
+/// Fits the frame of the field to the view and lays the darkness around the field.
 /datum/hud/rogue/proc/apply_frame()
 	frame_applied = TRUE
 	var/client/viewer = mymob?.client
@@ -194,24 +183,13 @@ GAME_VERB_NATIVE(/client, rogue_frame_resized, ".rogue-frame", null, width as nu
 		frame_field = "[view_size[1]]x[view_size[2]]"
 		var/atom/movable/screen/rogue/field_frame/field_frame = screen_objects[HUD_ROGUE_FIELD_FRAME]
 		field_frame?.fit_field(view_size[1], view_size[2])
-	var/south_edge = "SOUTH-[frame_gap + 1]"
+	var/south_edge = "SOUTH-[frame_bottom]"
 	var/north_edge = frame_top ? "NORTH+[frame_top]" : "NORTH"
 	// Left of the field and under it; in a window wider or taller than the least screen, right of it and above it too.
 	place_darkness(HUD_ROGUE_DARK_LEFT, "WEST-[frame_left],[south_edge] to WEST-1,[north_edge]")
 	place_darkness(HUD_ROGUE_DARK_BOTTOM, "WEST,[south_edge] to EAST,SOUTH-1")
 	place_darkness(HUD_ROGUE_DARK_RIGHT, frame_right ? "EAST+1,[south_edge] to EAST+[frame_right],[north_edge]" : null)
 	place_darkness(HUD_ROGUE_DARK_TOP, frame_top ? "WEST,NORTH+1 to EAST,[north_edge]" : null)
-	for(var/hud_key in screen_objects)
-		var/atom/movable/screen/piece = screen_objects[hud_key]
-		if(!istype(piece) || istype(piece, /atom/movable/screen/rogue/darkness))
-			continue
-		if(isnull(piece.rogue_frame_base))
-			// FALSE: not an element of the bottom row. The frame never moves it, whatever else
-			// changes its place later (TG moves its palette buttons, for one).
-			var/layout_place = piece.screen_loc
-			piece.rogue_frame_base = (istext(layout_place) && !findtext(layout_place, " to ") && frame_loc(layout_place)) ? layout_place : FALSE
-		if(piece.rogue_frame_base)
-			piece.screen_loc = frame_loc(piece.rogue_frame_base)
 
 /datum/hud/rogue/proc/place_darkness(hud_key, place)
 	var/atom/movable/screen/piece = screen_objects[hud_key]
@@ -219,16 +197,6 @@ GAME_VERB_NATIVE(/client, rogue_frame_resized, ".rogue-frame", null, width as nu
 		return
 	piece.screen_loc = place || "CENTER"
 	piece.invisibility = place ? INVISIBILITY_NONE : INVISIBILITY_ABSTRACT
-
-/// The place in the frame of an element the layout has at `base`: one in the bottom row (its y is SOUTH-1) goes to the
-/// screen's bottom row. Null for anything else: the frame leaves it alone, the left column included — it stands at
-/// WEST-1, against the field's frame.
-/datum/hud/rogue/proc/frame_loc(base)
-	var/static/regex/bottom = regex(@",SOUTH-1(?::(-?\d+))?$")
-	if(!bottom.Find(base))
-		return null
-	var/pixels = bottom.group[1]
-	return copytext(base, 1, bottom.index) + ",SOUTH-[frame_gap + 1][pixels ? ":[pixels]" : ""]"
 
 #undef ROGUE_FRAME_MIN_CONTROL
 #undef ROGUE_FRAME_OVERHANG

@@ -68,9 +68,6 @@ export function setupLocalization(): void {
   Byond.subscribeTo('localization/config', (payload: LocalizationConfig) => {
     const lang = payload?.lang === 'en' ? 'en' : 'ru';
     setLang(lang);
-    // Ratwood's Pterra has no Cyrillic: the chat reads in it in English only (chat/ratwood.scss). On the body, as
-    // TG's Layout overwrites the root's classes with its theme.
-    document.body?.classList.toggle('rogue-lang-en', lang === 'en');
     const url = payload?.dictionaryUrl;
     if (url && url !== fetchedUrl) {
       fetchedUrl = url;
