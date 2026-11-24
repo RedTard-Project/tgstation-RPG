@@ -24,20 +24,6 @@
 	screen_loc = rogueui_doll_toggle
 	group_key = HUD_GROUP_ROGUE_DOLL
 
-/atom/movable/screen/rogue/panel_strip
-	name = ""
-	icon = ROGUE_HUD_ICON_STRIP
-	icon_state = "strip"
-	screen_loc = rogueui_panel_strip
-	layer = ROGUE_HUD_LAYER - 1
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
-/// The row under the field, one button high: the hands, the intents and the RMB button stand on it. The left column runs
-/// down past it, so the corner under the column (the inventory button) belongs to the column.
-/atom/movable/screen/rogue/panel_strip/bottom
-	icon_state = "strip_bottom"
-	screen_loc = rogueui_bottom_strip
-
 /atom/movable/screen/rogue/doll_back
 	name = ""
 	icon = ROGUE_HUD_ICON_DOLL_BACK

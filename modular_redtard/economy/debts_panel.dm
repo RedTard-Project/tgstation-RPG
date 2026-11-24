@@ -92,7 +92,7 @@
 				machine.refuse("Nothing to repay with.")
 				return TRUE
 			playsound(machine, ROGUE_SOUND_COIN_INSERT, 100, FALSE, -1)
-			machine.say(loan in treasury.loans ? "[paid]m transferred. [loan.remaining_due()]m remains." : "Loan repaid in full. [paid]m transferred.")
+			machine.say((loan in treasury.loans) ? "[paid]m transferred. [loan.remaining_due()]m remains." : "Loan repaid in full. [paid]m transferred.")
 		if("advance")
 			if(treasury.pay_poll_advance(user, text2num("[params["days"]]")))
 				playsound(machine, ROGUE_SOUND_COIN_INSERT, 100, FALSE, -1)

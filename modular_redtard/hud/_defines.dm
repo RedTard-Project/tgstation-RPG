@@ -8,6 +8,7 @@
 #define ROGUE_HUD_ICON_BACK 'modular_redtard/icons/mob/roguehudback2.dmi'
 #define ROGUE_HUD_ICON_PANEL 'modular_redtard/icons/mob/roguehud_panel.dmi'
 #define ROGUE_HUD_ICON_STRIP 'modular_redtard/icons/hud/rogue_panel.dmi'
+#define ROGUE_HUD_ICON_FRAME 'modular_redtard/icons/hud/rogue_frame.dmi'
 #define ROGUE_HUD_ICON_DOLL_BACK 'modular_redtard/icons/hud/rogue_doll_back.dmi'
 #define ROGUE_HUD_ICON_INTENT_GRID 'modular_redtard/icons/hud/rogue_intent_grid.dmi'
 #define ROGUE_HUD_ICON_INTENTS 'modular_redtard/icons/mob/rogueintents.dmi'
@@ -29,10 +30,12 @@
 // The row under the field (2026-11-24) is the same for the bottom: with the column alone the screen was 16x15, and the
 // window, fitted to a square view, showed an empty bar under it. The row makes that bar the HUD's own, one button high;
 // the hands, the intents and the RMB button stand on it, the inventory button in the corner under the column.
+// Both are plain darkness with the buttons on it, and Roguetown's frame goes around the field (2026-11-24).
 // These are the places of the least screen; the frame (hud/rogue_frame.dm) adds black borders to fit the player's map
-// window and moves the column (x of WEST-1) and the bottom panel (y of SOUTH-1) within them.
-#define rogueui_panel_strip "WEST-1,SOUTH to WEST-1,NORTH"
-#define rogueui_bottom_strip "WEST-1,SOUTH-1 to EAST,SOUTH-1"
+// window and moves the column (x of WEST-1) and the bottom row (y of SOUTH-1) within them.
+#define rogueui_field_frame "WEST,SOUTH"
+#define rogueui_dark_left "WEST-1,SOUTH-1 to WEST-1,NORTH"
+#define rogueui_dark_bottom "WEST,SOUTH-1 to EAST,SOUTH-1"
 
 // The inventory opens over the field from its left edge; its button is in the corner of the column and the bottom row.
 #define rogueui_inventory_toggle "WEST-1,SOUTH-1"
@@ -102,12 +105,11 @@
 #define rogueui_ring_position(index) (index == 1 ? rogueui_ring1 : (index == 2 ? rogueui_ring2 : (index == 3 ? rogueui_ring3 : rogueui_ring4)))
 #define rogueui_hand_position(index) (index == 1 ? rogueui_hand_left : (index == 2 ? rogueui_hand_right : null))
 
-#define HUD_ROGUE_PANEL_STRIP "rogue_panel_strip"
-#define HUD_ROGUE_BOTTOM_STRIP "rogue_bottom_strip"
-#define HUD_ROGUE_FRAME_LEFT "rogue_frame_left"
-#define HUD_ROGUE_FRAME_RIGHT "rogue_frame_right"
-#define HUD_ROGUE_FRAME_TOP "rogue_frame_top"
-#define HUD_ROGUE_FRAME_GAP "rogue_frame_gap"
+#define HUD_ROGUE_FIELD_FRAME "rogue_field_frame"
+#define HUD_ROGUE_DARK_LEFT "rogue_dark_left"
+#define HUD_ROGUE_DARK_BOTTOM "rogue_dark_bottom"
+#define HUD_ROGUE_DARK_RIGHT "rogue_dark_right"
+#define HUD_ROGUE_DARK_TOP "rogue_dark_top"
 #define HUD_ROGUE_BUILD "rogue_build"
 #define HUD_ROGUE_DOLL_TOGGLE "rogue_doll_toggle"
 #define HUD_ROGUE_DOLL_BACK "rogue_doll_back"

@@ -188,6 +188,11 @@ SUBSYSTEM_DEF(rogue_light)
 /datum/controller/subsystem/rogue_light/proc/load_library()
 	if(library)
 		return TRUE
+#ifdef OPENDREAM
+	// OpenDream has no load_ext(), and the library is a 32-bit build.
+	log_world("Rogue lighting: OpenDream, the DM backend stays in charge.")
+	return FALSE
+#else
 	var/name = CONFIG_GET(string/rogue_lighting_library)
 	var/path = rogue_light_library_path(name)
 	if(!path)
@@ -216,6 +221,7 @@ SUBSYSTEM_DEF(rogue_light)
 		fn_stats = null
 	library = path
 	return TRUE
+#endif
 
 /datum/controller/subsystem/rogue_light/proc/start_native(from_areas)
 	native_ready = FALSE

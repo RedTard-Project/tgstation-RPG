@@ -23,8 +23,6 @@
 	. = ..()
 	add_screen_object(/atom/movable/screen/rogue/placeholder/grain, HUD_ROGUE_GRAIN, group_key = FALSE)
 	add_screen_object(/atom/movable/screen/rogue/placeholder/scannies, HUD_ROGUE_SCANNIES, group_key = FALSE)
-	add_screen_object(/atom/movable/screen/rogue/panel_strip, HUD_ROGUE_PANEL_STRIP, HUD_GROUP_ROGUE_PANEL)
-	add_screen_object(/atom/movable/screen/rogue/panel_strip/bottom, HUD_ROGUE_BOTTOM_STRIP, HUD_GROUP_ROGUE_PANEL)
 
 /datum/hud/rogue/proc/group_shown(group_key)
 	return !(group_key in folded_groups)

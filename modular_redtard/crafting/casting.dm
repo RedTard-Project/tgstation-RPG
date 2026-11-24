@@ -19,7 +19,6 @@
 
 /// Ratwood cast blades (anvil_recipes/blades.dm): what a mold makes; laid on the anvil in place of the recipe's bar.
 /obj/item/blade
-	parent_type = /obj/item/rockhill
 	name = "blade"
 	desc = "A cast blade waiting to be finished."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/anvil_casting.dmi'

@@ -75,7 +75,7 @@
 	data["duty_evaded"] = duty_evaded
 	data["levy_collected"] = levy_collected
 	data["next_airlift_seconds"] = max(0, round((next_airlift - world.time) / 10))
-	data["is_proprietor"] = user?.mind?.assigned_role?.title in profit_jobs
+	data["is_proprietor"] = (user?.mind?.assigned_role?.title in profit_jobs)
 	return data
 
 /obj/item/roguemachine/navigator/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
